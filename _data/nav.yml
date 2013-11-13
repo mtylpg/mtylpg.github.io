@@ -1,0 +1,8 @@
+- name: About
+  color: orange
+
+- name: Portfolio
+  color: purple
+
+- name: Contact
+  color: green
