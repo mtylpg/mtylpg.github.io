@@ -1,8 +1,8 @@
-- name: About
+- name: about
   color: orange
 
-- name: Portfolio
+- name: portfolio
   color: purple
 
-- name: Contact
+- name: contact
   color: green
