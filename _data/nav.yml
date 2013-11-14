@@ -1,8 +1,16 @@
+- name: home
+  target: index
+  color: multi
+
 - name: about
+  target: about
   color: orange
 
 - name: portfolio
   color: purple
+  target: portfolio
+
 
 - name: contact
   color: green
+  target: contact

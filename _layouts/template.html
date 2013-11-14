@@ -19,17 +19,17 @@
           <span class = "navlink">
             {% if item.name != page.title %}
               <a class="{{item.color}}lined" 
-                  href="/{{item.name}}.html">
+                  href="/{{item.target}}.html">
             {% else %}
               <a class="{{item.color}}lined {{item.color}}" 
-                  href="/{{item.name}}.html">
+                  href="/{{item.target}}.html">
             {% endif %}
               {{item.name}}</a>
           </span>
         {% endfor %}
       </div>
 
-      <h1>{{page.title}}</h1>
+      <h1>{{page.dtitle}}</h1>
       <br>
       {{ content }}
     </div>
