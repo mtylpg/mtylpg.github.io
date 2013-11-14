@@ -5,7 +5,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link type= "text/css" rel="stylesheet" href="stylesheets/temp.css" />
+    <link type= "text/css" rel="stylesheet" href="/stylesheets/temp.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,600,700' rel='stylesheet' type='text/css'/>
     <script type="text/javascript" src="jams.js"></script>
 
@@ -13,15 +13,16 @@
 
 <body>
     <div id="content">
+
       <div id="nav">
         {% for item in site.data.nav %}
           <span class = "navlink">
             {% if item.name != page.title %}
               <a class="{{item.color}}lined" 
-                  href="{{item.name}}.html">
+                  href="/{{item.name}}.html">
             {% else %}
               <a class="{{item.color}}lined {{item.color}}" 
-                  href="{{item.name}}.html">
+                  href="/{{item.name}}.html">
             {% endif %}
               {{item.name}}</a>
           </span>

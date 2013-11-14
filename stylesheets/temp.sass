@@ -6,38 +6,43 @@ $orange : #fb7300
 
 $link : #007dfb
 
-@media screen and (min-width: 22.1em)
+@media screen and (min-width: 30.1em)
     .primary
-        max-width: 63%
+        max-width: 62%
     
     .secondary
-        max-width: 37%
+        max-width: 36%
     
     body 
         font-size: 1.2em
     
 
-@media screen and (max-width:22em)
+@media screen and (max-width:30em)
     body
         font-size: 1.1em
     .primary, .secondary
         max-width: 100%
+        img
+            max-width: 70%
+            padding-left: 15%
+
 
 body
     font-family: 'OpenSans', Arial, Sans-serif
     margin-left: .5em
     margin-right: .5em
 
+
 #content
     margin-left: auto
     margin-right: auto
+    padding-right: 10px
     max-width: 34em
 
 h1
     font-size: 5em
     font-weight: 600
     text-transform: uppercase
-    text-align: center
     margin: 0
     line-height: 1em
     padding-top: .5em
@@ -50,7 +55,6 @@ h2
     line-height: 1em
     padding: .2em 0
     color: #4d4d4d
-    text-align: center
 
 h3
     color: #4d4d4d
@@ -59,6 +63,13 @@ h3
 h4
     color: #4d4d4d
     margin: 0
+
+.right
+    margin-right: 1%
+    float
+
+.left
+    margin-left: 1%
 
 .splash
     margin-top: 0
@@ -73,6 +84,23 @@ h4
 
 p
     margin-top: 0
+
+.split
+    display: inline-block
+
+.center
+    margin-left: auto
+    margin-right: auto
+
+.image
+    padding-bottom:  1em
+img
+    max-width: 100%
+
+.caption
+    font-size: .9em
+    font-style: italic
+    text-align: center
 
 .blue
     color: $blue
@@ -99,3 +127,28 @@ p
 .reslink
     font-size: .8em
     font-style: italic
+
+.Draft
+    color: $orange
+
+.postListing
+    padding: .5em
+    color: black
+    .title
+        font-size: 1.5em
+        color: #4d4d4d
+    .excerpt
+        font-style: italic
+    .postData
+        margin-left: 8em
+    .date
+        font-size: .8em
+        color: #4d4d4d
+    .status
+        font-size: .8em
+        display: inline-block
+        margin-right: 2em
+    img
+        float: left
+        width: 7em
+    border-bottom: 1px solid #4d4d4d

@@ -5,8 +5,28 @@ title: Portfolio
 
 <p>
     There will come a day when this page shall be filled with usability mocks and writting. 
-    It is not this day. For now it is barren, a desert of unfinished thought and incomplete wireframes. 
+    It is not this day. For now it is all but barren, a desert of unfinished thought and incomplete wireframes. 
 </p>
 <p>
-    Seriously though, check back on Thursday Nov 14. <span style="font-style: italic" >There will be <span class="purple">things.</span></span>
+    Expect <span class="purple">daily</span></span> entries!
 </p>
+
+{% for post in site.posts %}
+<a href="{{post.url}}">
+<div class='postListing split'>
+    <img class="left" src="{{post.minipic}}"/>
+    <div class="postData right">
+        <div class="title">{{ post.title }}</div>
+        <div class="date"> {{ post.date | date: "%-d %B %Y" }} </div>
+
+        <div class="excerpt">{{ post.excerpt }}</div>
+        <div class='status'> Status: 
+            <span class='{{ post.status }}'> {{ post.status }} </span>
+        </div>
+        <div class='status'> File Under: 
+            <span class='{{ post.file }}'> {{ post.file }} </span>
+        </div>
+    </div>
+</div>
+</a>
+{% endfor %}
