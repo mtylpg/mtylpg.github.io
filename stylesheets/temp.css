@@ -128,6 +128,13 @@ img {
 .Draft {
   color: #fb7300; }
 
+.divider {
+  margin-left: 15%;
+  width: 70%;
+  border-bottom: 2px solid #dddddd;
+  height: 2px;
+  margin-bottom: 1em; }
+
 .postListing {
   padding: 0.5em;
   color: black;
