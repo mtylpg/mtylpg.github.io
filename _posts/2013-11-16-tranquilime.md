@@ -9,7 +9,7 @@ file: Design
 ---
 
 <h4 class="green">Goal:</h4>
-Over a 2 day hackathon, build a site on which users can annonymously post stressors and leave supportive comments for others. Think Post-Secret, but with new focus on stress and anonymous feedback. (Project was made with Ben Myers).
+Over a 2 day hackathon, build a site on which users can annonymously post stressors and leave supportive comments for others. Think Post-Secret, but with new focus on stress and anonymous feedback.
 
 <h4 class="purple">Results:</h4>
 A fully functional local host version of the system is available on Github <a href="https://github.com/bridgs/tranquilime/">here</a>.
