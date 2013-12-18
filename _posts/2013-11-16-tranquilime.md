@@ -4,8 +4,8 @@ title: Tranquili.me
 dtitle: Tranquili.me
 excerpt: A hackathon project designed to combat stress, wherein users can anonymously post about what is stressing them out and get support.
 minipic: /images/post-images/2013-11-16-tranquilime-minipic.jpg
-status: Ongoing
-file: Design
+status: On Hold
+file: Web Design
 ---
 
 <h4 class="green">Goal:</h4>
@@ -15,7 +15,7 @@ Over a 2 day hackathon, build a site on which users can annonymously post stress
 A fully functional local host version of the system is available on Github <a href="https://github.com/bridgs/tranquilime/">here</a>.
 
 <h4 class="orange">The Future:</h4>
-One of these days we'll throw the thing up on AWS, with a possible twitter integration.
+One of these days we'll throw the thing up on AWS or Heorku, with a possible twitter integration, but there isn't much drive to do that these days (all the Mongo rewiring would just be a pain).
 
 
 The <a href="http://codeathon.splashthat.com/"> Tumblr/Clinton Foundation/Jawbone Codeathon</a> (<a href="https://twitter.com/search?q=%23code4health">#code4health</a>) is a recurring hackathon themed around countering the social determents of modern health. Working with <a href="https://github.com/bridgs">Ben Myers</a>, I participated in one second event of this type in October 2013. The theme stress in general and we decided to make a system based all around venting and sharing those every day stress-causes, just to give anybody a place to air out what was on their minds as a sort of therapy. I'll be honest and say that Ben and I never thought of Post-Secret while we were building it, but it seems to be what everybody else sees in the project and we don't disagree.
