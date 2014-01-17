@@ -1,0 +1,81 @@
+$blue : #007dfb
+$red : #ff4d4d
+$green : #33cc00
+$purple : #d34dff
+$orange : #fb7300
+
+$link : #007dfb
+
+@media screen and (min-width: 30.1em)
+    body 
+        max-width: 68%
+        font-size: 5vw
+@media screen and (max-width: 30em)
+    body
+        font-size: 7vw
+        max-width: 96%
+
+#content
+    margin-top: 2em
+    margin-left: auto
+    margin-right: auto
+    padding-right: 10px
+
+body 
+    font-family: "OpenSans", Arial, Sans-serif
+    font-weight: 600 
+    margin-left: auto
+    margin-right: auto
+
+.signature
+    text-align: right
+    margin-right: 3em
+
+#bad, #old
+    float: left
+    position: absolute
+    z-index: -2
+
+#bad
+    color: $red
+
+#old
+    color: #444
+
+#oldbad
+    display: inline-block
+    width: 2em
+    height: 1.08em
+    overflow: hidden
+
+.blinder
+    width: 3em
+    height: 2em
+    position: absolute
+    z-index: -1
+    background: white
+
+a
+    color: #444
+    text-decoration: none
+a:hover
+    color: $blue
+
+.reslink
+    font-size: 0.5em
+    font-style: italic
+    text-indent: 8.5em
+
+p
+    margin: 0
+
+.blue
+    color: $blue
+.red
+    color: $red
+.green
+    color: $green
+.purple
+    color: $purple
+.orange
+    color: $orange
