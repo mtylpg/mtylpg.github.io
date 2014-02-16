@@ -1,0 +1,31 @@
+.postListing {
+  height: 197px;
+  background: #333333;
+  margin: 10px; }
+
+.left, .right {
+  display: inline-block;
+  float: left; }
+
+.left {
+  width: 62%; }
+
+.right {
+  width: 37%; }
+
+.postListing img {
+  height: 100%; }
+
+.listheader {
+  font-size: 24pt;
+  font-weight: 300; }
+
+.excerpt {
+  font-size: 18 pt;
+  font-weight: 300; }
+
+.postData {
+  color: #dddddd; }
+
+.postData div {
+  padding: 0 10px; }
