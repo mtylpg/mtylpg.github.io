@@ -7,13 +7,20 @@
     <link rel="icon" type="image/png" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <link type= "text/css" rel="stylesheet" href="/stylesheets/cover2.css" />
+    <link type= "text/css" rel="stylesheet" href="/stylesheets/cover3.css" />
     <link href='http://fonts.googleapis.com/css?family=Montserrat:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="javascripts/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="javascripts/slick/slick-theme.css"/>
 
     <script type='text/javascript', src='/javascripts/jquery.js'></script>
 
     <script type="text/javascript" src="/javascripts/cover.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/slick/slick.min.js"></script>
+
 
 </head>
 
@@ -30,18 +37,18 @@
 
     <div id="navContainer">
         <div id='nav'>
-            <div class="navLink" link="headSection"> Home </div>
-            <div class="navLink" link="skillsbg"> Skills </div>
-            <div class="navLink" link="history"> History </div>
-            <div class="navLink" link="contact"> Contact </div>
+            <!-- <a href="javascript:scrollTo('headSection');" class="navLink"> Home </a> -->
+            <a href="javascript:scrollTo('skillsbg');" class="navLink"> Skills </a>
+            <a href="javascript:scrollTo('history');" class="navLink"> History </a>
+            <a href="javascript:scrollTo('contact');" class="navLink"> Contact </a>
         </div>
     </div>
     <div id="floatNav" class="hidden">
         <div id='nav'>
-            <div class="navLink" link="headSection"> Home </div>
-            <div class="navLink" link="skillsbg"> Skills </div>
-            <div class="navLink" link="history"> History </div>
-            <div class="navLink" link="contact"> Contact </div>
+            <a href="javascript:scrollTo('headSection');" class="navLink"> Home </a>
+            <a href="javascript:scrollTo('skillsbg');" class="navLink"> Skills </a>
+            <a href="javascript:scrollTo('history');" class="navLink"> History </a>
+            <a href="javascript:scrollTo('contact');" class="navLink"> Contact </a>
         </div>
     </div>
     <div id="navFiller"></div>
@@ -66,12 +73,26 @@
             History
         </h2>
         <p class='resLink'>
-             <a href="/files/resume.pdf">(Full Resume Here)</a>
+             <a href="/files/resume2015.pdf">(Full Resume Here)</a>
+        </p>
+
+        <p>
+            <span class="subheader">
+                Now
+            </span>
+            In 2014 I joined <a href='http://www.iqlicense.com'>iQ License</a>, a 8-person B2B startup, as a User Experience Developer. At iQ, I've lead design and front-end development for multiple iterations of our main product, as well as an suite of internal tools now transitioning to a SAAS offering.
         </p>
         <p>
-            Lead design and front-end development for a first-year online B2B licensing startup. Designed, prototyped, and released new user flows, working from paper sketches through Illustrator and Photoshop mockups to interactive online prototypes and final client-facing code, while conducting in-person and remote user interviews both current and potential clients to identify usability issues throughout our product.
+            I have designed, prototyped, and released new user flows, working from paper sketches through Illustrator and Photoshop mockups to interactive online prototypes and final client-facing code, while conducting in-person and remote user interviews both current and potential clients to identify usability issues throughout our products.
         </p>
         <p>
+            As the main design force in our company, I have also taken charge of numerous graphic design projects (i.e. business cards, trade show booths), and coordinated with contract designers to help revamp out sites look and feel.
+        </p>
+        <hr>
+        <p>
+            <span class="subheader">
+                Before
+            </span>
             In 2012 I joined NextJump as a full stack web developer building consumer facing sites in PHP, JS, CSS, and SQL, and coordinating cross-teams to fix UX flaws.
         </p>
         <p>
@@ -81,8 +102,37 @@
             While attending I was involved numerous research projects, studying HCI alongside motivational psychology and visual perception. I got to play with eye tracking for a bit.
         </p>
     </div>
+   <!--  <div id="portfoliobg" class="restricted">
+        <div id="portfolio">
+            <div>
+                <h2>
+                    iQ
+                </h2>
+            </div>
+            <div>
+                <h2>
+                    NxJ
+                </h2>
+            </div>
+            <div>
+                <h2>
+                    Art
+                </h2>
+            </div>
+        </div>
+    </div>
 
-    <div id="contactbg" class="restricted">
+    <div class="divider" id="history">
+        <h2>
+            Space filler
+        </h2>
+        <p>
+            Space filled.
+        </p>
+    </div>
+ -->
+
+    <div id="portfoliobg" class="restricted">
         <div id="contact">
             <h2>
                 Contact
@@ -105,37 +155,4 @@
             </span>
         </div>
     </div>
-
-<!-- DIDN'T GET THIS DONE -->
-   <!--  <div class="divider" id="education">
-        <h2>
-            Education
-        </h2>
-        <p>
-            I graduated from Cornell University in 2011 with a Bachelor's in Psychology and again in 2012 with a Master's in Information Science.
-        </p>
-        <p>
-            While attending I was involved numerous research projects, studying HCI alongside motivational psychology and visual perception. I got to play with eye tracking for a bit.
-        </p>
-
-    </div>
-
-
-    <div id="contactbg" class="restricted">
-        <div id="contact">
-            <h2>
-                Contact
-            </h2>
-            <p>
-                EMAIL: <a href="mailto:matthewclepage@gmail.com"> matthewclepage </a>
-            </p>
-            <p>
-                LINKEDIN: <a href="http://www.linkedin.com/in/mclepage">MCLepage</a>
-            </p>
-            <p>
-                GITHUB: <a href="https://www.github.com/mattylapage">MattyLapage</a>
-                <br><p class="resLink"> (This site is hosted <a href="https://github.com/MattyLapage/mattylapage.github.io">here</a>)
-            </p>
-        </div>
-    </div> -->
 </body>

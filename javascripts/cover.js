@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-    $('.navLink').each(function () {
-        $(this).on("click", function() {
-            targetHeight = $('#'+$(this).attr("link")).offset().top-50;
-            $('body').animate({ scrollTop: targetHeight}, 150);
-        });
-    });
+    // $('.navLink').each(function () {
+    //     $(this).on("click", function() {
+    //         targetHeight = $('#'+$(this).attr("link")).offset().top-50;
+    //         $('body').animate({ scrollTop: targetHeight}, 150);
+    //     });
+    // });
 
     var navLoc = $('#navContainer').position().top;
     var floatNav = $('#floatNav');
@@ -20,6 +20,8 @@ $(document).ready(function() {
 
     var bgList = [skillsbg, contactbg, bg1, bg2];
 
+    $('#portfolio').slick();
+
     //checkZoom($(window).width(), $(window).height());
     //setBackgrounds($("body").scrollTop())
 
@@ -33,6 +35,12 @@ $(document).ready(function() {
         }
         scrollTimeout = setTimeout(scrollHandler, 10);
     });
+
+    scrollTo = function (target) {
+        var targetHeight = $('#'+target).offset().top-50;
+        $('body').animate({ scrollTop: targetHeight}, 150);
+
+    }
 
     scrollHandler = function () {
         // Check your page position
