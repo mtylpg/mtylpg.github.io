@@ -1,14 +1,15 @@
 $(document).ready(function() {
 
     $('.navLink').each(function () {
-        $(this).on("click", function() { 
+        $(this).on("click", function() {
             targetHeight = $('#'+$(this).attr("link")).offset().top-50;
             $('body').animate({ scrollTop: targetHeight}, 150);
         });
     });
 
-    var navContainer = $('#navContainer');
-    var navFiller = $('#navFiller');
+    var navLoc = $('#navContainer').position().top;
+    var floatNav = $('#floatNav');
+    var floatHidden = true;
 
     var skillsbg = $('#skillsbg');
     var contactbg = $('#contactbg');
@@ -19,41 +20,62 @@ $(document).ready(function() {
 
     var bgList = [skillsbg, contactbg, bg1, bg2];
 
-    checkZoom($(window).width(), $(window).height());
-    setBackgrounds($("body").scrollTop())
+    //checkZoom($(window).width(), $(window).height());
+    //setBackgrounds($("body").scrollTop())
 
-    $(window).on("scroll", function() {
-        offset = $("body").scrollTop();
-        
-        if (offset > 335){
-            navContainer.addClass("floatNav");
-            navFiller.addClass("navFill");
-        }
-        else {
-            navContainer.removeClass("floatNav");
-            navFiller.removeClass("navFill");
-        }
+    var scrollTimeout;
 
-        setBackgrounds(offset);
+    $(window).scroll(function () {
+        if (scrollTimeout) {
+            // clear the timeout, if one is pending
+            clearTimeout(scrollTimeout);
+            scrollTimeout = null;
+        }
+        scrollTimeout = setTimeout(scrollHandler, 10);
     });
 
-    $(window).on('resize', function() {
-        checkZoom($(window).width(), $(window).height());
-    });
+    scrollHandler = function () {
+        // Check your page position
+        var offset = $("body").scrollTop();
+
+        if (offset > navLoc){
+            if(floatHidden){
+                floatNav.addClass("visible");
+                floatNav.animate({top: '0'}, 150);
+                floatHidden = false;
+            }
+        } else {
+            if(!floatHidden){
+
+                floatNav.animate({top: '-50'}, 100, function(){
+                    floatNav.removeClass("visible");
+                });
+                floatHidden = true;
+            }
+        }
+
+        // setBackgrounds(offset);
+    };
+
 
     function setBackgrounds(yPos){
-        skillsbg.css(
-            'background-position','-190px -'+
-                (yPos*0.4+0)+'px');
-        contactbg.css(
-            'background-position','-0px -'+
-                (yPos*0.4-300)+'px');
-        bg1.css(
-            'background-position','0px -'+
-                (yPos*0.7+120)+'px');
-        bg2.css(
-            'background-position','100% '+
-                (yPos*0.7)+'px');
+
+        $(skillsbg).animate(
+            {'background-position-y': -1*(yPos*0.4+0)},
+            10,
+            'linear');
+        $(contactbg).animate(
+            {'background-position-y': (0-1)*(yPos*0.4-300)},
+            10,
+            'linear');
+        $(bg1).animate(
+            {'background-position-y': (0-1)*(yPos*0.7+120)},
+            10,
+            'linear');
+        $(bg2).animate(
+            {'background-position-y': (yPos*0.7)},
+            10,
+            'linear');
     }
 
     function checkZoom(width, height){

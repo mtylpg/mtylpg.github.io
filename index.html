@@ -6,7 +6,7 @@
 <head>
     <link rel="icon" type="image/png" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <link type= "text/css" rel="stylesheet" href="/stylesheets/cover2.css" />
     <link href='http://fonts.googleapis.com/css?family=Montserrat:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -18,53 +18,58 @@
 </head>
 
 <body>
-    <div id="bg1">
-        <div id="bg2">
-            <div class="red" id="headSection">
-                <h1>
-                    STUFF
-                </h1>
-                <h2>
-                    by
-                </h2>
-                <h1>
-                    MATT
-                </h1>
-            </div>
+    <div class="" id="headSection">
+        <h1>
+            STUFF
+        <span>
+            // by //
+        </span>
+            MATT
+        </h1>
+    </div>
+
+    <div id="navContainer">
+        <div id='nav'>
+            <div class="navLink" link="headSection"> Home </div>
+            <div class="navLink" link="skillsbg"> Skills </div>
+            <div class="navLink" link="history"> History </div>
+            <div class="navLink" link="contact"> Contact </div>
         </div>
     </div>
-    <div class="divider">
-        <div id="navContainer">
-            <div id='nav'>
-                <div class="navLink" link="headSection"> Home </div>   
-                <div class="navLink" link="skillsbg"> Skills </div>
-                <div class="navLink" link="history"> History </div>
-                <div class="navLink" link="contact"> Contact </div>
-            </div>
+    <div id="floatNav" class="hidden">
+        <div id='nav'>
+            <div class="navLink" link="headSection"> Home </div>
+            <div class="navLink" link="skillsbg"> Skills </div>
+            <div class="navLink" link="history"> History </div>
+            <div class="navLink" link="contact"> Contact </div>
         </div>
-        <div id="navFiller"></div>
+    </div>
+    <div id="navFiller"></div>
+
+    <div class="divider">
         <p> Hi! I'm a Brooklyn based UX specialist with a mixed background in experimental psychology and web development.</p><p>I specialize in usability design and the many wonderful facets that compose it, combined with a background in web development and traditional computer science. </p>
     </div>
 
-    <div id="skillsbg">
-        <div class="blue" >
-            <div id="skills">
-                <div class="colorHeader black">
-                    Skillset
-                </div>
-                <div class="icon">
-                    <img src="/images/icons/IconsFinal.png">
-                </div>
+    <div id="skillsbg" class="restricted blue">
+        <div id="skills">
+            <h2>
+                Skillset
+            </h2>
+            <div class="icon">
+                <img src="/images/icons/IconsFinal.png">
             </div>
         </div>
     </div>
 
     <div class="divider" id="history">
-        <div class="colorHeader" >
+        <h2>
             History
-        </div>
+        </h2>
         <p class='resLink'>
              <a href="/files/resume.pdf">(Full Resume Here)</a>
+        </p>
+        <p>
+            In 2012 I joined NextJump as a full stack web developer building consumer facing sites in PHP, JS, CSS, and SQL, and coordinating cross-teams to fix UX flaws.
         </p>
         <p>
             I graduated from Cornell University in 2011 with a Bachelor's in Psychology and again in 2012 with a Master's in Information Science.
@@ -72,27 +77,62 @@
         <p>
             While attending I was involved numerous research projects, studying HCI alongside motivational psychology and visual perception. I got to play with eye tracking for a bit.
         </p>
-        <p>
-            In 2012 I joined NextJump as a full stack web developer building consumer facing sites in PHP, JS, CSS, and SQL, and coordinating cross-teams to fix UX flaws.
-        </p>
     </div>
 
-    
-    <div id="contactbg">
-        <div class="purple">
-            <div id="contact">
-                <div class="colorHeader"> Contact </div>
-                <p>
-                    EMAIL: <a href="mailto:matthewclepage@gmail.com"> matthewclepage </a>
-                </p>
-                <p>
-                    LINKEDIN: <a href="http://www.linkedin.com/in/mclepage">MCLepage</a>
-                </p>
-                <p>
-                    GITHUB: <a href="https://www.github.com/mattylapage">MattyLapage</a>
-                    <br><p class="resLink"> (This site is hosted <a href="https://github.com/MattyLapage/mattylapage.github.io">here</a>) 
-                </p>
-            </div>
+    <div id="contactbg" class="restricted">
+        <div id="contact">
+            <h2>
+                Contact
+            </h2>
+            <span>
+                EMAIL:
+            </span>
+            <a href="mailto:matthewclepage@gmail.com"> matthewclepage </a>
+            <span>
+                LINKEDIN:
+            </span>
+            <a href="http://www.linkedin.com/in/mclepage">MCLepage</a>
+            <span>
+                GITHUB:
+            </span>
+            <a href="https://www.github.com/mattylapage">MattyLapage</a>
+            <br>
+            <span class="hosted">
+                (This site is hosted <a href="https://github.com/MattyLapage/mattylapage.github.io">here</a>)
+            </span>
         </div>
     </div>
+
+<!-- DIDN'T GET THIS DONE -->
+   <!--  <div class="divider" id="education">
+        <h2>
+            Education
+        </h2>
+        <p>
+            I graduated from Cornell University in 2011 with a Bachelor's in Psychology and again in 2012 with a Master's in Information Science.
+        </p>
+        <p>
+            While attending I was involved numerous research projects, studying HCI alongside motivational psychology and visual perception. I got to play with eye tracking for a bit.
+        </p>
+
+    </div>
+
+
+    <div id="contactbg" class="restricted">
+        <div id="contact">
+            <h2>
+                Contact
+            </h2>
+            <p>
+                EMAIL: <a href="mailto:matthewclepage@gmail.com"> matthewclepage </a>
+            </p>
+            <p>
+                LINKEDIN: <a href="http://www.linkedin.com/in/mclepage">MCLepage</a>
+            </p>
+            <p>
+                GITHUB: <a href="https://www.github.com/mattylapage">MattyLapage</a>
+                <br><p class="resLink"> (This site is hosted <a href="https://github.com/MattyLapage/mattylapage.github.io">here</a>)
+            </p>
+        </div>
+    </div> -->
 </body>
