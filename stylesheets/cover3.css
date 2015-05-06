@@ -26,6 +26,9 @@ h1 {
     font-family: lato;
     display: inline-block;
     height: 50px; }
+    @media only screen and (max-width: 500px) {
+      h1 span {
+        display: block; } }
 
 h2 {
   font-size: 2.5em;
@@ -51,11 +54,18 @@ h3 {
   margin: 0 auto; }
 
 span.subheader {
-  margin-left: -90px;
+  margin-left: -150px;
+  width: 135px;
+  text-align: right;
   font-size: 1.5em;
   font-weight: normal;
   font-family: Oswald;
   float: left; }
+  @media only screen and (max-width: 1080px) {
+    span.subheader {
+      margin: 0;
+      text-align: left;
+      width: 100%; } }
 
 hr {
   margin-left: auto;
@@ -89,9 +99,13 @@ hr {
     margin-right: auto;
     text-align: center;
     max-width: 860px;
-    text-alight: left;
+    text-align: left;
     width: 100%;
     padding-bottom: 10px; }
+  @media only screen and (max-width: 500px) {
+    .divider {
+      padding-left: 10px;
+      padding-right: 10px; } }
 
 .navLink {
   display: inline-block; }
@@ -160,8 +174,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: 860px;
-  width: 25em; }
+  max-width: 860px; }
 
 #floatNav {
   position: fixed;
@@ -177,7 +190,7 @@ hr {
     top: 0px; }
 
 #nav a.navLink, #floatNav a.navLink {
-  width: 6em;
+  width: 4em;
   cursor: pointer; }
   #nav a.navLink:hover, #floatNav a.navLink:hover {
     color: #34ccff; }
@@ -189,7 +202,6 @@ hr {
   margin-right: auto;
   text-align: center;
   max-width: 860px;
-  min-width: 500px;
   background: rgba(255, 255, 255, 0); }
 
 #contact {
@@ -228,5 +240,8 @@ hr {
   padding: 10px; }
   .icon img {
     width: 60%; }
+    @media only screen and (max-width: 500px) {
+      .icon img {
+        width: 100%; } }
 
 /*# sourceMappingURL=cover3.css.map */

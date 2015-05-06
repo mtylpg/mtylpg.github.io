@@ -20,13 +20,13 @@ $link : #007dfb;
 
 @mixin respond-to ($media) {
     @if $media == mobile {
-        @media only screen and (max-width: $breakpointMobile) { @content; }
+        @media only screen and (max-width: 500px) { @content; }
     }
     @else if $media == medium {
-        @media only screen and (max-width: $breakpointSmall ) { @content; }
+        @media only screen and (max-width: 960px ) { @content; }
     }
     @else if $media == large {
-        @media only screen and (min-width: $breakpointLarge) { @content; }
+        @media only screen and (max-width: 1080px) { @content; }
     }
 }
 
@@ -59,6 +59,10 @@ h1 {
         font-family: lato;
         display: inline-block;
         height: 50px;
+        @include respond-to(mobile){
+            // width: 100%;
+            display: block;
+        }
     }
 }
 h2 {
@@ -79,11 +83,18 @@ h3 {
     margin: 0 auto;
 }
 span.subheader {
-    margin-left: -90px;
+    margin-left: -150px;
+    width: 135px;
+    text-align: right;
     font-size: 1.5em;
     font-weight: normal;
     font-family: Oswald;
     float: left;
+    @include respond-to(large){
+        margin: 0;
+        text-align: left;
+        width: 100%;
+    }
 }
 
 hr {
@@ -118,9 +129,13 @@ hr {
     p {
         margin: 0;
         @include centered;
-        text-alight: left;
+        text-align: left;
         width: 100%;
         padding-bottom: 10px;
+    }
+    @include respond-to(mobile){
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -195,7 +210,6 @@ hr {
     font-weight: bold;
     padding: 0px 0 10px 0;
     @include centered;
-    width: 25em;
 }
 
 #floatNav {
@@ -215,7 +229,7 @@ hr {
 }
 
 #nav a.navLink, #floatNav a.navLink {
-    width: 6em;
+    width: 4em;
     cursor: pointer;
     &:hover {
         color: #34ccff;
@@ -226,7 +240,6 @@ hr {
     width: 100%;
     padding: 20px 0;
     @include centered;
-    min-width: 500px;
     background: $white;
 }
 
@@ -271,5 +284,8 @@ hr {
     padding: 10px;
     img {
         width: 60%;
+        @include respond-to(mobile) {
+            width: 100%;
+        }
     }
 }
