@@ -10,6 +10,8 @@ a {
   text-decoration: none; }
   a:hover {
     color: #34ccff; }
+  a.iqlink {
+    color: purple; }
 
 h1 {
   margin: 50px;
@@ -235,6 +237,33 @@ hr {
 
 #history p {
   text-align: left; }
+
+.listBoxes {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 860px; }
+  .listBoxes .listBox {
+    width: 50%;
+    float: left; }
+    .listBoxes .listBox label {
+      margin: 15px 0;
+      font-family: Oswald; }
+    .listBoxes .listBox ul {
+      padding: 0 25px;
+      list-style-type: square;
+      text-align: left;
+      display: inline-block; }
+      .listBoxes .listBox ul li {
+        font-size: .8em;
+        margin-bottom: 10px; }
+    .listBoxes .listBox:last-child {
+      margin-left: 25%; }
+    @media only screen and (max-width: 500px) {
+      .listBoxes .listBox {
+        width: 100%; }
+        .listBoxes .listBox:last-child {
+          margin-left: 0; } }
 
 .icon {
   display: inline-block;

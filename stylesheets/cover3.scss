@@ -45,6 +45,10 @@ a {
     &:hover {
         color: #34ccff;
     }
+
+    &.iqlink{
+        color: purple;
+    }
 }
 
 h1 {
@@ -279,6 +283,41 @@ hr {
 
 #history p {
     text-align: left;
+}
+
+.listBoxes{
+    @include centered;
+    .listBox{
+        // @include centered;
+        // clear: both;
+        width: 50%;
+        float:left;
+        label{
+            margin: 15px 0;
+            font-family: Oswald;
+        }
+
+
+        ul{
+            padding: 0 25px;
+            list-style-type:square;
+            text-align: left;
+            display: inline-block;
+            li{
+                font-size: .8em;
+                margin-bottom: 10px;
+            }
+        }
+        &:last-child{
+            margin-left: 25%;
+        }
+        @include respond-to(mobile){
+            width: 100%;
+            &:last-child{
+                margin-left: 0;
+            }
+        }
+    }
 }
 
 .icon {
