@@ -12,18 +12,19 @@ $(document).ready(function() {
     var floatHidden = true;
 
     var skillsbg = $('#skillsbg');
+    var portfoliobg = $('#portfoliobg');
     var contactbg = $('#contactbg');
     var bg1 = $('#bg1');
     var bg2 = $('#bg2');
     var minbgwidth = 1225; // Thresholds for disabling parallax
     var minbgheight = 880;
 
-    var bgList = [skillsbg, contactbg, bg1, bg2];
+    var bgList = [skillsbg, contactbg, portfoliobg, bg1, bg2];
 
     $('#portfolio').slick();
 
-    //checkZoom($(window).width(), $(window).height());
-    //setBackgrounds($("body").scrollTop())
+    checkZoom($(window).width(), $(window).height());
+    setBackgrounds($("body").scrollTop());
 
     var scrollTimeout;
 
@@ -62,18 +63,22 @@ $(document).ready(function() {
             }
         }
 
-        // setBackgrounds(offset);
+        setBackgrounds(offset);
     };
 
 
     function setBackgrounds(yPos){
 
         $(skillsbg).animate(
-            {'background-position-y': -1*(yPos*0.4+0)},
+            {'background-position-y': -1*(yPos*0.4+300)},
             10,
             'linear');
         $(contactbg).animate(
             {'background-position-y': (0-1)*(yPos*0.4-300)},
+            10,
+            'linear');
+        $(portfoliobg).animate(
+            {'background-position-y': (0-1)*(yPos*0.4-500)},
             10,
             'linear');
         $(bg1).animate(
