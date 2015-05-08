@@ -296,7 +296,21 @@ hr {
         width: 100%; } }
 
 .featherlight-content {
-  padding: 0 !important; }
+  padding: 0 !important;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.3) !important; }
+  .featherlight-content * {
+    text-align: center !important;
+    width: 100%;
+    margin: auto; }
+  .featherlight-content p {
+    color: white;
+    margin: 20px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: .8em; }
+    .featherlight-content p a {
+      color: #34ccff; }
 
 .featherlight-close {
   top: 3px !important;
