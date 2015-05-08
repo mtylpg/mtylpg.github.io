@@ -1,7 +1,7 @@
 $blue : rgba(0, 172, 230, .8);
 $red : rgba(90.2%, 22.7%, 0%, .8);
 $green : rgba(0, 230, 5, 1.8);
-$purple : rgba(230, 0, 172, .7);
+$purple : rgba(230, 0, 172, .8);
 $white : rgba(255,255,255,.00);
 
 $link : #007dfb;
@@ -177,8 +177,8 @@ hr {
     box-shadow: inset 0 0 0 1000px $purple;
     background: url('/images/backgrounds/contact.jpg') rgba(10,10,100, 1);
     @include backgroundImage;
-    background-size: 2000px;
-    background-position: center;
+    background-size: 200%;
+    background-position: 50%;
     width: 100%;
     height: 100%;
     // Deal with floaty contents;
@@ -187,10 +187,13 @@ hr {
 }
 
 #contactbg {
-    box-shadow: inset 0 0 0 1000px rgba(0, 230, 5, .8);
+    // box-shadow: inset 0 0 0 1000px rgba(0, 230, 5, .8);
+    // background: url('/images/backgrounds/contact.jpg') rgba(10,10,100, 1);
+    box-shadow: inset 0 0 0 1000px $purple;
     background: url('/images/backgrounds/contact.jpg') rgba(10,10,100, 1);
     @include backgroundImage;
-    background-size: cover;
+    background-size: 100%;
+    background-position: right;
     width: 100%;
     height: 100%;
     // Deal with floaty contents;
@@ -362,7 +365,7 @@ hr {
     background-color: rgba(0,0,0,.3) !important;
     *{
         text-align: center !important;
-        width: 100%;
+        max-width: 100%;
         margin: auto;
     }
     p{

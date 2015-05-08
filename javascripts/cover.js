@@ -28,6 +28,7 @@ $(document).ready(function() {
     setBackgrounds($("body").scrollTop());
 
     var scrollTimeout;
+    var zoomTimeout;
 
     $(window).scroll(function () {
         if (scrollTimeout) {
@@ -37,13 +38,13 @@ $(document).ready(function() {
         }
         scrollTimeout = setTimeout(scrollHandler, 10);
     });
-    $(window).scroll(function () {
-        if (scrollTimeout) {
+    $(window).resize(function () {
+        if (zoomTimeout) {
             // clear the timeout, if one is pending
-            clearTimeout(scrollTimeout);
-            scrollTimeout = null;
+            clearTimeout(zoomTimeout);
+            zoomTimeout = null;
         }
-        scrollTimeout = setTimeout(scrollHandler, 10);
+        zoomTimeout = setTimeout(zoomHandler, 10);
     });
 
     scrollHandler = function () {
@@ -65,9 +66,12 @@ $(document).ready(function() {
                 floatHidden = true;
             }
         }
-
         setBackgrounds(offset);
     };
+
+    zoomHandler = function() {
+        checkZoom($(window).width(), $(window).height());
+    }
 
     scrollTo = function (target) {
         var targetHeight = $('#'+target).offset().top-50;
@@ -82,7 +86,7 @@ $(document).ready(function() {
             10,
             'linear');
         $(contactbg).animate(
-            {'background-position-y': (0-1)*(yPos*0.4-300)},
+            {'background-position-y': (0-1)*(yPos*0.1-150)},
             10,
             'linear');
         $(portfoliobg).animate(
