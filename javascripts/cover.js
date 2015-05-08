@@ -21,7 +21,8 @@ $(document).ready(function() {
 
     var bgList = [skillsbg, contactbg, portfoliobg, bg1, bg2];
 
-    $('#portfolio').slick();
+    // Galleria.loadTheme('/javascripts/galleria/themes/classic/galleria.classic.min.js');
+    // Galleria.run('#iqportfolio', {responsive:true,height:.3});
 
     checkZoom($(window).width(), $(window).height());
     setBackgrounds($("body").scrollTop());
@@ -36,12 +37,14 @@ $(document).ready(function() {
         }
         scrollTimeout = setTimeout(scrollHandler, 10);
     });
-
-    scrollTo = function (target) {
-        var targetHeight = $('#'+target).offset().top-50;
-        $('body').animate({ scrollTop: targetHeight}, 150);
-
-    }
+    $(window).scroll(function () {
+        if (scrollTimeout) {
+            // clear the timeout, if one is pending
+            clearTimeout(scrollTimeout);
+            scrollTimeout = null;
+        }
+        scrollTimeout = setTimeout(scrollHandler, 10);
+    });
 
     scrollHandler = function () {
         // Check your page position
@@ -66,6 +69,11 @@ $(document).ready(function() {
         setBackgrounds(offset);
     };
 
+    scrollTo = function (target) {
+        var targetHeight = $('#'+target).offset().top-50;
+        $('body').animate({ scrollTop: targetHeight}, 150);
+
+    };
 
     function setBackgrounds(yPos){
 

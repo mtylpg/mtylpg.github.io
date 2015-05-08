@@ -47,7 +47,10 @@ a {
     }
 
     &.iqlink{
-        color: purple;
+        color: $purple;
+    }
+    &.nxjlink{
+        color: $red;
     }
 }
 
@@ -257,9 +260,13 @@ hr {
         width: 50%;
         display: block;
         float: left;
+        @include respond-to(mobile){
+            font-size: .8em;
+        }
     }
     span {
         text-align: right;
+        clear: both;
     }
     >a {
         text-align: left;
@@ -278,7 +285,7 @@ hr {
 }
 
 .resLink {
-    font-size: .8em !important;
+    font-size: .8em;
     text-align: center !important;
     margin-top: 20px;
 }
@@ -306,7 +313,7 @@ hr {
             text-align: left;
             display: inline-block;
             li{
-                font-size: .8em;
+                // font-size: .8em;
                 margin-bottom: 10px;
             }
         }
@@ -322,6 +329,20 @@ hr {
     }
 }
 
+.portfolioBlock{
+    @include centered;
+    a{
+        // float: left;
+        vertical-align: middle;
+        display: inline-block;
+        border: 3px solid #999;
+        padding:5px;
+        border-radius:5px;
+        margin:10px;
+    }
+    clear: both;
+}
+
 .icon {
     display: inline-block;
     padding: 10px;
@@ -331,4 +352,17 @@ hr {
             width: 100%;
         }
     }
+}
+
+// Overwrite fleatherlight lightbox stiff
+
+.featherlight-content{
+    padding: 0 !important;
+}
+.featherlight-close{
+    top: 3px !important;
+    right: 3px !important;
+    background: rgba(0,0,0,.8) !important;
+    color: white !important;
+    font-size: .8em !important;
 }
