@@ -1,5 +1,6 @@
 $blue : rgba(0, 172, 230, .8);
 $red : rgba(90.2%, 22.7%, 0%, .8);
+$crimson: #e60000;
 $green : rgba(0, 230, 5, 1.8);
 $purple : rgba(230, 0, 172, .8);
 $white : rgba(255,255,255,.00);
@@ -51,6 +52,9 @@ a {
     }
     &.nxjlink{
         color: $red;
+    }
+    &.cornelllink{
+        color: $crimson;
     }
 }
 
@@ -374,9 +378,13 @@ hr {
         font-style: italic;
         font-weight: 400;
         font-size: .8em;
+        max-width: 800px;
         a{
             color: #34ccff
         }
+    }
+    img{
+        margin: 10px auto;
     }
 }
 .featherlight-close{

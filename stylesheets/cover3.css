@@ -14,6 +14,8 @@ a {
     color: rgba(230, 0, 172, 0.8); }
   a.nxjlink {
     color: rgba(230, 57, 0, 0.8); }
+  a.cornelllink {
+    color: #e60000; }
 
 h1 {
   margin: 50px;
@@ -309,9 +311,12 @@ hr {
     margin: 20px;
     font-style: italic;
     font-weight: 400;
-    font-size: .8em; }
+    font-size: .8em;
+    max-width: 800px; }
     .featherlight-content p a {
       color: #34ccff; }
+  .featherlight-content img {
+    margin: 10px auto; }
 
 .featherlight-close {
   top: 3px !important;
