@@ -69,9 +69,16 @@ h1 {
         vertical-align: middle;
         font-family: lato;
         display: inline-block;
-        height: 50px;
+        height: auto;
+        border: 12px solid $red;
+        border-right: 0px;
+        border-left: 0px;
+        padding: 10px 0;
+        margin-bottom: 20px;
+
         @include respond-to(mobile){
-            // width: 100%;
+            width:100px;
+            margin: auto;
             display: block;
         }
     }

@@ -31,9 +31,16 @@ h1 {
     vertical-align: middle;
     font-family: lato;
     display: inline-block;
-    height: 50px; }
+    height: auto;
+    border: 12px solid rgba(230, 57, 0, 0.8);
+    border-right: 0px;
+    border-left: 0px;
+    padding: 10px 0;
+    margin-bottom: 20px; }
     @media only screen and (max-width: 500px) {
       h1 span {
+        width: 100px;
+        margin: auto;
         display: block; } }
 
 h2 {
