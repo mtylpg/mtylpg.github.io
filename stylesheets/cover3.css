@@ -10,10 +10,12 @@ a {
   text-decoration: none; }
   a:hover {
     color: #34ccff; }
+  a.twoulink {
+    color: rgba(0, 172, 230, 0.8); }
   a.iqlink {
     color: rgba(230, 0, 172, 0.8); }
   a.nxjlink {
-    color: rgba(230, 57, 0, 0.8); }
+    color: rgba(230, 58, 0, 0.8); }
   a.cornelllink {
     color: #e60000; }
 
@@ -32,7 +34,7 @@ h1 {
     font-family: lato;
     display: inline-block;
     height: auto;
-    border: 12px solid rgba(230, 57, 0, 0.8);
+    border: 12px solid rgba(230, 58, 0, 0.8);
     border-right: 0px;
     border-left: 0px;
     padding: 10px 0;
@@ -94,7 +96,7 @@ hr {
   background: #00e605; }
 
 .red {
-  background: rgba(230, 57, 0, 0.8); }
+  background: rgba(230, 58, 0, 0.8); }
 
 .blue {
   background: rgba(0, 172, 230, 0.8); }
