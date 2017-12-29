@@ -1,4 +1,4 @@
 mattylapage.github.io
 =====================
 
-A blog!?
+Personal Stuff.
