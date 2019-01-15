@@ -1,0 +1,39 @@
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<style type="text/css">
+		h1{
+			font-size: 4rem;
+			text-align: center;
+			margin: auto;
+			font-family: 'Open Sans', sans-serif;
+			margin-top: 200px;
+			color:white;
+		}
+		body{
+			background: #036ad2;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<h1 id="ability">Placeholder</h1>
+
+</body>
+
+<script type="text/javascript">
+
+	Array.prototype.sample = function(){
+		return this[Math.floor(Math.random()*this.length)];
+	}
+	var duration = ["Permanent", "Situational", "Situational"];
+	var ability = ["Touch", "Visual", "Audio", "Speech"];
+	var social = ["Family", "Friends", "Strangers"];
+
+	reroll = function(){
+		$("#ability").html(duration.sample() +" "+ ability.sample());
+	}
+	reroll();
+</script>
