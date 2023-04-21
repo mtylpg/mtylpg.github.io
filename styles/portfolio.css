@@ -10,6 +10,10 @@ body{
     }
 }
 
+p:last-child{
+    margin-bottom: 0px;
+}
+
 a:focus{
     outline:none;
     border-radius: 4px;;
