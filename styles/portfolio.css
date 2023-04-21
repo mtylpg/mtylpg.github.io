@@ -1,0 +1,201 @@
+
+body{
+    font-family: "Figtree";
+    font-size:24px;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #666666;
+    margin:0px;
+    @media only screen and (max-width: 900px) {
+        font-size: 20px;
+    }
+}
+
+main{
+    margin: auto;
+}
+.header-color{
+    background-color: #d63d46;
+    color: white;
+    padding: 4px;
+}
+
+.work-block, .header-block{
+    margin: auto;
+    max-width: 960px;
+    padding: 20px;
+}
+
+.image-row{
+    max-width: 1280px;
+    margin: auto;
+    min-height: 320px;
+    @media only screen and (max-width: 900px) {
+        min-height: 240px;
+    }
+}
+
+h1 {
+    font-size: 82px;
+    font-weight: 300;
+    line-height: 1;
+    margin: .3em 0 0;
+    flex:2;
+    @media only screen and (max-width: 900px) {
+        font-size: 64px;
+    }
+}
+
+.h1-subheader {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-top:12px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 0;
+    @media only screen and (max-width: 900px) {
+        font-size: 24px;
+    }
+}
+
+.h2-subheader {
+    font-size: 40px;
+    @media only screen and (max-width: 900px) {
+        font-size: 24px;
+    }
+}
+
+a{
+    color: #3347D6;
+}
+
+.cvlink{
+    font-size: 18px;
+    color: white;
+}
+
+.cvlink>.material-symbols-outlined {
+    vertical-align: text-bottom;
+    font-size: 20px;
+}
+
+.highlight-container{
+    display: inline-block;
+    margin-left:-12px;
+    margin-bottom: 8px;
+}
+
+.highlight{
+    padding: 8px 16px;
+}
+
+.highlight-purple{
+    background-color: #C42CC9;
+    color: #ffffff;
+}
+
+.highlight-orange{
+    background-color: #D0420E;
+    color: #ffffff;
+}
+
+.highlight-blue{
+    background-color: #3347D6;
+    color: #ffffff;
+}
+
+.highlight-red{
+    background-color: #d63d46;
+    color: #ffffff;
+}
+
+ul.image-row{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.tobii-helper{
+    margin: auto;
+    width: 240px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+li.image{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    flex:1;
+    padding: 20px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    max-width: 100%;
+    min-width: 210px;
+}
+
+.image-item{
+    transition: all 0.1s ease-in;
+    width: 100%;
+    max-height: 280px;
+    border: 1px solid #3347D6;
+    box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #3347D6;
+}
+
+.image-item:hover{
+    margin: -4px 0 0 -4px;
+    max-height: 284px;
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #3347D6;
+}
+
+.image:nth-child(2n) .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #C42CC9;
+}
+
+.image:nth-child(2n) .image-item:hover{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #C42CC9;
+}
+
+.image:nth-child(3n) .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #D0420E;
+}
+
+.image:nth-child(3n) .image-item:hover{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #D0420E;
+}
+
+.image:nth-child(4n) .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #6CEB8E;
+}
+
+.image:nth-child(4n) .image-item:hover{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #6CEB8E;
+}
+
+/* Tobii overrides */
+figcaption{
+    padding: 1.5rem !important;
+    margin-bottom: 40px;
+}
+figure>img{
+    padding-bottom: 40px;
+}
+
+hr{
+    margin-top: 24px;
+}
+
+.contact{
+    width: 480px;
+    text-align: center;
+    font: 12PX;;
+}
+
+ul.contact-links{
+    list-style: none;
+    font-size: 18px;
+    padding:0;
+    margin: 0;
+}
