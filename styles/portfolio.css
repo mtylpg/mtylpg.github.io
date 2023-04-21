@@ -1,4 +1,3 @@
-
 body{
     font-family: "Figtree";
     font-size:24px;
@@ -9,6 +8,12 @@ body{
     @media only screen and (max-width: 900px) {
         font-size: 20px;
     }
+}
+
+a:focus{
+    outline:none;
+    border-radius: 4px;;
+    box-shadow: 0 0 0 2px #ffffff, 0px 0px 0px 4px #3347D6;
 }
 
 main{
@@ -125,29 +130,73 @@ ul.image-row{
     font-style: italic;
 }
 
+.learn-container{
+    margin: auto;
+    width: fit-content;
+}
+a.learn-more{
+    transition: all 0.1s ease-in;
+    border-radius: 0;
+    font-size: 24px;
+    padding: 12px 24px;
+    font-weight: bold;
+    color: #3347D6;
+    border: 4px solid #3347D6;
+    display: block;
+    text-decoration: none;;
+    width: fit-content;
+    text-align: center;
+    margin-top:40px;
+    margin-bottom:40px;
+    box-shadow: 0 0 0 2px #ffffff, 6px 6px 0px 0px #3347D6;
+}
+a.learn-more:hover, a.learn-more:focus{
+    /* border-radius: 8px; */
+    font-size: 24px;
+    padding: 12px 24px;
+    font-weight: bold;
+    color: #3347D6;
+    border: 4px solid #3347D6;
+    background-color: rgba(51, 71, 214, 5%);
+    display: block;
+    text-decoration: none;;
+    width: fit-content;
+    text-align: center;
+    margin:34px auto 46px -6px;
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0px 0px #3347D6;
+}
+
 li.image{
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.1s ease-in;
     flex:1;
     padding: 20px;
     margin: auto;
     justify-content: center;
+    align-items: center;
     display: flex;
     max-width: 100%;
-    min-width: 210px;
+    min-width: 240px;
+    height: 240px;
 }
-
+li.image a{
+    line-height: 0px;
+}
 .image-item{
     transition: all 0.1s ease-in;
     width: 100%;
-    max-height: 280px;
+    max-height: 230px;
     border: 1px solid #3347D6;
     box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #3347D6;
 }
 
-.image-item:hover{
+
+.image-item:hover, a:focus .image-item{
     margin: -4px 0 0 -4px;
-    max-height: 284px;
+    max-height: 234px;
     box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #3347D6;
+}
+.image a:focus{
+    box-shadow:none;
 }
 
 .image:nth-child(2n) .image-item{
@@ -155,6 +204,10 @@ li.image{
 }
 
 .image:nth-child(2n) .image-item:hover{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #C42CC9;
+}
+
+.image:nth-child(2n) a:focus .image-item{
     box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #C42CC9;
 }
 
@@ -166,6 +219,9 @@ li.image{
     box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #D0420E;
 }
 
+.image:nth-child(3n) a:focus .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #D0420E;
+}
 .image:nth-child(4n) .image-item{
     box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #6CEB8E;
 }
@@ -174,23 +230,18 @@ li.image{
     box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #6CEB8E;
 }
 
-/* Tobii overrides */
-figcaption{
-    padding: 1.5rem !important;
-    margin-bottom: 40px;
-}
-figure>img{
-    padding-bottom: 40px;
+.image:nth-child(4n) a:focus .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #6CEB8E;
 }
 
+
 hr{
-    margin-top: 24px;
+    margin: 24px auto 0px;
+    max-width: 1080px;
 }
 
 .contact{
-    width: 480px;
     text-align: center;
-    font: 12PX;;
 }
 
 ul.contact-links{
@@ -198,4 +249,62 @@ ul.contact-links{
     font-size: 18px;
     padding:0;
     margin: 0;
+}
+
+/* Tobii overrides */
+figcaption{
+    padding: 1.5rem !important;
+    margin-bottom: 40px;
+    bottom: auto;
+}
+
+figure>img{
+    padding-bottom: 40px;
+}
+.tobii__slide figure{
+    position:inherit;
+}
+
+
+ul.showcase{
+    max-width: 960px;
+    margin: auto;
+    padding: 0px;
+}
+
+ul.showcase li.image{
+    height: fit-content;
+    flex-wrap: wrap;
+    padding: 32px 0px;
+    border-bottom: 4px solid #ccc;
+}
+ul.showcase li.image:first-child{
+    padding-top: 0px;
+}
+
+ul.showcase li.image:last-child{
+    border-bottom: none;
+}
+
+ul.showcase li.image:nth-child(2n){
+    height: fit-content;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+ul.showcase a{
+    flex: 1;
+    text-align: center;
+    padding-bottom:20px;
+}
+
+ul.showcase a img{
+    width: auto;
+}
+
+ul.showcase p{
+    flex: 1;
+    min-width: 320px;
+    padding: 0 20px;
+    font-size: 18px;
 }
