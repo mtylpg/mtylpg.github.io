@@ -16,7 +16,7 @@ p:last-child{
 
 a:focus{
     outline:none;
-    border-radius: 4px;;
+    border-radius: 4px;
     box-shadow: 0 0 0 2px #ffffff, 0px 0px 0px 4px #3347D6;
 }
 
@@ -315,4 +315,90 @@ ul.showcase p{
     min-width: 320px;
     padding: 0 20px;
     font-size: 18px;
+}
+
+.case-study p{
+    flex: 1;
+    min-width: 320px;
+    font-size: 18px;
+}
+
+.case-study img.image-item{
+    max-width: 200px;
+}
+
+.portfolio-images{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 00px;
+
+    width: auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 20px
+}
+.portfolio-images li{
+    transition: all 0.1s ease-in;
+    flex:1;
+    padding: 8px;
+    margin: 32px 8px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-width: 80px;
+    height: 140px;
+    flex-shrink: 1;
+    @media only screen and (max-width: 720px) {
+        height: 60px;
+    }
+}
+
+
+.flex-break{
+    flex-basis: 100%;
+    height: 0;;
+}
+
+
+.portfolio-images li a:focus{
+    box-shadow: none;
+}
+
+.portfolio-images li:nth-child(2n) .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #C42CC9;
+}
+
+.portfolio-images li:nth-child(2n) .image-item:hover{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #C42CC9;
+}
+
+.portfolio-images li:nth-child(2n) a:focus .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #C42CC9;
+}
+
+.portfolio-images li:nth-child(3n) .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #D0420E;
+}
+
+.portfolio-images li:nth-child(3n) .image-item:hover{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #D0420E;
+}
+
+.portfolio-images li:nth-child(3n) a:focus .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #D0420E;
+}
+.portfolio-images li:nth-child(4n) .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 12px 12px 0 0 #6CEB8E;
+}
+
+.portfolio-images li:nth-child(4n) .image-item:hover{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #6CEB8E;
+}
+
+.portfolio-images li:nth-child(4n) a:focus .image-item{
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #6CEB8E;
 }
