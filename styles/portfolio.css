@@ -5,7 +5,9 @@ body{
     background-color: #fff;
     color: #666666;
     margin:0px;
-    @media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 900px) {
+    body{
         font-size: 20px;
     }
 }
@@ -39,7 +41,9 @@ main{
     max-width: 1280px;
     margin: auto;
     min-height: 320px;
-    @media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 900px) {
+    .image-row{
         min-height: 240px;
     }
 }
@@ -50,9 +54,6 @@ h1 {
     line-height: 1;
     margin: .3em 0 0;
     flex:2;
-    @media only screen and (max-width: 600px) {
-        font-size: 64px;
-    }
 }
 
 .h1-subheader {
@@ -64,14 +65,19 @@ h1 {
 h2 {
     font-size: 40px;
     margin-bottom: 0;
-    @media only screen and (max-width: 600px) {
-        font-size: 24px;
-    }
 }
 
 .h2-subheader {
     font-size: 40px;
-    @media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .h2-subheader {
         font-size: 24px;
     }
 }
@@ -138,6 +144,7 @@ ul.image-row{
 .learn-container{
     margin: auto;
     width: fit-content;
+    align-items: center;
 }
 a.learn-more{
     transition: all 0.1s ease-in;
@@ -169,6 +176,26 @@ a.learn-more:hover, a.learn-more:focus{
     text-align: center;
     margin:34px auto 46px -6px;
     box-shadow: 0 0 0 2px #ffffff, 20px 20px 0px 0px #3347D6;
+}
+
+a.learn-more.red{
+    color: #d63d46;
+    border: 4px solid #d63d46;
+    box-shadow: 0 0 0 2px #ffffff, 6px 6px 0px 0px #d63d46;
+}
+a.learn-more.red:hover, a.learn-more.red:focus{
+    background-color: #d63d4605;
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0px 0px #d63d46;
+}
+
+a.learn-more.purple{
+    color: #C42CC9;
+    border: 4px solid #C42CC9;
+    box-shadow: 0 0 0 2px #ffffff, 6px 6px 0px 0px #C42CC9;
+}
+a.learn-more.purple:hover, a.learn-more.purple:focus{
+    background-color: #c42cc905;
+    box-shadow: 0 0 0 2px #ffffff, 20px 20px 0px 0px #C42CC9;
 }
 
 li.image{
@@ -250,6 +277,7 @@ hr{
 .contact{
     text-align: center;
 }
+
 
 ul.contact-links{
     list-style: none;
@@ -352,8 +380,17 @@ ul.showcase p{
     min-width: 80px;
     height: 140px;
     flex-shrink: 1;
-    @media only screen and (max-width: 720px) {
-        height: 60px;
+}
+@media only screen and (max-width: 720px) {
+    .portfolio-images li{
+        height: 50px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .portfolio-images li a img{
+        height: auto;
+        width: 100%;
+        max-width: 150px;
     }
 }
 
@@ -401,4 +438,177 @@ ul.showcase p{
 
 .portfolio-images li:nth-child(4n) a:focus .image-item{
     box-shadow: 0 0 0 2px #ffffff, 20px 20px 0 0 #6CEB8E;
+}
+
+
+/* experiments in layout */
+
+table{
+    border-radius: 4px;
+    border: 1px;
+    font-size: 18px;
+}
+td{
+    vertical-align: top;
+    padding: 8px;
+    /* background: #3346d60c; */
+    margin:4px;
+}
+td:first-of-type{
+    border-bottom: 4px solid #3346d6;
+    ;
+    font-weight: 600;
+}
+tr{
+    margin-bottom: 8px;
+}
+
+.cols{
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid #3347d6a1;
+    background: #3347d605;
+}
+@media only screen and (max-width: 720px) {
+    .cols{
+        display: block;
+    }
+}
+
+.case-study2 p{
+    /* min-width: 320px; */
+    font-size: 24px;
+}
+
+.case-study img.image-item{
+    max-width: 200px;
+}
+
+
+.cols p{
+    font-size: 16px;
+}
+.cols h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.col-3, .col-3{
+    padding:24px;
+}
+.col-2{
+    flex:2;
+    padding:24px;
+}
+.col-3{
+    flex:3;
+    padding:24px;
+    border-right: 2px solid #3347d6a1;
+}
+@media only screen and (max-width: 720px) {
+    .col-3{
+        border-right: 0;
+        border-bottom: 2px solid #3347d6a1;
+    }
+}
+
+
+.portfolio-banner{
+    padding: 64px;
+    padding-bottom:0px;
+    background-image:url('a11y-banner2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+@media only screen and (max-width: 1240px) {
+    .portfolio-banner{
+        padding: 32px;
+        padding-bottom:0px;
+    }
+}
+@media only screen and (max-width: 1170px) {
+    .portfolio-banner{
+        padding: 20px 0px;
+    }
+}
+
+.portfolio-banner.amt{
+    background-image:url('amt-banner.png');
+}
+
+.portfolio-banner.mag{
+    background-image:url('mag-banner.png');
+}
+
+
+.banner-cutout{
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 200px;
+    background: #ffffffcc;
+    backdrop-filter: blur(5px);
+    padding: 20px 64px;
+    border-radius: 4px;
+
+}
+@media only screen and (max-width: 1170px) {
+    .banner-cutout{
+        max-width:100%;
+        padding: 0px 0;
+        border-radius: 0;
+    }
+    .portfolio-banner{
+        background-size: auto 400px;
+        background-position: top center;
+    }
+}
+
+ul.project-links{
+    list-style: none;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+}
+ul.project-links li{
+    margin: 0;
+    flex:1;
+}
+
+ul.project-links li a.learn-more{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+ul.project-links li p{
+    margin: 10px 0px;
+}
+
+
+h2#projects{
+    /* making this an id incase I need to link to it */
+    text-align: center;
+}
+
+.header-small{
+    background: #333333da;
+    backdrop-filter: blur(5px);
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: -80px;
+}
+.header-small a{
+    display: inline;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+
+@media only screen and (max-width: 670px) {
+    .header-tags{
+        display: none;
+    }
 }
