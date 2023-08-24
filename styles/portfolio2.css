@@ -1,0 +1,236 @@
+
+:root {
+    --blue-var: 51, 71, 214;
+    --blue: #3347d6;
+    --red-var: 214, 61, 70;
+    --red: #d63d46;
+    --purple-var: 196, 44, 201;
+    --purple: #c42cc9;
+    --orange-var: 208, 66, 14;
+    --orange: #d0420e;
+    --green-var: 108, 235, 142;
+    --green: #6ceb8e;
+    --link-button-resting: 0 0 0 2px #ffffff, 0px 0px 0px 2px;
+    --link-button-hover: 0 0 0 2px #ffffff, 6px 6px 0px 0px;
+    --image-resting: 0 0 0 2px #ffffff, 4px 4px 0px 0px;
+    --image-hover: 0 0 0 2px #ffffff, 12px 12px 0px 0px;
+}
+
+/* High Level Layout */
+
+body{
+    font-family: "Figtree";
+    font-size:20px;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #666666;
+    margin:0px;
+}
+
+
+main, .contact{
+    margin: auto;
+    max-width: 1060px;
+    padding: 80px;
+}
+
+footer{
+    background-color: black;
+    color: #fefefe;
+    min-height: 60px;
+    width: 100%;
+}
+
+.footer-homepage{
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* Typography */
+
+h1{
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 36px;
+    margin: 0;
+    margin-right: 8px;
+}
+
+h2{
+    font-size: 32px;
+    line-height: 1em;
+    margin-bottom: 8px;
+    margin-top: 32px;
+}
+
+.h1-subheader{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.footer-header{
+    margin: 0;
+    font-size: 16px;
+    display: inline;
+}
+
+a>.material-symbols-outlined {
+    /* vertical-align: text-bottom; */
+    font-size: .8em;
+}
+
+.contact a{
+    color: #fefefe;
+}
+
+.contact-links{
+    list-style: none;
+    color: #fefefe;
+}
+.contact-links li{
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cover-list li{
+    margin-bottom: 4px;
+}
+
+
+/* Background Images */
+
+.photo-background{
+    background-color: green;
+    background-image: url('../images/cover-photos/3_cherrytree.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.blur-container{
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+
+
+.contact{
+    padding:10px 60px;
+}
+
+.contact-links{
+    list-style: none;
+    max-width: 980px;
+    margin:auto;
+}
+
+.contact-links li{
+    display: inline;
+    margin-right: 24px;
+}
+
+.header-block, .body-block{
+    background-color: white;
+    margin-bottom: 64px;
+    width: fit-content;
+    padding: 40px;
+}
+
+.header-block h1:first-child,
+.body-block h2:first-child{
+    margin-top: 0;
+}
+
+.body-block{
+    min-width: 640px;
+    /* margin-bottom: 120px; */
+}
+
+@media only screen and (max-width: 900px) {
+    main{
+        padding: 20px 20px 0 20px;
+        width: auto;
+    }
+    body{
+        font-size: 20px;
+    }
+    .body-block{
+        width: auto;
+        min-width: auto;
+    }
+
+    .footer-header{
+        display: inline-block;
+        width:100% ;
+    }
+}
+
+@media only screen and (max-height: 900px) {
+    .photo-background{
+        height: fit-content;
+    }
+    .footer-homepage{
+        position: relative;
+    }
+}
+
+/* link animation */
+
+a{
+    width: fit-content;
+    text-decoration: none;
+    margin-bottom:1em;
+    /* Considering this but can't until I see more content */
+    padding: 2px 0px;
+}
+
+a:focus{
+    outline:none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px #ffffff, 0px 0px 0px 4px var(--blue);
+}
+
+a:hover,
+a:focus{
+    background-size: 0 2px, 200% 2px;
+}
+
+a {
+    text-decoration: none;
+    background: 
+        linear-gradient(to right, rgba(var(--blue-var), .7), rgba(var(--blue-var), .5)),
+        linear-gradient(to right, rgba(var(--purple-var), 1), rgba(var(--purple-var), 1), rgba(var(--blue-var), .8));
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+ 
+a:focus{
+    outline:none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px #ffffff, 0px 0px 0px 4px var(--blue);
+}
+
+
+.contact-links li a {
+    background: 
+        linear-gradient(to right,#fff, #fff),
+        linear-gradient(to right, rgba(var(--purple-var), 1),  #fff, #fff);
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+
+}
+
+.contact-links li a:hover,
+.contact-links li a:focus{
+    background-size: 0 2px, 200% 2px;
+}

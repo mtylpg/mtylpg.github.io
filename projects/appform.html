@@ -29,12 +29,10 @@
                 <strong>Matt Lepage</strong>
                 <span class="header-tags">
                     <span aria-hidden="true"> • </span>
-                    product design, accessibility, ux discovery 
+                    product design, accessibility 
                 </span>
                 <span aria-hidden="true"> • </span>
                 <a href="../index.html">Home</a>
-                <span aria-hidden="true"> • </span>
-                <a href="../portfolio.html">Projects</a>
                 <span aria-hidden="true"> • </span>
                 <a class="cvlink" href="../files/MLepage_CV2023.pdf" target="_blank"> CV<span
                         class="material-symbols-outlined" aria-hidden="true"
@@ -46,7 +44,7 @@
             <div class="banner-cutout">
                 <div class="work-block">
                     <div class="case-study2">
-                        <h2 class="highlight-container highlight-red">
+                        <h2 aria-level="1" class="highlight-container highlight-red">
                             <span class="highlight "> Application Form System </span>
                         </h2>
                         <div class="h2-subheader">
@@ -87,7 +85,7 @@
                         <div class="portfolio-data">
                             <div class="cols">
                                 <div class="col-3">
-                                    <h3>Summary</h3>
+                                    <h3 aria-level="2">Summary</h3>
                                     <p>
                                         2U’s online Application System is the first interactive touch point for our users, presenting a potential drop-off point for prospective students. I led a full redesign of this experience, prioritizing form accessibility, legibility, and a high degree of content flexibility to accommodate the many unique needs different partners needed. The final product contained a suite of interoperable form components in a minimalist responsive layout.
                                     </p>
@@ -96,67 +94,50 @@
                                     </p>
                                 </div>
                                 <div class="col-2">
-                                    <h3>Project Goals</h3>
+                                    <h3 aria-level="3">Project Goals</h3>
                                     <p>Reimagine application workflow, addressing accessibility debt </p>
-                                    <h3>Responsibilities</h3>
+                                    <h3 aria-level="3">Responsibilities</h3>
                                     <p>Design Lead, Prototyping, UX research,Accessibility Testing, Journey Mapping. Mobile Web Design</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h3> Project Details </h3>
+                        <h3 aria-level="2"> Project Details </h3>
                         <p>
                             In response to partner concerns around accessibility compliance, I was tasked with redesigning all aspects of our online application forms. The content of these forms is determined by university partners, so my focus was on both a series of polished input components to cover expected question types as well as a top-level container interface that placed guardrails on our content to ensure WCAG 2.1 compliance in the end product.
                         </p>
-                        <h3> Process </h3>
+                        <h3 aria-level="2"> Process </h3>
                         <p>
                             I started with a series of interviews and research sessions, walking through our existing product with current students and shadowing members of our internal applicant support teams as they coached users. We identified that the largest needs were around question clarity and data persistence, with many applicants feeling overwhelmed by both the jargon of our application forms and the size of our old system's massive single page form. After early prototypes that focused on breaking the form into many small pages tested well (with heavy inspiration from <a href="https://www.gov.uk/service-manual/design/form-structure#start-with-one-thing-per-page" target="_blank">excellent form design</a>), I presented our findings to senior leadership and we settled on many-page pattern with clearly announced auto-save mechanics and generous, non-blocking validation mechanics.
                         </p>
                         <p>
                             With the structure of the form decided, I then began mapping the questions asked across a sampling of our larger forms to build out a component library of forms inputs. As some of our forms relied on non-standard input structures like customized file inputs and radio grids, I build code prototypes of these inputs and tested them with accessibility consultants to ensure the questions were clear and usable. Much of our actually form content was being written by our partner management teams and at times by university faculty directly, I accompanied all question type modules with guidance documentation explaining when to use what form components (i.e. radio buttons vs dropdowns) and how to structure text and labels. Both the visual patterns and this guidance was added to our early CSS based design system at the time, and later into react components that are now in use across many of 2U's products.
                         </p>
-                        <h3> Outcomes </h3>
+                        <h3 aria-level="2"> Outcomes </h3>
                         <p>
                             Most of the hard metrics we were targeting happened on the <a href="amt.html">administrative side of this project</a>, but UAT showed positive reactions to our new design. Users cited the application overview pages working as intended to help them plan ahead for longer tasks (essays, referrals, etc) and found the validation and error recovery flows easy to work with. Tracking statistics for form completion rates is tricky as the market for online education is kinda all over the place, but we can at least be sure that this design launching... during the pandemic didn't prevent us from seeing a large spike in remote learning interest.
                         </p>
-                        <ul class="portfolio-images">
-                            
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
         <div class="learn-container work-block">
-            <h2 id="projects">Other Projects</h2>
             <ul class="project-links">
                 <li>
-                    <a href="./a11y.html" class="learn-more ">Inclusive design training</a>
-                </li>
-                <!-- <li>
-                    <a href="./cms.html" class="learn-more red">Marketing CMS</a>
-                </li> -->
-                <li>
-                    <a href="./mag.html" class="learn-more purple">Indie Game Festivals</a>
-                </li>
-
-                <li>
-                    <p>~ or ~</p>
                     <a href="../index.html" class="learn-more">
                         Back to Home
                     </a>
                 </li>
             </ul>
         </div>
-        <hr>
-        <div class="work-block contact">
-            <h2 class="highlight-container highlight-red" style="margin-left:0px;">
-                <span class="highlight"> Contact </span>
-            </h2>
-            <div class="h2-subheader">
-                Say hi!
-            </div>
+    </main>
+    <footer class="footer">
+        <div class="header-block " role="nav" name="contact-navigation">
             <ul class="contact-links">
+                <li>
+                    <h2 class="footer-header"> Contact </h2>
+                </li>
                 <li>
                     <a href="mailto:matthewclepage@gmail.com">matthewclepage@gmail.com</a>
                 </li>
@@ -166,13 +147,9 @@
                 <li>
                     <a href="https://www.github.com/mtylpg">Github</a>
                 </li>
-                <li>
-                    (This site is hosted <a href="https://github.com/mtylpg/mtylpg.github.io">here</a>)
-                </li>
-            </ul>
-            </p>
+            </ul>   
         </div>
-    </main>
+    </footer>
     <script src="../scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="../libraries/tobii.min.js" charset="utf-8"></script>
     <script src="../scripts/portfolio.js" charset="utf-8"></script>

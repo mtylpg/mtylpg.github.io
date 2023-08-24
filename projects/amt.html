@@ -29,12 +29,10 @@
                 <strong>Matt Lepage</strong>
                 <span class="header-tags">
                     <span aria-hidden="true"> • </span>
-                    product design, accessibility, ux discovery 
+                    product design, accessibility 
                 </span>
                 <span aria-hidden="true"> • </span>
                 <a href="../index.html">Home</a>
-                <span aria-hidden="true"> • </span>
-                <a href="../portfolio.html">Projects</a>
                 <span aria-hidden="true"> • </span>
                 <a class="cvlink" href="../files/MLepage_CV2023.pdf" target="_blank"> CV<span
                         class="material-symbols-outlined" aria-hidden="true"
@@ -46,7 +44,7 @@
             <div class="banner-cutout">
                 <div class="work-block">
                     <div class="case-study2">
-                        <h2 class="highlight-container highlight-orange">
+                        <h2 aria-level="1" class="highlight-container highlight-orange">
                             <span class="highlight "> Admissions Portal </span>
                         </h2>
                         <div class="h2-subheader">
@@ -87,7 +85,7 @@
                         <div class="portfolio-data">
                             <div class="cols">
                                 <div class="col-3">
-                                    <h3>Summary</h3>
+                                    <h3 aria-level="2">Summary</h3>
                                     <p>
                                         I designed a form CMS for our university partners to build their own application forms, as well as map data collected to their unique internal database structures. This project included extensive internal flow analysis, user testing, accessibility testing, and code prototyping.
                                     </p>
@@ -96,26 +94,26 @@
                                     </p>
                                 </div>
                                 <div class="col-2">
-                                    <h3>Project Goals</h3>
+                                    <h3 aria-level="3">Project Goals</h3>
                                     <p> Replace manual development tasks with a flexible standalone CMS </p>
-                                    <h3>Responsibilities</h3>
+                                    <h3 aria-level="3">Responsibilities</h3>
                                     <p>Design Lead, Prototype Coding, Internal Usability Testing, Story Mapping, Data Modeling</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h3> Project Details </h3>
+                        <h3 aria-level="2"> Project Details </h3>
                         <p>
                             2U builds online application forms for all our university partners, often with unique needs for copy or question formats. Our old platform required developer action to make any content changes, as well as a steep time investment to stand up new forms. I worked with product and engineering leadership to design a CMS for these forms from the ground up, restructuring our data model and designing a suite of internal tools and dashboards for both building the forms and editing applicant information.
                         </p>
-                        <h3> Process </h3>
+                        <h3 aria-level="2"> Process </h3>
                         <p>
                             I began with heavy exploration work, where I led and moderated journey mapping exercises to build a shared understanding of internal processes and debt that had evolved over the company's rapid early growth. I ran interviews and tested prototypes with our targeted internal users to understand their needs and priorities, and presented to senior leadership on ways in which we could majorly shift our form content structure to make filling out of forms easier for applicants.
                         </p>
                         <p>
                             As an internal tool to be used by both 2U employees and university admins, this project prioritized pure function over form. As we ran testing sessions with the internal teams that would be using the tools it was clear our users simply didn’t care about visual styling, citing that even using pure Bootstrap and linear page layouts was still such an improvement over previous workloads that they'd rather have an uglier product sooner and worry about visual enhancements after launch. This led us to a number of dense, efficiency-minded pages and flows that the team loved, though we were careful to make sure they scaled their team training accordingly.
                         </p>
-                        <h3> Outcomes </h3>
+                        <h3 aria-level="2"> Outcomes </h3>
                         <p>
                             The full suite began rollout in 2018 with a small scale MVP (used for letters of recommendation), and in the following years was deployed for all partners following a few future-proofing iteration cycles.
                         </p>
@@ -128,27 +126,15 @@
         </div>
         <hr>
         <div class="learn-container work-block">
-            <h2 id="projects">Other Projects</h2>
             <ul class="project-links">
                 <li>
-                    <a href="./a11y.html" class="learn-more ">Inclusive Design Training</a>
-                </li>
-                <!-- <li>
-                    <a href="./cms.html" class="learn-more red">Marketing CMS</a>
-                </li> -->
-                <li>
-                    <a href="./mag.html" class="learn-more purple">Indie Game Festivals</a>
-                </li>
-
-                <li>
-                    <p>~ or ~</p>
                     <a href="../index.html" class="learn-more">
                         Back to Home
                     </a>
                 </li>
             </ul>
         </div>
-        <hr>
+        <!-- <hr>
         <div class="work-block contact">
             <h2 class="highlight-container highlight-red" style="margin-left:0px;">
                 <span class="highlight"> Contact </span>
@@ -171,8 +157,26 @@
                 </li>
             </ul>
             </p>
-        </div>
+        </div> -->
     </main>
+    <footer class="footer">
+        <div class="header-block " role="nav" name="contact-navigation">
+            <ul class="contact-links">
+                <li>
+                    <h2 class="footer-header"> Contact </h2>
+                </li>
+                <li>
+                    <a href="mailto:matthewclepage@gmail.com">matthewclepage@gmail.com</a>
+                </li>
+                <li>
+                    <a href="http://www.linkedin.com/in/mclepage">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="https://www.github.com/mtylpg">Github</a>
+                </li>
+            </ul>   
+        </div>
+    </footer>
     <script src="../scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="../libraries/tobii.min.js" charset="utf-8"></script>
     <script src="../scripts/portfolio.js" charset="utf-8"></script>
