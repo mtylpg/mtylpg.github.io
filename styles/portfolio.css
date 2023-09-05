@@ -715,7 +715,10 @@ footer{
     font-size: 24px;
     display: inline;
 }
-
+footer .contact-links li{
+    display: inline;
+}
 footer .contact-links li a{
+    display: inline-block;
     color: #fff;
 }

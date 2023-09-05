@@ -1,7 +1,8 @@
-
 :root {
     --blue-var: 51, 71, 214;
     --blue: #3347d6;
+    --aqua: #33d6d6;
+    --aqua-var: 51, 214, 214;
     --red-var: 214, 61, 70;
     --red: #d63d46;
     --purple-var: 196, 44, 201;
@@ -22,57 +23,95 @@ body{
     font-family: "Figtree";
     font-size:20px;
     line-height: 1.5;
-    background-color: #fff;
+    background-color: rgba(255,255,255, .95);
     color: #666666;
     margin:0px;
 }
 
 
-main, .contact{
+main, .contact, .top-nav__block{
     margin: auto;
-    max-width: 1060px;
+    max-width: 960px;
     padding: 80px;
+    padding-bottom: 20px;
 }
 
-footer{
+.footer{
     background-color: black;
     color: #fefefe;
     min-height: 60px;
     width: 100%;
 }
 
-.footer-homepage{
+.footer--sticky{
     position: absolute;
     bottom: 0;
 }
 
 
+.top-nav{
+    background: #333333da;
+    backdrop-filter: blur(5px);
+    color: #fff;
+    font-size: 18px;
+}
+.top-nav__block{
+    padding: 20px;
+}
+.top-nav__content{
+    padding: 0 48px;
+}
 /* Typography */
 
-h1{
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 36px;
+h1, .h1{
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 72px;
     margin: 0;
     margin-right: 8px;
 }
 
-h2{
-    font-size: 32px;
+h2, .h2{
+    font-size: 48px;
     line-height: 1em;
     margin-bottom: 8px;
-    margin-top: 32px;
+    margin-top: 48px;
 }
 
-.h1-subheader{
+.h1--subheader{
     font-size: 16px;
-    line-height: 32px;
+    line-height: 2em;
+}
+.h2--subheader{
+    font-size: 24px;
+    line-height: 1em;
+    font-weight: bold;
+    margin-top: 16px;
 }
 
-.footer-header{
+.border--blue{
+}
+.border--red{
+}
+.border--orange{
+}
+.header--first{
+    margin-top:0px;
+}
+p{
+    font-size: 20px;
+}
+
+.footer__header{
     margin: 0;
     font-size: 16px;
     display: inline;
+}
+
+.top-nav__link{
+    display: inline;
+    color: #fff;
+    text-decoration: none;
 }
 
 a>.material-symbols-outlined {
@@ -80,11 +119,13 @@ a>.material-symbols-outlined {
     font-size: .8em;
 }
 
-.contact a{
+.contact__link{
     color: #fefefe;
+    font-size: 16px;
 }
 
-.contact-links{
+.contact__link-list{
+    padding: 0 48px;
     list-style: none;
     color: #fefefe;
 }
@@ -100,7 +141,7 @@ ul{
     margin: 0;
 }
 
-.cover-list li{
+.cover-list__item{
     margin-bottom: 4px;
 }
 
@@ -108,10 +149,35 @@ ul{
 /* Background Images */
 
 .photo-background{
+    background-image:url('a11y-banner2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.photo-header--work{
+    background-image:
+        url('work-banner.png');
+}
+
+.photo-header__cutout{
+    max-width: 1000px;
+    margin: 40px auto;
+    background: rgba(255,255,255, .95);
+    backdrop-filter: blur(5px);
+    padding: 48px;
+}
+
+.photo-background--home{
     background-color: green;
     background-image: url('../images/cover-photos/3_cherrytree.jpg');
     background-size: cover;
     height: 100vh;
+}
+
+.photo-background--work{
+    background-image: url('../images/cover-photos/10_stock.jpg');
 }
 
 .blur-container{
@@ -121,25 +187,25 @@ ul{
 
 
 .contact{
-    padding:10px 60px;
+    padding:10px 108px;
 }
 
-.contact-links{
+.contact__link-list{
     list-style: none;
     max-width: 980px;
     margin:auto;
 }
 
-.contact-links li{
+.contact__link-list__item{
     display: inline;
     margin-right: 24px;
 }
 
 .header-block, .body-block{
-    background-color: white;
+    background-color: rgba(255,255,255, .95);
     margin-bottom: 64px;
     width: fit-content;
-    padding: 40px;
+    padding: 48px;
 }
 
 .header-block h1:first-child,
@@ -149,38 +215,12 @@ ul{
 
 .body-block{
     min-width: 640px;
+    max-width: 720px;
     /* margin-bottom: 120px; */
 }
 
-@media only screen and (max-width: 900px) {
-    main{
-        padding: 20px 20px 0 20px;
-        width: auto;
-    }
-    body{
-        font-size: 20px;
-    }
-    .body-block{
-        width: auto;
-        min-width: auto;
-    }
 
-    .footer-header{
-        display: inline-block;
-        width:100% ;
-    }
-}
-
-@media only screen and (max-height: 900px) {
-    .photo-background{
-        height: fit-content;
-    }
-    .footer-homepage{
-        position: relative;
-    }
-}
-
-/* link animation */
+/* global link animation (breaking BEM for this) */
 
 a{
     width: fit-content;
@@ -219,7 +259,7 @@ a:focus{
 }
 
 
-.contact-links li a {
+.contact__link, .top-nav__link{
     background: 
         linear-gradient(to right,#fff, #fff),
         linear-gradient(to right, rgba(var(--purple-var), 1),  #fff, #fff);
@@ -229,8 +269,108 @@ a:focus{
     transition: background-size 400ms;
 
 }
+.link--big{
+    text-decoration: none;
+    background: 
+        linear-gradient(to right, rgba(var(--blue-var), 1), rgba(var(--blue-var), 1)),
+        linear-gradient(to right, rgba(var(--purple-var), 1), rgba(var(--purple-var), 1), rgba(var(--blue-var), 1));
+    background-size: 100% 6px, 0 6px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
 
-.contact-links li a:hover,
-.contact-links li a:focus{
+.contact__link:hover,
+.contact__link:focus, 
+.top-nav__link:hover,
+.top-nav__link:focus{
     background-size: 0 2px, 200% 2px;
+}
+
+.link--big:hover,
+.link--big:focus{
+    background-size: 0 6px, 200% 6px;
+}
+
+.a11y{
+    background-image:url('a11y-banner2.png');
+}
+
+.amt{
+    background-image:url('amt-spec.png');
+}
+
+.appsys{
+    background-image:url('amt-banner.png');
+}
+
+.mag{
+    background-image:url('mag-banner.png');
+}
+
+.home-link{
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    margin:auto;
+    margin-top: 48px;
+}
+
+
+hr{
+    border-width: 0px;
+    border-radius: 4px;
+    width: 80%;
+    margin: auto;
+    margin-top: 48px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(var(--blue-var), 1), rgba(var(--purple-var), 1));
+}
+hr:nth-of-type(2){
+    background: linear-gradient(to right, rgba(var(--purple-var), 1), rgba(var(--aqua-var), 1));
+}
+hr:nth-of-type(3){
+    background: linear-gradient(to right, rgba(var(--aqua-var), 1), rgba(var(--blue-var), 1));
+}
+
+
+/* Responsive Overrides */
+@media only screen and (max-width: 900px) {
+    main{
+        padding: 20px 20px 0 20px;
+        width: auto;
+    }
+    body{
+        font-size: 20px;
+    }
+    .body-block{
+        width: auto;
+        min-width: auto;
+    }
+
+    .footer--sticky{
+        display: inline-block;
+        width:100% ;
+    } 
+}
+@media only screen and (max-width: 1070px) {
+    .photo-header{
+        padding: 20px 0px;
+        background-size: initial;
+    }
+    h1, .h1{
+        font-size: 56px;
+    }
+    h2, .h2{
+        font-size: 48px;
+    }
+}
+
+@media only screen and (max-height: 1074px) {
+    .photo-background--home{
+        height: fit-content;
+    }
+    .footer--sticky{
+        position: relative;
+    }
 }
