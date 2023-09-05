@@ -84,7 +84,7 @@ h2, .h2{
 }
 .h2--subheader{
     font-size: 24px;
-    line-height: 1em;
+    line-height: 1.5em;
     font-weight: bold;
     margin-top: 16px;
 }
@@ -165,7 +165,6 @@ ul{
     max-width: 1000px;
     margin: 40px auto;
     background: rgba(255,255,255, .95);
-    backdrop-filter: blur(5px);
     padding: 48px;
 }
 
@@ -337,11 +336,17 @@ hr:nth-of-type(3){
 /* Responsive Overrides */
 @media only screen and (max-width: 900px) {
     main{
-        padding: 20px 20px 0 20px;
+        padding: 20px 0;
         width: auto;
     }
     body{
         font-size: 20px;
+    }
+    .header-block, .body-block, .photo-header__cutout{
+        padding: 24px;
+    }
+    .top-nav__content{
+        padding: 0px 24px;
     }
     .body-block{
         width: auto;
@@ -352,6 +357,10 @@ hr:nth-of-type(3){
         display: inline-block;
         width:100% ;
     } 
+
+    .contact{
+        padding: 10px;
+    }
 }
 @media only screen and (max-width: 1070px) {
     .photo-header{
@@ -359,10 +368,10 @@ hr:nth-of-type(3){
         background-size: initial;
     }
     h1, .h1{
-        font-size: 56px;
+        font-size: 48px;
     }
     h2, .h2{
-        font-size: 48px;
+        font-size: 40px;
     }
 }
 
