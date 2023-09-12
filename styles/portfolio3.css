@@ -1,0 +1,51 @@
+:root {
+    /* --blue-var: 51, 71, 214;
+    --blue: #3347d6;
+    --red-var: 214, 61, 70;
+    --red: #d63d46;
+    --purple-var: 196, 44, 201;
+    --purple: #c42cc9;
+    --orange-var: 208, 66, 14;
+    --orange: #d0420e;
+    --green-var: 108, 235, 142;
+    --green: #6ceb8e; */
+
+    --aqua-1: #E4FFFD;
+    --aqua-1-var: 255, 252, 240;
+    --aqua: #68E2D6;
+    --aqua-var: 104, 226, 214;
+    --light-yellow: #FFFCF0;
+    --light-yellow-var: 255, 252, 240;
+
+    --purple-1: #A00090;
+    --purple-1-var: 160, 0, 144;
+    --purple-2: #8D2683;
+    --purple-2-var: 141, 38, 131;
+    --purple-3: #720067;
+    --purple-3-var: 114, 0, 103;
+
+
+    --link-button-resting: 0 0 0 2px #ffffff, 0px 0px 0px 2px;
+    --link-button-hover: 0 0 0 2px #ffffff, 6px 6px 0px 0px;
+    --image-resting: 0 0 0 2px #ffffff, 4px 4px 0px 0px;
+    --image-hover: 0 0 0 2px #ffffff, 12px 12px 0px 0px;
+}
+
+/* High Level Layout */
+
+body{
+    font-family: "Figtree";
+    font-size:20px;
+    line-height: 1.5;
+    background-color: rgba(255,255,255, .95);
+    color: #666666;
+    margin:0px;
+}
+
+main{
+    max-width: 1240px;
+    margin: auto;
+}
+h1{
+    font-size: 140px;
+}
