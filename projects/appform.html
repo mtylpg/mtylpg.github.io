@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <link type="text/css" rel="stylesheet" href="../styles/portfolio.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/portfolio3.css" />
     <link href='https://fonts.googleapis.com/css?family=Figtree' rel='stylesheet' type='text/css'>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,0,0" />
@@ -23,132 +23,157 @@
 </script>
 
 <body>
-    <main>
-        <div class="header-small">
-            <div class="header-block" role="nav">
-                <strong>Matt Lepage</strong>
-                <span class="header-tags">
-                    <span aria-hidden="true"> • </span>
-                    product design, accessibility 
-                </span>
-                <span aria-hidden="true"> • </span>
-                <a href="../index.html">Home</a>
-                <span aria-hidden="true"> • </span>
-                <a class="cvlink" href="../files/MLepage_CV2023.pdf" target="_blank"> CV<span
-                        class="material-symbols-outlined" aria-hidden="true"
-                        aria-describedby="(opens in new tab)">open_in_new</span></a>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-banner appsys">
-            <div class="banner-cutout">
-                <div class="work-block">
-                    <div class="case-study2">
-                        <h2 aria-level="1" class="highlight-container highlight-red">
-                            <span class="highlight "> Application Form System </span>
-                        </h2>
-                        <div class="h2-subheader">
-                            Senior Product Designer, 2U Inc, 2016-2020
-                        </div>
-                        <ul class="portfolio-images">
-                            <li>
-                                <a href="../images/portfolio/2u/amt/AMT-responsive.png" class="lightbox" target="_blank">
-                                    <img class="image-item" src="../images/portfolio/2u/amt/AMT-responsive.png"
-                                        alt="Our responsive form system, featuring a number of input components and a flexible UI meeting the needs of our different university partners..">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../images/portfolio/2u/a11y/forms.png" class="lightbox" target="_blank">
-                                    <img class="image-item" src="../images/portfolio/2u/a11y/forms.png"
-                                        alt="A component diagram for a forms system including usage and copy guidance for helptext, labels and validation messaging. This pattern was developed for my work on our admissions portal, and has since grown into a standard for the company.">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../images/portfolio/2u/amt/amt.png" class="lightbox" target="_blank">
-                                    <img class="image-item" src="../images/portfolio/2u/amt/amt.png"
-                                        alt="The first launch of our admissions portal, which is individually branded by CSS for different partners. The end user completes a 4-5 page responsive form composed of question type modules I designed and worked with engineering to implement.">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../images/portfolio/2u/amt/journey-map.png" class="lightbox" target="_blank">
-                                    <img class="image-item" src="../images/portfolio/2u/amt/journey-map.png"
-                                        alt="Since we were aiming to significantly change the onboarding flow for new users, part of the admissions project was mapping out our ideal user journey and identifying weak spots. I worked with the UX team to build this mural showcasing our targets in our offices.">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../images/portfolio/2u/amt-hub.png" class="lightbox" target="_blank">
-                                    <img class="image-item" src="../images/portfolio/2u/amt-hub.png"
-                                        alt="A late stage wireframe for our application hub, with an experimental progress tracker on the right.">
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="portfolio-data">
-                            <div class="cols">
-                                <div class="col-3">
-                                    <h3 aria-level="2">Summary</h3>
-                                    <p>
-                                        2U’s online Application System is the first interactive touch point for our users, presenting a potential drop-off point for prospective students. I led a full redesign of this experience, prioritizing form accessibility, legibility, and a high degree of content flexibility to accommodate the many unique needs different partners needed. The final product contained a suite of interoperable form components in a minimalist responsive layout.
-                                    </p>
-                                    <p>
-                                        This work happened in parallel to our <a href="amt.html">internal tool redesign.</a>
-                                    </p>
-                                </div>
-                                <div class="col-2">
-                                    <h3 aria-level="3">Project Goals</h3>
-                                    <p>Reimagine application workflow, addressing accessibility debt </p>
-                                    <h3 aria-level="3">Responsibilities</h3>
-                                    <p>Design Lead, Prototyping, UX research,Accessibility Testing, Journey Mapping. Mobile Web Design</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 aria-level="2"> Project Details </h3>
-                        <p>
-                            In response to partner concerns around accessibility compliance, I was tasked with redesigning all aspects of our online application forms. The content of these forms is determined by university partners, so my focus was on both a series of polished input components to cover expected question types as well as a top-level container interface that placed guardrails on our content to ensure WCAG 2.1 compliance in the end product.
-                        </p>
-                        <h3 aria-level="2"> Process </h3>
-                        <p>
-                            I started with a series of interviews and research sessions, walking through our existing product with current students and shadowing members of our internal applicant support teams as they coached users. We identified that the largest needs were around question clarity and data persistence, with many applicants feeling overwhelmed by both the jargon of our application forms and the size of our old system's massive single page form. After early prototypes that focused on breaking the form into many small pages tested well (with heavy inspiration from <a href="https://www.gov.uk/service-manual/design/form-structure#start-with-one-thing-per-page" target="_blank">excellent form design</a>), I presented our findings to senior leadership and we settled on many-page pattern with clearly announced auto-save mechanics and generous, non-blocking validation mechanics.
-                        </p>
-                        <p>
-                            With the structure of the form decided, I then began mapping the questions asked across a sampling of our larger forms to build out a component library of forms inputs. As some of our forms relied on non-standard input structures like customized file inputs and radio grids, I build code prototypes of these inputs and tested them with accessibility consultants to ensure the questions were clear and usable. Much of our actually form content was being written by our partner management teams and at times by university faculty directly, I accompanied all question type modules with guidance documentation explaining when to use what form components (i.e. radio buttons vs dropdowns) and how to structure text and labels. Both the visual patterns and this guidance was added to our early CSS based design system at the time, and later into react components that are now in use across many of 2U's products.
-                        </p>
-                        <h3 aria-level="2"> Outcomes </h3>
-                        <p>
-                            Most of the hard metrics we were targeting happened on the <a href="amt.html">administrative side of this project</a>, but UAT showed positive reactions to our new design. Users cited the application overview pages working as intended to help them plan ahead for longer tasks (essays, referrals, etc) and found the validation and error recovery flows easy to work with. Tracking statistics for form completion rates is tricky as the market for online education is kinda all over the place, but we can at least be sure that this design launching... during the pandemic didn't prevent us from seeing a large spike in remote learning interest.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="learn-container work-block">
-            <ul class="project-links">
+    <nav title="Main Navigation">
+        <div class="container">
+            <ul class="navlist">
+                <li><a href="../index.html">Home </a></li>
+                <li class="flex-1">
+                </li>
                 <li>
-                    <a href="../index.html" class="learn-more">
-                        Back to Home
+                    <a class="cvlink" href="./files/MLepage_CV2023.pdf" target="_blank"> Condensed CV <span class="material-symbols-outlined" aria-hidden="true" aria-describedby="(opens in new tab)">open_in_new</span></a>
+                </li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#work">Work</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="heading-block">
+            <div class="container">
+                <h1 class="project-header">
+                        Forms Design and CMS </h1>
+                    </h1>
+                    <strong>
+                        Senior Accessibility Designer, 2U Inc, 2016 - 2020
+                    </strong>
+                </div> 
+        </div>
+        <div class="tldr">
+            <div class="container">
+                <h2 class="tldr-header">TL;DR</h2>
+                <p>
+                    Over four years of research and iterative design we reimagined both the application process aspiring students went through to enroll in online degrees and the content tools used by universities to manage student data. We built a forms design system focused on accessibility and a CMS emphasizing efficiency for internal teams and stakeholders.
+                </p>
+                <h2 class="tldr-header ">Project Goals</h2>
+                <p>
+                    Reimagine our university application workflow, addressing accessibility debt and building improved experiences for end users and internal stakeholders at the same time
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <ul class="portfolio-images">
+                <li>
+                    <a href="../images/portfolio/2u/a11y/forms.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/a11y/forms.png"
+                            alt="A component diagram for a forms system including usage and copy guidance for helptext, labels and validation messaging. This pattern was developed for my work on our admissions portal, and has since grown into a standard for the company.">
+                    </a>
+                </li>
+                <li>
+                    <a href="../images/portfolio/2u/amt/amt.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt/amt.png"
+                            alt="The first launch of our admissions portal, which is individually branded by CSS for different partners. The end user completes a 4-5 page responsive form composed of question type modules I designed and worked with engineering to implement.">
+                    </a>
+                </li>
+                <li>
+                    <a href="../images/portfolio/2u/amt-hub.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt-hub.png"
+                            alt="A late stage wireframe for our application hub, with an experimental progress tracker on the right.">
                     </a>
                 </li>
             </ul>
         </div>
+
+        <div class="container">
+            <h2>Detailed Process</h2>
+            <p>
+                As an embedded designer on our online applications development team, I worked closely with lead developers to pitch a full redesign of our existing applications system to to leadership, replacing both the final form interfaces shown to users as they apply to our online programs and the suite of internal tools used by universities to track applicants and manage form content.
+            </p>
+            <p>
+                This meant approaching the problem from both ends: thinking about how we could best set up a forms architecture that would meet the content flexibility needs of our university partners while keeping clear and concise form design for users.
+            </p>
+            <ul class="portfolio-images">
+                <li>
+                    <a href="../images/portfolio/2u/amt/amt-flow.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt/amt-flow.png"
+                            alt="A flow chart of the different systems being designed. On one side is the Univeristy Partner tool, where faculty can design the form content within a CMS and customize data exports. On the other side is the student facing form, where students can fill out online forms and export their submissions for their own records.">
+                    </a>
+                </li>
+                <li>
+                    <a href="../images/portfolio/2u/amt/journey-map.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt/journey-map.png"
+                            alt="Since we were aiming to significantly change the onboarding flow for new users, part of the admissions project was mapping out our ideal user journey and identifying weak spots. I worked with the UX team to build this mural showcasing our targets in our offices.">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../images/portfolio/2u/amt/spec_gen.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt/spec_gen.png"
+                            alt="A mess of index cards labeled with different data points or applications, used to map out the dependencies of our new internal system. Much of the months of work was spent generating artifacts like this and externalizing them to build buy-in for such a large redesign.">
+                    </a>
+                </li>
+            </ul>
+            <p>
+                The two projects operated under very different needs - university admins wanted a CMS that was infinitely flexible, available yesterday, and didn’t care if it was ugly; while our external users needed a streamlined forms UI that would maximize clarity (and accessibility) while guiding them through the application process. The first year was spent almost entirely on research, mapping out internal processes and building bridges with other teams in marketing and university relations, while testing prototypes of a forms system with potential users.
+            </p>
+            <p>
+                I shaped my design process to match the divide in user needs: leaning on rough wireframes for the CMS, while polishing visuals for a forms design system and minimalist UI for students.
+            </p>
+            <div class="container">
+                <ul class="portfolio-images">
+                    
+                <!-- <li>
+                    <a href="../images/portfolio/2u/ers_workflow.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/ers_workflow.png"
+                            alt="An series of user workflow diagrams for our admissions team.">
+                    </a>
+                </li> -->
+                <li>
+                    <a href="../images/portfolio/2u/amt/AMT-editing.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt/AMT-editing.png"
+                            alt="Editing interface for our admin tooling. Every time we tested more... visually appealing solutions for this page we got pushback asking for louder and denser views; and this ultra-efficient setup was consistently a user favorite. This did mean we had to invest in onboarding documentation, but it was well worth it.">
+                    </a>
+                </li>
+                <li>
+                    <a href="../images/portfolio/2u/amt/data-export.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt/data-export.png"
+                            alt="Since our solution needed to communicate with different systems for every university partner, we build a UI for our brand ops team to customize the many different ways our questions might map to university server architectures. This was debatably the most important function of the entire product in terms on internal time saved.">
+                    </a>
+                </li>
+                <li>
+                    <a href="../images/portfolio/2u/amt/AMT-responsive.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/amt/AMT-responsive.png"
+                            alt="Our responsive form system, featuring a number of input components and a flexible UI meeting the needs of our different university partners..">
+                    </a>
+                </li>
+
+                </ul>
+            </div>
+            <p>
+                As our new systems went live in 2018, UAT showed unanimously positive reactions to our new design. Users cited the application overview pages working as intended to help them plan ahead for longer tasks (essays, referrals, etc) and found the validation and error recovery flows easy to work with. Internal tools had a quick iterative cycle (as I could run focus groups and user tests with other 2U employees), and as our first internal tools were released in 2018 the time save reported by our stakeholder was massive. This was all kinda expected, as we were replacing a dev-heavy flow with a dedicated tooling, but was still nice to see just how much of a difference it made.
+            </p>
+        </div>
+        <div class="container"><hr></div>
     </main>
     <footer class="footer">
-        <div class="header-block " role="nav" name="contact-navigation">
-            <ul class="contact-links">
-                <li>
-                    <h2 class="footer-header"> Contact </h2>
-                </li>
-                <li>
-                    <a href="mailto:matthewclepage@gmail.com">matthewclepage@gmail.com</a>
-                </li>
-                <li>
-                    <a href="http://www.linkedin.com/in/mclepage">LinkedIn</a>
-                </li>
-                <li>
-                    <a href="https://www.github.com/mtylpg">Github</a>
-                </li>
-            </ul>   
-        </div>
+        <div class="container flex flex-center">
+            <div class="flex-1">
+                <img src="../images/textures/portrait.png" alt="" class="portrait">
+            </div>
+            <div class="flex-5 footer-nav">
+                <h2 class="footer-header"> Say hi! </h2>
+                <ul class="navlist footer-list">
+                    <li class="">
+                        <a class="contact__link" href="mailto:matthewclepage@gmail.com">matthewclepage@gmail.com</a>
+                    </li>
+                    <li class="">
+                        <a class="contact__link" href="http://www.linkedin.com/in/mclepage">LinkedIn</a>
+                    </li>
+                    <li class="">
+                        <a class="contact__link" href="https://www.github.com/mtylpg">Github</a>
+                    </li>
+                </ul>
+            </div>
+        </div> 
     </footer>
     <script src="../scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="../libraries/tobii.min.js" charset="utf-8"></script>

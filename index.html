@@ -6,8 +6,13 @@
         <link rel="icon" type="image/png" href="favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-        <link type= "text/css" rel="stylesheet" href="./styles/portfolio2.css" />
+        <link type= "text/css" rel="stylesheet" href="./styles/portfolio3.css" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href='https://fonts.googleapis.com/css?family=Figtree' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,200;16..144,400;16..144,700&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Figtree' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;800&family=Montagu+Slab:opsz,wght@16..144,200;16..144,400;16..144,700&display=swap" rel="stylesheet">
         <link type= "text/css" rel="stylesheet" href="./libraries/tobii.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
 
@@ -21,81 +26,117 @@
     
         gtag('config', 'G-JLT263CQKF');
     </script>
-
     <body>
-        <div class="photo-background--home">
-            <div class="blur-container">
-                <main>
-                    <div class="header-block">
-                        <h1 class="h1">
-                            Matt Lepage
-                        </h1>
-                        <div class="h1-subheader">
-                            UX Design <span aria-hidden="true"> // </span> Accessibility 
-                        </div>
-                    </div>
-
-                    <div class="body-block">
-
-                        <h2 class="h2">About</h2>
-                        <ul class="cover-list">
-                            <li class="cover-list__item">
-                                <a class="cvlink" href="./files/MLepage_CV2023.pdf" target="_blank"> Condensed CV <span class="material-symbols-outlined" aria-hidden="true" aria-describedby="(opens in new tab)">open_in_new</span></a>
-                            </li>
-                            <li class="cover-list__item">
-                                <a href="projects/workhistory.html">Work History
-                                    <span class="outline"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <h2 class="h2">Writing</h2>
-                        <ul class="cover-list">
-                            <li class="cover-list__item">
-                                <a href="https://medium.com/@mattylpg/why-i-a11y-design-and-you-should-too-46ec021f5727">Why I a11y Design (and you should too) <span class="material-symbols-outlined" aria-hidden="true" aria-describedby="(opens in new tab)">open_in_new</span></a>
-                            </li>
-                            <li class="cover-list__item">
-                                <a href="https://medium.com/@mattylpg/a-ui-designers-guide-to-color-accessibility-d7a234d18f8e">UI Designer's Guide to Color Accessibility <span class="material-symbols-outlined" aria-hidden="true" aria-describedby="(opens in new tab)">open_in_new</span></a>
-                            </li>
-                            <!-- <li  class="cover-list__item">
-                                <a href="workhistory.html">Fantastic Fields and How to Form Them</a>
-                            </li> -->
-                        </ul>
-                        <h2 class="h2">Work Samples</h2>
-                        <ul class="cover-list">
-                            <li class="cover-list__item">
-                                <a href="projects/a11y.html">A11Y Design Training</a>
-                            </li>
-                            <li class="cover-list__item">
-                                <a href="projects/appform.html">Online Form Ecosystem</a> and <a href="projects/amt.html">Builder </a>
-                            </li>
-                            <li class="cover-list__item">
-                                <a href="projects/mag.html">Volunteer Projects</a>
-                            </li>
-                        </ul>
-                    </div>
-                </main>
-                <footer class="footer footer--sticky"> 
-                    <div class="contact">
-                        <ul class="contact__link-list">
-                            <li class="contact__link-list__item">
-                                <h2 class="footer__header"> Contact </h2>
-                            </li>
-                            <li class="contact__link-list__item">
-                                <a class="contact__link" href="mailto:matthewclepage@gmail.com">matthewclepage@gmail.com</a>
-                            </li>
-                            <li class="contact__link-list__item">
-                                <a class="contact__link" href="http://www.linkedin.com/in/mclepage">LinkedIn</a>
-                            </li>
-                            <li class="contact__link-list__item">
-                                <a class="contact__link" href="https://www.github.com/mtylpg">Github</a>
-                            </li>
-                        </ul>   
-                    </div>
-                </footer>
+        <nav title="Main Navigation">
+            <div class="container">
+                <ul class="navlist">
+                    <li><a href="index.html">Home </a></li>
+                    <li class="flex-1">
+                    </li>
+                    <li>
+                        <a class="cvlink" href="./files/MLepage_CV2023.pdf" target="_blank"> Condensed CV <span class="material-symbols-outlined" aria-hidden="true" aria-describedby="(opens in new tab)">open_in_new</span></a>
+                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                </ul>
             </div>
-        </div>
+        </nav>
+        <main>
+            <div class="heading-block">
+                <div class="container">
+                    <h1 class="h1">
+                        <span class="pretext">Hi! I do</span>
+                        Inclusive Design
+                    </h1>
+                    <div style="text-align:center; padding-bottom: 40px">
+                    <strong>Matt Lepage</strong> <br>
+                    UX Design & Accessibility 
+                    </div>
+                </div>
+            </div>
+            <div class="wavy-border">
+                <div class="bg-purple" id="about">
+                    <div class="container flex">
+                        <h2 class="flex-1">Product Design, with Access in Mind</h2>
+                        <p class="flex-2">
+                            I’m a Brooklyn-based Product Designer, working with design and product teams to build inclusive experiences that work better for everyone. I’m excited by novel modes of interaction, and the ways that interface design can reshape our relation to technology and the world around us.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container">
+                <h3>Currently: Senior A11Y Designer at 2U Inc</h3>
+                
+                <p>
+                    Right now I'm <a href="projects/a11y.html">working with designers and devs</a> to chart a course for accessible learning experiences online. My work centers around incorporating accessibility and inclusive design practices into our UX org.
+                </p>
+
+                <h3>Previously: Senior UX Design, Front-End Development</h3>
+                <p>
+                    Prior to my current role, I worked at 2U as a Senior Product Designer, specializing in accessibility topics and <a href="projects/appform.html">CMS design</a>. My largest projects were modular end user experiences and tools for building them, like a forms UI rebuild and accompanying CMS.
+                </p>
+
+                <h3>On The Side: Indie Gaming Events and Livestreams</h3>
+                <p>
+                    Outside of work hours I help run an <a href="projects/mag.html">annual Indie Arcade festival</a>, building out livestream assets and talking to fun people about weird games.
+                </p>
+            </div>
+            <div class="container flex">
+                <div class="flex-1">
+                    <h2 id="work" class="h2">Work Samples</h2>
+                    <ul class="cover-list">
+                        <li class="cover-list__item">
+                            <a href="projects/a11y.html">Inclusive Design</a>
+                        </li>
+                        <li class="cover-list__item">
+                            <a href="projects/appform.html">Online Form Interface and Builder </a>
+                        </li>
+                        <li class="cover-list__item">
+                            <a href="projects/mag.html">Charity and Festival Graphics</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-1">
+                    <h2 class="h2">Blog Posts</h2>
+                    <ul class="cover-list">
+                        <li class="cover-list__item">
+                            <a href="https://medium.com/@mattylpg/a-ui-designers-guide-to-color-accessibility-d7a234d18f8e">UI Designer's Guide to Color Accessibility <span class="material-symbols-outlined" aria-hidden="true" aria-describedby="(opens in new tab)">open_in_new</span></a>
+                        </li>
+                        <li class="cover-list__item">
+                            <a href="https://medium.com/@mattylpg/why-i-a11y-design-and-you-should-too-46ec021f5727">Why I a11y Design<span class="material-symbols-outlined" aria-hidden="true" aria-describedby="(opens in new tab)">open_in_new</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container"><hr></div>
+        </main>
+
+        <footer class="footer">
+            <div class="container flex flex-center">
+                <div class="flex-1">
+                    <img src="images/textures/portrait.png" alt="" class="portrait">
+                </div>
+                <div class="flex-5 footer-nav">
+                    <h2 class="footer-header"> Say hi! </h2>
+                    <ul class="navlist footer-list">
+                        <li class="">
+                            <a class="contact__link" href="mailto:matthewclepage@gmail.com">matthewclepage@gmail.com</a>
+                        </li>
+                        <li class="">
+                            <a class="contact__link" href="http://www.linkedin.com/in/mclepage">LinkedIn</a>
+                        </li>
+                        <li class="">
+                            <a class="contact__link" href="https://www.github.com/mtylpg">Github</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </footer>
         <script src="./scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
         <script src="./libraries/tobii.min.js" charset="utf-8"></script>
         <script src="./scripts/portfolio.js" charset="utf-8"></script>
     </body>
+<script src="https://cdn.jsdelivr.net/npm/ukiyojs@4.1.2/dist/ukiyo.min.js"></script>
+<script src="scripts/main.js"></script>
 </html>
