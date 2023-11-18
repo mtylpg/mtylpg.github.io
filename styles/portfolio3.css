@@ -18,6 +18,7 @@
     --aqua-2-var: 0, 92, 83;
     --light-yellow: #FFF5D7;
     --light-yellow-var: 255, 252, 240;
+    --green: #8AFCBE;
 
     --purple-1: #A4128E;
     --purple-1-var: 160, 0, 144;
@@ -44,6 +45,7 @@ body{
     font-size:24px;
     line-height: 1.5;
     margin:0px;
+    color: #303030;
 }
 nav{
     border-bottom: 2px solid var(--purple-1);
@@ -170,6 +172,7 @@ a.lightbox:hover{
     padding-right: 16px;
     font-size: .8em;
     font-weight: 800;
+    line-height: 1.75em;
 }
 .navlist li:first-child{
     padding-left: 0;
@@ -244,7 +247,7 @@ h2{
 .tldr .container{
     rotate: 2deg;
     margin-top: 24px;
-    background: #8AFCBE;
+    background: var(--green);
     background-image: url("../images/textures/squares.svg");
     padding-top:.5em;
     padding-bottom:.5em;
@@ -256,6 +259,10 @@ h2{
     border-image-slice: 12;
 }
 
+.tldr .container a{
+    text-shadow: -2px 3px 0px var(--green), 2px 3px 0px var(--green),
+    0px 2px 0px var(--green);
+}
 .portrait{
     max-width: 124px;
 }
@@ -267,8 +274,9 @@ a{
     width: fit-content;
     text-decoration: none;
     margin-bottom:1em;
-    color: #333;
+    color: #000F47;
     padding: 2px 0px;
+    text-shadow: -2px 3px 0px #fff, 2px 3px 0px #fff,0px 3px 0px #fff;
 }
 
 a:focus{
@@ -339,9 +347,13 @@ ul.navlist a:focus{
     h1, h1.project-header{
         font-size: 3em;
         text-shadow: -6px 6px rgba(var(--purple-1-var), .2);
+        line-height: 1.25em;
+        margin-bottom: .25em;
     }
     span.pretext{
         font-size: 36px;
+        line-height: 1.5em;
+        margin: 0px;
     }
     .bg-purple{
         padding-top: 24px;
@@ -358,27 +370,26 @@ ul.navlist a:focus{
     .portrait{
         max-width: 80px;
     }
-
-
     .image-item{
         width: 100%;
         min-width: 80px;
         max-width: 160px;
         opacity: 1;
     }
-
+    nav{
+        position: relative;
+    }
+    main{
+        padding-top: 0px;
+    }
+    .navlist li{
+        line-height: 2.25em;
+    }
 }
 @media only screen and (max-width: 1008px) {
     .tldr .container{
-        margin-top: 24px;
-        background: #8AFCBE;
         background-image: url("../images/textures/squares.svg");
-        border-radius: 0;
         border: 0;
         rotate: 0deg;
     }    
-}
-
-@media only screen and (max-height: 1074px) {
-
 }
