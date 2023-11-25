@@ -70,6 +70,13 @@ main{
 
 hr{
     margin: 1em 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--purple-1);
+    margin: 1em 0;
+    padding: 0;
+    clear: both;
 }
 
 /* flexbox helpers */
@@ -96,6 +103,19 @@ hr{
 .flex-break{
     flex-basis: 100%;
     height: 0;
+}
+
+.flex.skills{
+    align-items: start;
+    font-size: .875em;
+    text-align: center;
+    gap:3em;
+}
+
+.skill-icon{
+    padding-top: 42px;
+    height: 150px;
+    margin: auto;
 }
 
 .portfolio-images{
@@ -252,8 +272,13 @@ span.pretext{
 }
 
 h2{
-    /* font-family: "Montagu Slab"; */
     font-weight: 600;
+}
+
+h2.large{
+    font-weight: 800;
+    font-size: 4em;
+    margin: 0;
 }
 
 .bg-purple{
@@ -392,10 +417,18 @@ ul.navlist a:focus{
     .flex{
         display: block;
     }
+    .flex-1{
+        width: 100%;
+        display: block;
+        clear: both;
+    }
     h1, h1.project-header{
         font-size: 3em;
         line-height: 1.25em;
         margin-bottom: .25em;
+    }
+    h2.large{
+        font-size: 2em;
     }
     .shadow, h1.project-header .shadow{
         top: .0625em;
@@ -413,12 +446,30 @@ ul.navlist a:focus{
         padding-bottom: 24px;
     }
 
+        
+    .flex.skills{
+        text-align: left;
+    }
+
+    .skill-icon{
+        display: inline-block;
+        float: left;
+        padding: 0 20px;
+        width: 100px;
+    }
+
     .footer-list, .footer-list li{
+        display: inline-block;
+    }
+    .footer-list li:first-of-type{
         display: block;
     }
     footer .flex{
         display: flex;
         align-items: flex-start;
+    }
+    .footer-header{
+        display: none;
     }
     .portrait{
         max-width: 80px;
