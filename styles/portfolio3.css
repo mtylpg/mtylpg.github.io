@@ -19,6 +19,7 @@
     --light-yellow: #FFF5D7;
     --light-yellow-var: 255, 252, 240;
     --green: #8AFCBE;
+    --green-var: 135, 252, 188;
 
     --purple-1: #A4128E;
     --purple-1-var: 160, 0, 144;
@@ -300,9 +301,9 @@ h2.large{
 }
 
 .tldr .container{
-    rotate: 1deg;
+    /* rotate: 1deg; */
     margin-top: 24px;
-    background: var(--green);
+    background: rgba(var(--green-var), .5);
     background-image: url("../images/textures/squares.svg");
     padding-top:.5em;
     padding-bottom:.5em;
@@ -315,8 +316,7 @@ h2.large{
 }
 
 .tldr .container a{
-    text-shadow: -2px 3px 0px var(--green), 2px 3px 0px var(--green),
-    0px 2px 0px var(--green);
+    text-shadow: none;
 }
 .portrait{
     max-width: 124px;
