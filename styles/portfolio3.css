@@ -16,20 +16,20 @@
     --aqua-var: 104, 226, 214;
     --aqua-2: #005c53;
     --aqua-2-var: 0, 92, 83;
-    --light-yellow: #FFF5D7;
-    --light-yellow-var: 255, 252, 240;
+    /* --light-yellow: #FFF5D7;
+    --light-yellow-var: 255, 252, 240; */
     --green: #8AFCBE;
     --green-var: 135, 252, 188;
 
     --purple-1: #A4128E;
     --purple-1-var: 160, 0, 144;
-    --purple-2: #8D2683;
+    /* --purple-2: #8D2683;
     --purple-2-var: 141, 38, 131;
     --purple-3: #720067;
     --purple-3-var: 114, 0, 103;
+    --dark-purple:#D313B7; */
 
 
-    --dark-purple:#D313B7;
 
     --link-button-resting: 0 0 0 2px #ffffff, 0px 0px 0px 2px;
     --link-button-hover: 0 0 0 2px #ffffff, 6px 6px 0px 0px;
@@ -164,18 +164,17 @@ a.lightbox{
     transition: background-size 400ms; */
     background:none;
     transition: border 200ms;
-    border: 4px solid var(--aqua);
-    border-image-source: linear-gradient(45deg, var(--aqua),var(--aqua-1));
+    border: 4px dashed var(--aqua);
+    /* border-image-source: linear-gradient(45deg, var(--aqua),var(--aqua-1)); */
     border-image-slice: 1;
-    border-radius: 10px;
-    background-color: RGBA(0,0,0,.3);
+    /* border-radius: 10px; */
+    /* background-color: RGBA(0,0,0,.3); */
 }
 
-a.lightbox:hover{
+a.lightbox:hover, a.lightbox:focus{
     /* background-size: 100% 300px, 200% 300px; */
-    border: 4px solid var(--purple-1);
-    border-image-source: linear-gradient(45deg, var(--purple-1), var(--aqua));
-    border-image-slice: 1;
+    border: 4px dashed var(--purple-1);
+    /* border-image-source: linear-gradient(45deg, var(--purple-1), var(--aqua)); */
 }
 
 /* Typography */
@@ -280,6 +279,15 @@ h2.large{
     font-weight: 800;
     font-size: 4em;
     margin: 0;
+}
+
+h3{
+
+}
+
+h4{
+    font-weight: 600;
+    margin: 1em 0;
 }
 
 .bg-purple{
