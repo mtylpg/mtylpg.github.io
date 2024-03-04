@@ -83,12 +83,15 @@ hr{
 /* flexbox helpers */
 .flex{
     display: flex;
-    align-items: baseline;
+    align-items: start;
     flex-wrap: wrap;
     gap: 32px;
 }
 .flex-center{
     align-items: center;
+}
+.flex-baseline{
+    align-items: baseline;
 }
 .flex-1{
     flex: 1;
@@ -110,7 +113,9 @@ hr{
     align-items: start;
     font-size: .875em;
     text-align: center;
-    gap:3em;
+    gap:1em;
+    max-width: 600px;
+    margin: auto;
 }
 
 .skill-icon{
@@ -281,8 +286,8 @@ h2.large{
     margin: 0;
 }
 
-h3{
-
+h2.centered{
+    text-align: center;
 }
 
 h4{
@@ -290,7 +295,7 @@ h4{
     margin: 1em 0;
 }
 
-.bg-purple{
+.wavy-border{
     color: #fff;
     padding-top: 70px; 
     /* only 18 because of the line's 26 */
@@ -301,9 +306,25 @@ h4{
     border-image-slice: 26;
 }
 
-.wavy-border{
+.wavy-top{
+    margin-top: 40px;
+    padding-top: 20px; 
+    /* only 18 because of the line's 26 */
+    padding-bottom: 20px;
+    border-top:26px solid;
+    border-image:url(../images/textures/whitewave.svg);
+    border-image-slice: 26;
+}
+
+.bg-purple{
     background-color: var(--purple-1);
     background-image: url("../images/textures/lines.svg");
+    background-size: 200px;
+    background-position-y: -27px;
+}
+.bg-teal{
+    background-color: rgba(var(--green-var), .5);
+    background-image: url("../images/textures/squares.svg");
     background-size: 200px;
     background-position-y: -27px;
 }
@@ -316,20 +337,23 @@ h4{
     padding-top:.5em;
     padding-bottom:.5em;
     border-radius: 4px;
-
     border-left:24px solid;
     border-right:24px solid;
     border-image:url(../images/textures/triangles.svg) repeat;
     border-image-slice: 12;
 }
 
-.tldr .container a{
+.tldr .container a, .footer a{
     text-shadow: none;
+    
 }
 .portrait{
     max-width: 124px;
 }
 
+img.work-preview{
+    overflow: auto;
+}
 
 /* global link animation (breaking BEM for this) */
 
@@ -458,7 +482,6 @@ ul.navlist a:focus{
     .flex.skills{
         text-align: left;
     }
-
     .skill-icon{
         display: inline-block;
         float: left;
@@ -579,30 +602,3 @@ ul.navlist a:focus{
 }
 
 
-
-
-/* 
-
-Backup shadow text style if the one I'm using keeps bein silly
-
-
-.shadowtext{
-    position: relative;
-}
-.shadowtext:after{
-    content: "Accessibility Design Projects";
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHElEQVQYV2NUVFT8f//+fUYGBgYGMAEDcA5IBQCKJQVmn76DhAAAAABJRU5ErkJggg==) repeat;
-    letter-spacing: 6px;
-    left: calc(50% + 6px);
-    position: absolute;
-    top: calc(50% + 6px);
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    -webkit-text-stroke-width: 0;
-    -moz-text-stroke-width: 0;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-} */
