@@ -93,6 +93,9 @@ hr{
 .flex-baseline{
     align-items: baseline;
 }
+.flex-reverse{
+    flex-direction: row-reverse;
+}
 .flex-1{
     flex: 1;
 }
@@ -473,7 +476,7 @@ ul.navlist a:focus{
         line-height: 1.5em;
         margin: 0px;
     }
-    .bg-purple{
+    .wavy-border{
         padding-top: 24px;
         padding-bottom: 24px;
     }
