@@ -1,40 +1,23 @@
 :root {
-    /* --blue-var: 51, 71, 214;
-    --blue: #3347d6;
-    --red-var: 214, 61, 70;
-    --red: #d63d46;
-    --purple-var: 196, 44, 201;
-    --purple: #c42cc9;
-    --orange-var: 208, 66, 14;
-    --orange: #d0420e;
-    --green-var: 108, 235, 142;
-    --green: #6ceb8e; */
-
     --aqua-1: #E4FFFD;
     --aqua-1-var: 255, 252, 240;
     --aqua: #68E2D6;
     --aqua-var: 104, 226, 214;
     --aqua-2: #005c53;
     --aqua-2-var: 0, 92, 83;
-    /* --light-yellow: #FFF5D7;
-    --light-yellow-var: 255, 252, 240; */
+
     --green: #8AFCBE;
     --green-var: 135, 252, 188;
 
     --purple-1: #A4128E;
     --purple-1-var: 160, 0, 144;
-    /* --purple-2: #8D2683;
-    --purple-2-var: 141, 38, 131;
-    --purple-3: #720067;
-    --purple-3-var: 114, 0, 103;
-    --dark-purple:#D313B7; */
-
-
 
     --link-button-resting: 0 0 0 2px #ffffff, 0px 0px 0px 2px;
     --link-button-hover: 0 0 0 2px #ffffff, 6px 6px 0px 0px;
     --image-resting: 0 0 0 2px #ffffff, 4px 4px 0px 0px;
     --image-hover: 0 0 0 2px #ffffff, 12px 12px 0px 0px;
+
+    --baseline-font-size: 20px;
 }
 
 /* High Level Layout */
@@ -43,7 +26,7 @@ html{
 }
 body{
     font-family: "Figtree";
-    font-size:24px;
+    font-size:var(--baseline-font-size);
     line-height: 1.5;
     margin:0px;
     color: #303030;
@@ -117,7 +100,6 @@ hr{
     font-size: .875em;
     text-align: center;
     gap:1em;
-    max-width: 600px;
     margin: auto;
 }
 
@@ -343,8 +325,8 @@ h4{
     margin-top: 24px;
     background: rgba(var(--green-var), .5);
     background-image: url("../images/textures/squares.svg");
-    padding-top:.5em;
-    padding-bottom:.5em;
+    padding-top:.25em;
+    padding-bottom:.75em;
     border-radius: 4px;
     border-left:24px solid;
     border-right:24px solid;
@@ -363,6 +345,7 @@ h4{
 img.work-preview{
     overflow: auto;
 }
+
 
 /* global link animation (breaking BEM for this) */
 
@@ -541,6 +524,10 @@ ul.navlist a:focus{
     }
     .navlist li{
         line-height: 2.25em;
+    }
+    
+    img.work-preview{
+        display:none;
     }
 }
 
