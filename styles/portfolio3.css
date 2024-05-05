@@ -19,7 +19,17 @@
 
     --baseline-font-size: 20px;
 }
+
+
+
 /* branch-specific pls reorder */
+
+
+.line-offset{
+    position:relative;
+    max-width: 1080px;
+    margin: auto;
+}
 .dotted-line{
     /* border: 2px dashed rgba(var(--purple-1-var), 1); */
     position: absolute;
@@ -30,6 +40,8 @@
     background-size: 40px 2px, 40px 2px, 2px 40px, 2px 40px;
     background-position: 0px 0px, 0px 100%, 0px 0px, 100% 0px;
     animation: rotate 5s infinite linear;
+    margin: 10px 0 0 -10px;
+    border-radius: 2px;
 }
 
 @keyframes rotate {
@@ -39,8 +51,6 @@
     }
 }
 
-
-
 .solid-line{
     border: 2px solid rgba(var(--purple-1-var), 1);
     position: absolute;
@@ -49,7 +59,29 @@
     margin: -10px 0 0 10px
 }
 
-/* High Level Layout */
+
+.home-title{
+    padding: 44px 0 0 24px;
+    max-width: 770px;
+    margin: auto;
+}
+
+.home-title_subheader{
+    padding: 8px;
+    position: relative;
+    bottom:-24px;
+    background:white;
+    width:fit-content;
+    height: fit-content;
+}
+
+#about{
+    text-align: center;
+}
+
+
+
+/*---- High Level Layout ----*/
 html{
     scroll-behavior: smooth;
 }
