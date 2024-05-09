@@ -107,6 +107,7 @@ if(window.scrollY!=0){
     hasScrolled = true;
     // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
     document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
+    
 
 }
 
