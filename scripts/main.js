@@ -2,21 +2,23 @@ console.log('This would be the main JS file.');
 
 
 stars = document.getElementById("stars");
-starCanvas = document.getElementsByClassName("h1")[0].getBoundingClientRect();
+starCanvas = document.getElementsByClassName("stars-container")[0];
+starCanvasArea = starCanvas.getBoundingClientRect();
+headerContainer = document.getElementsByClassName("line-offset")[0];
+
 starArray = [];
-initial_minStars = 15;
-initial_spawnRate = 500;
-initial_waveRate = 2000;
+initial_maxstars = 6;
+initial_spawnRate = 1500;
+initial_waveRate = 5000;
 
-
-if (starCanvas.width<1000)
+if (starCanvasArea.width<1000)
 {
-    minStars = initial_minStars/3;
+    maxStars = initial_maxstars/3;
     spawnRate = initial_spawnRate*2;
     waveRate = initial_waveRate*2;
 
 } else {
-    minStars = initial_minStars;
+    maxStars = initial_maxstars;
     spawnRate = initial_spawnRate;
     waveRate = initial_waveRate;
 }
@@ -26,7 +28,7 @@ console.log(stars);
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+    return Math.floor((Math.random()+.01) * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
   }  
 
 function spawnStar(x, y, rotation) {
@@ -55,6 +57,7 @@ function spawnStar(x, y, rotation) {
 }
 
 function spawnStars(count, spawnRate) {
+    return;
     lastRandom = false;
     lastSpawn = 0
     nextSpawn = 0;
@@ -63,11 +66,11 @@ function spawnStars(count, spawnRate) {
             nextSpawn = spawnRate - lastSpawn;
             lastRandom = false;
         } else{
-            nextSpawn = getRandomInt(0,spawnRate)+500;
+            nextSpawn = 500;
             lastRandom = true;
         }
         // console.log(starArray);
-        if (starArray.length > minStars)
+        if (starArray.length > maxStars)
         {
             starArray[0].parentNode.removeChild(starArray[0]);
             starArray.shift();
@@ -76,22 +79,44 @@ function spawnStars(count, spawnRate) {
         }
         setTimeout(function(){
             spawnStar (
-                getRandomInt(starCanvas.left+30,starCanvas.left+starCanvas.width-30),getRandomInt(starCanvas.top-80, starCanvas.top+starCanvas.height-100),getRandomInt(0,180))
-        }, nextSpawn);
+                getRandomInt(starCanvasArea.left+400,starCanvasArea.left+starCanvasArea.width-400),getRandomInt(starCanvasArea.top-80, starCanvasArea.top+starCanvasArea.height-400),getRandomInt(0,180))
+        }, 1000);
         lastSpawn = nextSpawn;
-        console.log(lastSpawn);
     }
 }
 
-spawnStars(4, spawnRate);
-setInterval(function() {spawnStars(4, spawnRate)}, waveRate);
+spawnStars(1, 1);
+setInterval(function() {spawnStars(1, spawnRate)}, 2000);
 
 addEventListener("resize", (event) => {
-    starCanvas = document.getElementsByClassName("h1")[0].getBoundingClientRect();
-    if (starCanvas.width<1000)
+    console.log(starCanvasArea);
+    if (starCanvasArea.width<1000)
     {
-        minStars = initial_minStars/2;
+        maxStars = initial_maxStars/2;
     } else {
-        minStars = initial_minStars;
+        maxStars = initial_maxStars;
     }
+    // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";bg-purple-content
 });
+
+let hasScrolled = false;
+
+
+
+if(window.scrollY!=0){
+    hasScrolled = true;
+    // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
+    document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
+    
+
+}
+
+else{
+    document.addEventListener("scroll", (event) => {
+        if (!hasScrolled) {
+            hasScrolled = true;
+            // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
+            document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
+        }
+    });
+}
