@@ -63,9 +63,9 @@
 
         <div class="tldr">
             <div class="container">
-                <h2 class="tldr-header">TL;DR</h2>
+                <h2 class="tldr-header">What and Why</h2>
                 <p>
-                    I work with our design and product teams to build inclusive processes and move accessibility left in our development lifecycle. I build components and documentation in our <a href="https://paragon-openedx.netlify.app/" target="_blank">design systems</a>, run design critiques and pair with designers, lead workshops around accessibility topics, and work with product leadership to scope accessibility features.
+                    Nobody wants to be making accessible experiences. These things come up from lack of awareness (and, at times, lack of funding). Products are rendered inaccessible by chance, from gaps in understand from the entire product pipeline - product managers don’t account for a11y testing or research, designers don’t account for accessibility heuristics in their wireframes and final comps, devs don’t account for the code needs to ensure that a design is working with varied users and technologies.
                 </p>
             </div>
         </div>
@@ -93,64 +93,79 @@
         </div>
 
         <div class="container">
-            <h2>Detailed Process</h2>
-            <p>
-                Early on in my design career I took ownership of a highly sensitive accessibility-themed redesign, tasked with both “make this accessible” and “figure out what it means for a design to be accessible.” The more I learned about inclusive design from mentors and peers, the clearer it became to me that:
-            </p>
-            <ul>
-                <li>
-                    Accessibility was treated largely as a source of technical debt, with inaccessible designs making it all the way to production before major usability flaws were surfaced
-                </li>
-                <li>
-                    Work done to address that debt was often messy and expensive
-                </li>
-                <li>
-                    Inclusive design practices not only reduced this future debt, but simply led to good design, highlighting edge cases and building future proof processes and products
-                </li>
-                <li>
-                    For all of the above, an engineer-turned-designer with an interest in alternative control schemes and hardware made me a… kinda perfect fit the work?
-                </li>
-            </ul>
-            <p>
+            <em>To any designers reading this: I highly recommend picking up a copy of <strong><a href="https://mitpress.mit.edu/9780262539487/mismatch/">Mismatch: How Inclusion Shapes Design</a></strong> By Kat Holmes. It’s worth every cent, and was hugely impactful for me getting started in this space. Hell, get your company to buy a few copies for your team! It’ll pay off.</em>
 
-                So after 5 years working as a designer in 2U's UX team, I shifted in 2020 to a new role as a designer embedded in our accessibility team. 2U is held to a high standard by our partners (WCAG AA 2.1), and by working as a conduit between our accessibility org, software development leadership, and design teams I’ve been able to move accessibility earlier in our design process and advocate across organizations for broader, a11y-first approach to access in our learning tools.
+            <h2>My Role</h2>
+            <p>
+                As a proponent of inclusive design practices (for both accessibility benefits and because it’s just a good process), I work with teams across tech organizations to educate around what accessibility is, how to think about inclusion in a productive and respectful way, and how to begin shifting products towards their accessible future.
+            </p>
+            <p>
+                I have designed and run accessibility introductions and inclusive design workshops for teams across the product pipeline. These include high level presentations to build in initial empathy, QA/dev focused sessions on understanding how Assistive Technology (AT) interprets the literal code of the web, lessons on how to use screen readers responsibly to confirm a page is working correctly, and how to incorporate accessibility heuristics and inclusive thinking into the UX design process (at both low and high fidelity).
+            </p>
+            <p>
+                I find that the learning dependency chart is as follows:
             </p>
         </div>
         <div class="container">
             <ul class="portfolio-images">
     
                 <li>
-                    <a href="../images/portfolio/2u/a11y/forms.png" class="lightbox" target="_blank">
-                        <img class="image-item" src="../images/portfolio/2u/a11y/forms.png"
-                            alt="A component diagram for a forms system including usage and copy guidance for helptext, labels and validation messaging. This pattern was developed for my work on our admissions portal, and has since grown into a standard for the company.">
-                    </a>
-                </li>
-                <li>
-                    <a href="../images/portfolio/2u/a11y/modals.png" class="lightbox" target="_blank">
-                        <img class="image-item" src="../images/portfolio/2u/a11y/modals.png"
-                            alt="A WIP interaction diagram outlining modal interactions at a high level. As 2U has been working more with 3rd party developers, I've been making more design-agnostic documentation like this that abstracts common patterns to blocky wireframes.">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../images/portfolio/2u/a11y/lifecycle.png" class="lightbox" target="_blank">
-                        <img class="image-item" src="../images/portfolio/2u/a11y/lifecycle.png"
-                            alt="A flow chart for senior leadership, outlining the tasks the accessibility team can help with throughout our company's defined product lifecycle.">
+                    <a href="../images/portfolio/2u/a11y/a11y-learning-graph.png" class="lightbox" target="_blank">
+                        <img class="image-item" src="../images/portfolio/2u/a11y/a11y-learning-graph.png"
+                            alt="A flow chart of topics to cover when teaching new audiences about accessibility in digital environments. The steps are outlined later in the post.">
                     </a>
                 </li>
             </ul>
         </div>
         <div class="container">
-            <p>
-                This role has included a lotta different tasks, including regularly working with senior leadership as a design advocate. I’ve built out learning plans and workshops for our design teams, managed audits of our live products, paired with developers to fix arcane screenreader bugs, and worked to pitch different ways accessibility can fit into our SDLC; all while making sure to remain an active member of our product design teams. More recently I’ve been working on major overhauls of our <a href="https://paragon-openedx.netlify.app/" target="_blank">design system Paragon's</a> ecosystem, addressing how to build out not only the visual and code libraries but the documentation and tooling necessary to make sure our components are accessible in practice across all our products and domains.
-            </p>
+            <ol>
+                <li>
+                    <strong>Set expectations on language and mindset.</strong>
+                    <ul>
+                        <li>
+                            I start with the difference between the medical model - in which disability is an individual failure to be “fixed” by medical technology - and the social model - in which disability is a symptom of a society which fails to accommodate all people by operating with rigid expectations.</li>
+                        <li>
+                            It’s the difference between “I need glasses to see the world around me” and “the world expects me to be able to read small text from far away, so I need glasses.”
+                        </li>
+                        <li>
+                            It’s a subtle difference, but vitally as makers of things (websites, physical spaces, tools), we can’t control what tools or medical devices our users might be able to access, but we CAN influence the expectations we put on those users through our designs.
+                        </li>
+                      </ul> 
+                </li>
+                <li>
+                    <strong>Build an understanding of the breadth of accessibility technology.</strong> 
+                    <ul>
+                        <li>
+                            Many in the tech scene think only about color deficiencies or fully non-visual users. But when you talk through the way screen magnification can make right-aligned controls harder to notice, or how tactile interfaces become more logical when inputs have decent padding between them, or how voice control can fail when too much text on a page is repeated. these conversations get people excited
+                        </li>
+                        <li>
+                            This helps shift thinking from centering on the <em> barriers </em> of accessibility towards the <em></em>opportunities </em> we have to remove those barriers.
+                        </li>
+                    </ul>
+                   
+                </li>
+                <li>
+                    Depending on the audience, I talk through <strong>the specifics of what these opportunities look like</strong> in different aspects of web design and development.
+                    <ul>
+                        <li>
+                            This might mean exploring browser tools with a group ofd developers, going through design heuristic worksheets with a UX team, or teaching a mixed audience how to explore pages using simple AT like VoiceOver
+                        </li>
+                        <li>
+                            I even built a <a href="/side-projects/ability_randomizer.html">few tools here</a> (based on exercises from Microsoft’s fantastic <a href="https://inclusive.microsoft.design/">Inclusive Toolkit</a>) for running sketching exercises and brainstorming sessions.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    And finally, ending on a note about the relative cheapness of the techniques we’ve covered - <strong>how teams can easily work these things into their current workflows</strong> and begin the process of learning more (and of course offering to do any sort of team/individual follow-up to cover edge cases).
+                </li>
+            </ul>
         </div>
         <div class="container">
             <ul class="portfolio-images">
                 <li>
                     <a href="../images/portfolio/2u/a11y/guild.png" class="lightbox" target="_blank">
                         <img class="image-item" src="../images/portfolio/2u/a11y/guild.png"
-                            alt="Slides from a handful of other presentations I've given, one for a focused session with our marketing org around color contrast and WCAG 2.2, another for an all purpose accessibility guild we started to promote general conversation around a11y and related fields.">
+                            alt="Slides from a handful of other presentations I've given, one for a focused session with our marketing org around color contrast and WCAG 2.2, another for an all purpose accessibility guild we started to promote lgeneral conversation around a11y and related fields.">
                     </a>
                 </li>
                 <li>
@@ -164,6 +179,26 @@
                         <img class="image-item" src="../images/portfolio/2u/a11y/status.png"
                             alt="I'm acting as a bit of a PM for the documentation goals of the accessibility team, outlining what topics we need to cover and coordinating who is writing what.">
                     </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <h2>Sample Presentations</h2>
+            <ul>
+                <li>
+                    <a href="https://www.figma.com/proto/5mZdsbgQU3aZRyzYHgRCpG/Forms-A11Y-Presentation---5%2F24%2F2023?page-id=0%3A1&node-id=1-13&viewport=1559%2C722%2C0.26&t=CaIKhncnIJ7N8hVI-1&scaling=min-zoom&starting-point-node-id=1%3A13"> Forms Specific Session</a>for Graphic Designers (Figma)
+                </li>
+                <li>
+                    <a href="https://docs.google.com/presentation/d/1f8XfHt-GfPNz6TR6vz68GU0F3b7tMZxV2CjufzZ2C2I/edit?usp=sharing">Inclusive Design Workshop</a>, part of a large scale (8 hours across two days) A11Y Crash for visual and UX design teams (PPT)
+                </li>
+                <li>
+                    <a href="https://docs.google.com/presentation/d/1-w_vnsXU2xbms-6IPFcqblUOWgJxxc2tuV-fZ6mgvhs/edit?usp=sharing">A11Y for UX Designers</a> (PPT)
+                </li>
+                <li>
+                    <a href="https://docs.google.com/presentation/d/1AqRf5f4o-l7smH94U83H6s6ZpMCXXzqu6AwVL_Fxp7w/edit?usp=sharing">Color Crash Course</a> for brand design group (PPT)
+                </li>
+                <li>
+                   <a href="https://docs.google.com/presentation/d/1jBBv2DZlpxGO-mgEVWqpetNL5bxKCpefSpw9r-ivt_M/edit?usp=sharing">Lean Coffee Presentation for All Tech Team</a>, including a group VO exercise (everyone had MacBooks) (PPT) 
                 </li>
             </ul>
         </div>
