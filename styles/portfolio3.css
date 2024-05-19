@@ -660,7 +660,8 @@ ul.navlist a:focus{
         transition: none;
         padding: 16px;
         /* border-bottom: 2px solid purple; */
-        margin-top: 0
+        margin-top: 0;
+        margin-bottom: 80px;
     }
     .line-offset{
         top:100%;
