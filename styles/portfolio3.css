@@ -250,6 +250,19 @@ hr{
     height: 0;
 }
 
+.skills-header{
+    padding: 12px;
+    background: linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 40px 2px, 40px 2px, 2px 40px, 2px 40px;
+    background-position: 0px 0px, 0px 100%, 0px 0px, 100% 0px;
+    animation: rotate 5s infinite linear;
+    backdrop-filter: hue-rotate(90deg);
+    width: fit-content;
+    margin: auto;
+    border-radius: 2px;
+    margin-bottom: 40px;
+}
 .flex.skills{
     align-items: start;
     font-size: .875em;
@@ -789,7 +802,7 @@ ul.navlist a:focus{
         margin:auto;
     }
     .intro-blurb--visible{
-        margin-top: 0;
+        margin-top: 40px;
     }
 }
 
