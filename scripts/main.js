@@ -6,6 +6,122 @@ starCanvas = document.getElementsByClassName("stars-container")[0];
 starCanvasArea = starCanvas.getBoundingClientRect();
 headerContainer = document.getElementsByClassName("line-offset")[0];
 
+
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    let mm = gsap.matchMedia();
+
+    // large-screen animations
+    mm.add("(min-width: 800px)", () => {
+        gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
+        gsap.fromTo('.intro-blurb', {
+            y:100
+        }, {
+            scrollTrigger: {
+                trigger: '.intro-blurb', // start the animation when ".box" enters the viewport (once)
+                start: "0 100%"
+            },
+            y: -120
+        });
+       
+        gsap.fromTo(".skill", {
+            y: 120,
+            autoAlpha:0,
+            y:120
+        }, {
+            scrollTrigger: {
+                trigger: ".skills",
+                Start: "20px 80%"
+            },
+            stagger:.25,
+            autoAlpha:1,
+            y:0
+        })
+       
+    });
+
+    mm.add("(max-width: 800px)", () => {
+        gsap.fromTo(".skill", {
+            x: 120,
+            autoAlpha:0,
+        },{
+            scrollTrigger: {
+                trigger: ".skills",
+                Start: "20px 80%"
+            },
+            stagger:.25,
+            autoAlpha:1,
+            x:0
+        })
+    });
+
+
+    gsap.to(".star-burst",{
+        scrollTrigger: {
+            trigger: ".skills",
+            Start: "20px 100%"
+        },
+        stagger:.55,
+        scale: 1.5,
+        duration: 3,
+        rotation: "-=100"
+    })
+    gsap.to("#purple-wave", {
+        scrollTrigger: {
+            trigger: ".wave-start",
+            scrub: true,
+            Start: "50px 80%"
+        },
+        y: -800
+    })
+    gsap.to("#wave-end", {
+        scrollTrigger: {
+            trigger: "#wave-end",
+            scrub: true,
+            Start: "20px 80%"
+        },
+        y: -800
+    })
+
+// end: () => `+=${elem.offsetHeight}` // will be updated
+// const boxes = gsap.utils.toArray('.box');
+//     boxes.forEach(box => {
+//     gsap.to(box, { 
+//       x: 300,
+//       scrollTrigger: {
+//         trigger: box,
+//         scrub: true
+//       }
+//     })
+//   });
+    // gsap.to('.skill', {
+    //     scrollTrigger: '.skill', // start the animation when ".box" enters the viewport (once)
+    //     y: -120,
+    // });
+   });
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 starArray = [];
 initial_maxstars = 6;
 initial_spawnRate = 1500;
@@ -116,7 +232,7 @@ else{
         if (!hasScrolled) {
             hasScrolled = true;
             // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
-            document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
+            // document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
         }
     });
 }

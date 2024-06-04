@@ -31,13 +31,10 @@
 .intro-blurb{
     font-size: 1em;
     color: transparent;
-    transition: all .25s ease-out;
     margin:auto;
     z-index: 5;
     max-width: 770px;
     padding: 24px 60px;
-    margin-top:120px;
-    margin-bottom:-120px;
     border:2px solid transparent;
 }
 
@@ -46,8 +43,6 @@
     color: #303030;
     background-image: url(/images/textures/dots-inverted.svg);
     background-size:32px;
-    margin-top:-120px;
-    margin-bottom:120px;
     backdrop-filter: hue-rotate(180deg);
 }
 
@@ -276,7 +271,6 @@ hr{
     padding: 8px;
     border-radius: 5px;
     backdrop-filter: hue-rotate(180deg);
-    
 }
 
 .skill-icon{
@@ -738,10 +732,12 @@ ul.navlist a:focus{
     .flex.skills{
         text-align: left;
     }
+    .skill{
+        display: flex;
+    }
     .skill-icon{
         display: inline-block;
-        float: left;
-        padding: 0 20px;
+        padding: 0 24px;
         width: 100px;
     }
 
@@ -791,7 +787,7 @@ ul.navlist a:focus{
     .stars-container{
         height: fit-content;
         max-height: fit-content;
-        padding-bottom:40px;
+        padding-bottom:120px;
         padding-top:10px;
     }
     .line-offset{
