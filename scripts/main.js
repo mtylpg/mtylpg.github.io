@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 trigger: '.intro-blurb', // start the animation when ".box" enters the viewport (once)
                 start: "0 100%"
             },
-            y: -120
+            y: -80
         });
        
         gsap.fromTo(".skill", {
             y: 120,
             autoAlpha:0,
-            y:120
+            y:80
         }, {
             scrollTrigger: {
                 trigger: ".skills",
@@ -56,32 +56,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
 
-    gsap.to(".star-burst",{
-        scrollTrigger: {
-            trigger: ".skills",
-            Start: "20px 100%"
-        },
-        stagger:.55,
-        scale: 1.5,
-        duration: 3,
-        rotation: "-=100"
-    })
-    gsap.to("#purple-wave", {
-        scrollTrigger: {
-            trigger: ".wave-start",
-            scrub: true,
-            Start: "50px 80%"
-        },
-        y: -800
-    })
-    gsap.to("#wave-end", {
-        scrollTrigger: {
-            trigger: "#wave-end",
-            scrub: true,
-            Start: "20px 80%"
-        },
-        y: -800
-    })
+    // gsap.to(".star-burst",{
+    //     scrollTrigger: {
+    //         trigger: ".skills",
+    //         Start: "20px 100%"
+    //     },
+    //     stagger:.55,
+    //     scale: 1.5,
+    //     duration: 3,
+    //     rotation: "-=100"
+    // })
+    // gsap.to("#purple-wave", {
+    //     scrollTrigger: {
+    //         trigger: ".wave-start",
+    //         scrub: true,
+    //         Start: "50px 80%"
+    //     },
+    //     y: -800
+    // })
+    // gsap.to("#wave-end", {
+    //     scrollTrigger: {
+    //         trigger: "#wave-end",
+    //         scrub: true,
+    //         Start: "20px 80%"
+    //     },
+    //     y: -800
+    // })
 
 // end: () => `+=${elem.offsetHeight}` // will be updated
 // const boxes = gsap.utils.toArray('.box');
@@ -204,35 +204,35 @@ function spawnStars(count, spawnRate) {
 spawnStars(1, 1);
 setInterval(function() {spawnStars(1, spawnRate)}, 2000);
 
-addEventListener("resize", (event) => {
-    console.log(starCanvasArea);
-    if (starCanvasArea.width<1000)
-    {
-        maxStars = initial_maxStars/2;
-    } else {
-        maxStars = initial_maxStars;
-    }
-    // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";bg-purple-content
-});
+// addEventListener("resize", (event) => {
+//     console.log(starCanvasArea);
+//     if (starCanvasArea.width<1000)
+//     {
+//         maxStars = initial_maxStars/2;
+//     } else {
+//         maxStars = initial_maxStars;
+//     }
+//     // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";bg-purple-content
+// });
 
-let hasScrolled = false;
+// let hasScrolled = false;
 
 
 
-if(window.scrollY!=0){
-    hasScrolled = true;
-    // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
-    document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
+// if(window.scrollY!=0){
+//     hasScrolled = true;
+//     // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
+//     document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
     
 
-}
+// }
 
-else{
-    document.addEventListener("scroll", (event) => {
-        if (!hasScrolled) {
-            hasScrolled = true;
-            // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
-            // document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
-        }
-    });
-}
+// else{
+//     document.addEventListener("scroll", (event) => {
+//         if (!hasScrolled) {
+//             hasScrolled = true;
+//             // document.getElementsByClassName("bg-purple")[0].style.top=headerContainer.getBoundingClientRect().y + headerContainer.getBoundingClientRect().height + 160+"px";
+//             // document.getElementsByClassName("intro-blurb")[0].classList.add("intro-blurb--visible");
+//         }
+//     });
+// }
