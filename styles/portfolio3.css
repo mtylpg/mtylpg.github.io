@@ -1,3 +1,5 @@
+/* -----  -----  -----  Variables and Utilities  -----  -----  ----- */
+
 :root {
     --aqua-1: #E4FFFD;
     --aqua-1-var: 255, 252, 240;
@@ -17,38 +19,128 @@
     --image-resting: 0 0 0 2px #ffffff, 4px 4px 0px 0px;
     --image-hover: 0 0 0 2px #ffffff, 12px 12px 0px 0px;
 
-    --baseline-font-size: 20px;
+    --baseline-font-size: 22px;
 
     --star-size:400px;
 
+    --blob: #cef5ff;
 }
 .u--mobile-only{
     display: none !important;
 }
 
-/* branch-specific pls reorder */
+/* -----  -----  -----  High Level Layout  -----  -----  ----- */
 
-.intro-blurb{
-    font-size: 1em;
-    color: transparent;
-    margin:auto;
-    z-index: 5;
-    max-width: 770px;
-    padding: 24px 60px;
-    border:2px solid transparent;
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Figtree";
+    font-size:var(--baseline-font-size);
+    line-height: 1.5;
+    margin:0px;
+    color: #303030;
+}
+nav{
+    /* border-bottom: 2px solid var(--purple-1); */
+    margin-bottom:32px;
+    font-size: 1.125em;
+    padding: 80px 0px 6px;
+    z-index: 1;
+    width: 100%;
+    /* background-color: #fff; */
 }
 
-.intro-blurb--visible{
-    border: 2px solid rgba(var(--purple-1-var), 1);
-    color: #303030;
+main{
+    padding: 80px 0;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+hr{
+    display: block;
+    height: 4px;
+    border: 0;
+    margin: 4em 0;
+    padding: 0;
+    clear: both;
+    background: linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 40px 2px, 0 0, 0 0 , 0 0;
+    background-position: 0px 0px, 0px 100%, 0px 0px, 100% 0px;
+    animation: rotate 5s infinite linear;
+}
+path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear forwards;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+/* flexbox helpers */
+.flex{
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+.flex-center{
+    align-items: center;
+}
+.flex-baseline{
+    align-items: baseline;
+}
+.flex-reverse{
+    flex-direction: row-reverse;
+}
+.flex-1{
+    flex: 1;
+}
+.flex-2{
+    flex: 2;
+}
+.flex-5{
+    flex: 5;
+}
+.flex-break{
+    flex-basis: 100%;
+    height: 0;
+}
+
+
+/* -----  -----  -----  Global Animations  -----  -----  ----- */
+
+.dotted-border{
+    background: linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 40px 2px, 40px 2px, 2px 40px, 2px 40px;
+    background-position: 0px 0px, 0px 100%, 0px 0px, 100% 0px;
+    animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+    0%  {}
+    100% {background-position-x: -40px, 40px, 0px, 100%;
+        background-position-y: 0px, 100%, 40px, -40px;
+    }
+}
+
+.dotted-background{
     background-image: url(/images/textures/dots-inverted.svg);
     background-size:32px;
     backdrop-filter: hue-rotate(180deg);
 }
 
-.intro-blurb-container{
-    height: fit-content;
-}
+
+/* -----  -----  -----  Blob Animation  -----  -----  ----- */
 
 .blobs{
     position: fixed;
@@ -64,6 +156,10 @@
     position: fixed;
     scale: 100%;
 }
+.bg-blob path{
+    fill: var(--blob);
+}
+
 .bg-blob-1{
     top:-30%;
     left:-30%;
@@ -88,38 +184,86 @@
     padding:0;
 }
 
-.bg-purple{
-    /* position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: 100vh;
-    z-index: -5;
-    transition: all 1s ease-out; */
+
+/* -----  -----  -----  Navigation and skip links  -----  -----  ----- */
+
+.top-nav{
+    /* border-bottom: 4px solid var(--purple-1); */
+
 }
-.bg-purple-content{
-    /* color: white;
-    min-height: 100vh;
-    height: fit-content; */
+
+ul.navlist a{
+    text-decoration: none;
+    background: 
+        linear-gradient(to right, rgba(var(--aqua-2-var), 0), rgba(var(--aqua-2-var), 0)),
+        linear-gradient(to right, rgba(var(--purple-1-var), 1), rgba(var(--purple-1-var), .7), rgba(var(--aqua-1-var), .8));
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
 }
-.wavy-border{
+
+ul.navlist a:hover,
+ul.navlist a:focus{
+    background-size: 0 2px, 200% 2px;
+    background-color: rgba(255,255,255,50);
+}
+
+ul.navlist a:focus{
+    outline:none;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #ffffff, 0px 0px 0px 4px var(--purple-1);
+}
+
+.skip-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, 0.0625rem);
+    text-underline-offset: 0.1578em;
+    font-size: .75em;
+    display: block;
+}
+.skip-link:active, .skip-link:focus {
+    left: 16px;
+    top: 16px;
+    height: 24px;
+    z-index: 5;
+    width: fit-content;
+    background: #FFE390;
+    text-shadow: none;
+    padding: 10px 15px;
+}
+
+
+/* -----  -----  -----  Homepage Styles  -----  -----  ----- */
+
+.home-title{
+    padding: 44px 0 0 0px;
+    margin: auto;
+    margin-top: 160px;
+}
+
+.intro-blurb{
+    font-size: 1.25em;
+    line-height: 1.75em;
+    /* margin:auto; */
+    z-index: 5;
+}
+.intro-extension{
+}
+
+.home-banner-container{
     /* height: 100vh; */
-}
-.stars-container{
-    height: 100vh;
     min-height: fit-content;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     transition: max-height 2s;
     overflow: hidden;
 }
 
 .line-offset{
-    position:relative;
-    max-width: 1040px;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
 .dotted-line, .solid-line{
     position: absolute;
@@ -129,129 +273,24 @@
     z-index: -2;
 }
 .dotted-line{
-    /* border: 2px dashed rgba(var(--purple-1-var), 1); */
-    background: linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%);
-    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
-    background-size: 40px 2px, 40px 2px, 2px 40px, 2px 40px;
-    background-position: 0px 0px, 0px 100%, 0px 0px, 100% 0px;
-    animation: rotate 5s infinite linear;
     margin: 10px 0 0 -10px;
     border-radius: 2px;
 }
 
-@keyframes rotate {
-    0%  {}
-    100% {background-position-x: -40px, 40px, 0px, 100%;
-        background-position-y: 0px, 100%, 40px, -40px;
-    }
-}
 
 .solid-line{
     border: 2px solid rgba(var(--purple-1-var), 1);
     margin: -10px 0 0 10px
 }
 
-.home-title{
-    padding: 44px 0 0 0px;
-    max-width: 770px;
-    margin: auto;
-}
-
-.home-title_subheader{
-    padding: 8px 16px;
-    position: relative;
-    bottom:-24px;
-    left:-16px;
-    background:white;
-    width:fit-content;
-    height: fit-content;
-    border: 2px solid rgba(var(--purple-1-var), 1);
-}
-
-/*---- High Level Layout ----*/
-html{
-    scroll-behavior: smooth;
-}
-body{
-    font-family: "Figtree";
-    font-size:var(--baseline-font-size);
-    line-height: 1.5;
-    margin:0px;
-    color: #303030;
-}
-nav{
-    border-bottom: 2px solid var(--purple-1);
-    margin-bottom:32px;
-    font-size: 1.125em;
-    padding: 10px 0px 6px;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    background-color: #fff;
-}
-
-main{
-    padding: 80px 0;
-
-}
-
-.container{
-    max-width: 960px;
-    margin: auto;
-    padding: 0 40px;
-}
-
-
-hr{
-    margin: 1em 0;
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 2px solid var(--purple-1);
-    margin: 1em 0;
-    padding: 0;
-    clear: both;
-}
-
-/* flexbox helpers */
-.flex{
-    display: flex;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 32px;
-}
-.flex-center{
-    align-items: center;
-}
-.flex-baseline{
-    align-items: baseline;
-}
-.flex-reverse{
-    flex-direction: row-reverse;
-}
-.flex-1{
-    flex: 1;
-}
-.flex-2{
-    flex: 2;
-}
-.flex-5{
-    flex: 5;
-
-}
+.cta button{
     
-.flex-break{
-    flex-basis: 100%;
-    height: 0;
 }
 
+/* Homepage skills component */
 .skills-header{
     padding: 12px;
-    background: linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(90deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%), linear-gradient(0deg, var(--purple-1) 50%, transparent 50%);
-    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
-    background-size: 40px 2px, 40px 2px, 2px 40px, 2px 40px;
-    background-position: 0px 0px, 0px 100%, 0px 0px, 100% 0px;
-    animation: rotate 5s infinite linear;
+    
     backdrop-filter: hue-rotate(90deg);
     width: fit-content;
     margin: auto;
@@ -259,18 +298,17 @@ hr{
     margin-bottom: 40px;
 }
 .flex.skills{
-    align-items: start;
-    font-size: .875em;
-    text-align: center;
-    gap:3em;
     margin: auto;
 }
 .skill{
-    background-image: url(/images/textures/dots-inverted.svg);
-    background-size:32px;
     padding: 8px;
     border-radius: 5px;
-    backdrop-filter: hue-rotate(180deg);
+    /* display: flex; */
+}
+
+.skill-content{
+    font-size: 1em;
+    text-align: left;
 }
 
 .skill-icon{
@@ -278,6 +316,7 @@ hr{
     height: 150px;
     margin: auto;
     text-align: center;
+    width: 100%;
 }
 
 .portfolio-images{
@@ -358,14 +397,22 @@ a.cvlink>.material-symbols-outlined{
     font-size: .8em;
 }
 
+footer{
+    padding-bottom: 40px;
+    margin-top: -40px;
+}
 .footer-header{
     display: inline;
     font-size: 1em;
 }
+.footer .flex{
+    gap:8px;
+}
 
 h1{
-    font-family: "Figtree";
-    font-size: 8em;
+    font-family: "";
+    font-family: "Noto Sans";
+    font-size: 5em;
     font-weight: 700;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -414,12 +461,15 @@ span.pretext{
 }
 
 h2{
+    font-size: 2.25em;
     font-weight: 600;
+    font-family: "Noto Sans";
 }
 
 h2.large{
+    font-family: "Noto Sans";
     font-weight: 800;
-    font-size: 4em;
+    font-size: 2.5em;
     margin: 0;
 }
 
@@ -427,14 +477,17 @@ h2.centered{
     text-align: center;
 }
 
+h3{
+    font-family: "Noto Sans";
+}
 h4{
     font-weight: 600;
     margin: 1em 0;
 }
 
+
 .wavy-border{
     padding-top: 70px; 
-    /* only 18 because of the line's 26 */
     padding-bottom: 70px;
     border-top:26px solid;
     border-bottom:26px solid;
@@ -445,7 +498,6 @@ h4{
 .wavy-top{
     margin-top: 40px;
     padding-top: 20px; 
-    /* only 18 because of the line's 26 */
     padding-bottom: 20px;
     border-top:26px solid;
     border-image:url(../images/textures/whitewave.svg);
@@ -456,22 +508,6 @@ h4{
     0%  {background-position-x:0px; background-position-y:0px}
     50%  {background-position-x:200px; background-position-y:100px}
     100%  {background-position-x:400px; background-position-y:200px}
-}
-
-.bg-purple{
-    color: #fff;
-    background-color: rgba(var(--purple-1-var), 1);
-    background-image: url("../images/textures/lines.svg");
-    background-size: 200px;
-    background-position-y: -27px;
-    animation: bg-scroll 18s infinite linear;
-}
-
-.bg-teal{
-    background-color: rgba(var(--green-var), .5);
-    background-image: url("../images/textures/squares.svg");
-    background-size: 200px;
-    background-position-y: -27px;
 }
 
 .tldr .container{
@@ -497,9 +533,6 @@ h4{
 }
 
 .work-item{
-    background-image: url(/images/textures/dots-inverted.svg);
-    background-size:32px;
-    backdrop-filter: hue-rotate(180deg);
     padding-left: 16px;
     padding-right: 16px;
 }
@@ -516,7 +549,6 @@ a{
     margin-bottom:1em;
     color: #000F47;
     padding: 2px 0px;
-    text-shadow: -2px 3px 0px #fff, 2px 3px 0px #fff,0px 3px 0px #fff;
 }
 
 a:focus{
@@ -547,65 +579,44 @@ a:focus{
     box-shadow: 0 0 0 2px #ffffff, 0px 0px 0px 4px var(--purple-1);
 }
 
-ul.navlist a{
-    text-decoration: none;
-    background: 
-        linear-gradient(to right, rgba(var(--aqua-2-var), 0), rgba(var(--aqua-2-var), 0)),
-        linear-gradient(to right, rgba(var(--purple-1-var), 1), rgba(var(--purple-1-var), .7), rgba(var(--aqua-1-var), .8));
-    background-size: 100% 2px, 0 2px;
-    background-position: 100% 100%, 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 400ms;
-}
-
-ul.navlist a:hover,
-ul.navlist a:focus{
-    background-size: 0 2px, 200% 2px;
-}
-
-ul.navlist a:focus{
-    outline:none;
-    border-radius: 4px;
-    box-shadow: 0 0 0 2px #ffffff, 0px 0px 0px 4px var(--purple-1);
-}
-
-
-.skip-link {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    text-decoration: underline;
-    text-decoration-thickness: max(1px, 0.0625rem);
-    text-underline-offset: 0.1578em;
-    font-size: .75em;
+.me-gif{
+    margin: auto;
+    padding: 20px;
     display: block;
-    padding: 10px 15px;
 }
-.skip-link:active, .skip-link:focus {
-    left: 16px;
-    top: 16px;
-    height: 24px;
-    z-index: 5;
-    width: fit-content;
-    background: #FFE390;
-    text-shadow: none;
-}
+
 /* Responsive Overrides */
 @media only screen and (max-width: 1080px) {
+    .flex{
+        gap:5px
+    }
     .tldr .container{
         background-image: url("../images/textures/squares.svg");
         border: 0;
         rotate: 0deg;
     }
-    h1{
-        font-size: 7em;
+    h1.project-header{
+        font-size: 3.5em;
     }
-
+    h2{
+        font-size: 2em;
+        font-weight: bold;
+    }
+    .home-title{
+        margin-top: 0;
+        display: block;
+        max-width:720px;
+    }
     .home-title>.h1{
         font-size: 7em;
     }
-
+    .me-gif{
+        max-width: 160px;
+    }
+    .cta-button{
+        margin: auto;
+        display: block;
+    }
     .line-offset{
         position:relative;
         max-width: 1080px;
@@ -655,20 +666,17 @@ ul.navlist a:focus{
         margin-top:-32px;
         background-position: center;
     }
-    .home-title>h1{
+    .home-title h1{
         text-align: center;
     }
-    .intro-blurb{
+    .intro-blurb, .intro-extension{
         border: none;
         color: #303030;
-        background-image: url(/images/textures/dots-inverted.svg);
-        background-size:32px;
-        backdrop-filter: hue-rotate(180deg);
         transition: none;
         padding: 16px;
         /* border-bottom: 2px solid purple; */
         margin-top: 0;
-        margin-bottom: 80px;
+        margin-bottom: 8px;
     }
     .line-offset{
         top:100%;
@@ -684,10 +692,9 @@ ul.navlist a:focus{
         border-top: none;
     }
 
-    .stars-container{
+    .home-banner-container{
         display: block;
         height: fit-content;
-        padding-bottom: 48px;
     }
     .home-title_subheader{
         margin:auto;
@@ -695,7 +702,7 @@ ul.navlist a:focus{
         left:0;
         text-align:center;
     }
-    .home-title>.h1{
+    .home-title h1{
         font-size: 4em;
     }
 
@@ -704,7 +711,6 @@ ul.navlist a:focus{
         margin:auto;
     }
 
-
     h1, h1.project-header{
         font-size: 2em;
         line-height: 1.25em;
@@ -712,6 +718,12 @@ ul.navlist a:focus{
     }
     h2.large{
         font-size: 2em;
+    }
+    h2{
+        font-size: 1.25em;
+    }
+    h3{
+        font-size: 1em;
     }
     .shadow, h1.project-header .shadow{
         top: .0625em;
@@ -749,10 +761,10 @@ ul.navlist a:focus{
     }
     footer .flex{
         display: flex;
-        align-items: flex-start;
+        align-items: flex-end;
     }
     .footer-header{
-        display: none;
+        /* display: none; */
     }
     .portrait{
         max-width: 80px;
@@ -764,6 +776,7 @@ ul.navlist a:focus{
         opacity: 1;
     }
     nav{
+        padding-top: 24px;
         position: relative;
         font-size: 1em;
     }
@@ -784,10 +797,9 @@ ul.navlist a:focus{
     .main--homepage{
         padding-top: 80px;
     }
-    .stars-container{
+    .home-banner-container{
         height: fit-content;
         max-height: fit-content;
-        padding-bottom:120px;
         padding-top:10px;
     }
     .line-offset{
@@ -807,11 +819,11 @@ ul.navlist a:focus{
 
 /*
 
-.stars-container{
+.home-banner-container{
     position: relative;
 }
 
-.star-container{
+.home-banner-container{
     position: absolute;
     height: var(--star-size);
     width: var(--star-size);
@@ -877,3 +889,40 @@ ul.navlist a:focus{
 } */
 
 
+/* Old BG stuff */
+
+.bg-purple{
+    color: #fff;
+    background-color: rgba(var(--purple-1-var), 1);
+    background-image: url("../images/textures/lines.svg");
+    background-size: 200px;
+    background-position-y: -27px;
+    animation: bg-scroll 18s infinite linear;
+}
+
+.bg-teal{
+    background-color: rgba(var(--green-var), .5);
+    background-image: url("../images/textures/squares.svg");
+    background-size: 200px;
+    background-position-y: -27px;
+}
+
+
+
+
+.bg-purple{
+    /* position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 100vh;
+    z-index: -5;
+    transition: all 1s ease-out; */
+}
+.bg-purple-content{
+    /* color: white;
+    min-height: 100vh;
+    height: fit-content; */
+}
+.wavy-border{
+    /* height: 100vh; */
+}

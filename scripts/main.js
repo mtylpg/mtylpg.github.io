@@ -12,48 +12,48 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let mm = gsap.matchMedia();
 
     // large-screen animations
-    mm.add("(min-width: 800px)", () => {
-        gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
-        gsap.fromTo('.intro-blurb', {
-            y:100
-        }, {
-            scrollTrigger: {
-                trigger: '.intro-blurb', // start the animation when ".box" enters the viewport (once)
-                start: "0 100%"
-            },
-            y: -80
-        });
+    // mm.add("(min-width: 800px)", () => {
+    //     gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
+    //     gsap.fromTo('.intro-blurb', {
+    //         y:100
+    //     }, {
+    //         scrollTrigger: {
+    //             trigger: '.intro-blurb', // start the animation when ".box" enters the viewport (once)
+    //             start: "0 100%"
+    //         },
+    //         y: -80
+    //     });
        
-        gsap.fromTo(".skill", {
-            y: 120,
-            autoAlpha:0,
-            y:80
-        }, {
-            scrollTrigger: {
-                trigger: ".skills",
-                Start: "20px 80%"
-            },
-            stagger:.25,
-            autoAlpha:1,
-            y:0
-        })
+    //     gsap.fromTo(".skill", {
+    //         y: 120,
+    //         autoAlpha:0,
+    //         y:80
+    //     }, {
+    //         scrollTrigger: {
+    //             trigger: ".skills",
+    //             Start: "20px 80%"
+    //         },
+    //         stagger:.25,
+    //         autoAlpha:1,
+    //         y:0
+    //     })
        
-    });
+    // });
 
-    mm.add("(max-width: 800px)", () => {
-        gsap.fromTo(".skill", {
-            x: 120,
-            autoAlpha:0,
-        },{
-            scrollTrigger: {
-                trigger: ".skills",
-                Start: "20px 80%"
-            },
-            stagger:.25,
-            autoAlpha:1,
-            x:0
-        })
-    });
+    // mm.add("(max-width: 800px)", () => {
+    //     gsap.fromTo(".skill", {
+    //         x: 120,
+    //         autoAlpha:0,
+    //     },{
+    //         scrollTrigger: {
+    //             trigger: ".skills",
+    //             Start: "20px 80%"
+    //         },
+    //         stagger:.25,
+    //         autoAlpha:1,
+    //         x:0
+    //     })
+    // });
 
 
     // gsap.to(".star-burst",{
