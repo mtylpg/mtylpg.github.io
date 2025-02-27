@@ -203,14 +203,40 @@ path {
 }
 
 .main--homepage{
-    /* background: url(/images/textures/blobs.png); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     padding:0;
 }
-
-
+.body--main{
+    background-color: #e6faff;
+}
+.animated--container{
+    position: relative;
+    z-index: -1;
+}
+.animated--bg{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: -100vh;
+}
+.animated--bg::after{
+    background: url(/images/textures/invertwave.svg);
+    height: 800px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    content: "";
+    position: absolute;
+    bottom: -800px;
+    display: block;
+}
+.home-banner-container{
+    /* background: white; */
+}
 /* -----  -----  -----  Navigation and skip links  -----  -----  ----- */
 
 .top-nav{
@@ -316,7 +342,8 @@ ul.navlist a:focus{
     margin: -10px 0 0 10px
 }
 
-.cta button{
+.cta-button{
+    background: purple;
     
 }
 
@@ -967,10 +994,14 @@ a:focus{
 .cta-button{
     background: blue;
     background: 
-    linear-gradient(217deg, rgba(var(--aqua-2-var), 0), rgba(var(--aqua-2-var), 1)),
-    linear-gradient(217deg, rgba(var(--purple-1-var), 1), rgba(var(--purple-1-var), .7), rgba(var(--aqua-1-var), .8));
-
+    /* linear-gradient(217deg, rgba(var(--aqua-2-var), 0), rgba(var(--aqua-2-var), 1)),
+    linear-gradient(217deg, rgba(var(--purple-1-var), 1), rgba(var(--purple-1-var), .7), rgba(var(--aqua-1-var), .8)); */
+    background-size: 100% 92px, 0 2px;
     border-radius: 40px;
     padding: 24px 40px 24px;
     display: inline-block;
+}
+.cta-button:hover,
+.cta-button:focus{
+    /* background-size: 0 2px, 200% 2px; */
 }
