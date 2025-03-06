@@ -212,7 +212,7 @@ path {
     padding:0;
 }
 .body--main{
-    background-color: #e2f9ff;
+    background-color: #ecfbff;
     /* background-color: #FAF2D1; */
     background-image: url("../images/textures/dots-inverted.svg");
     background-attachment: fixed;
@@ -255,9 +255,20 @@ path {
     display: block;
     mask-repeat: no-repeat;
     mask-size: 100%;
-    background: linear-gradient(var(--bg-loud), var(--bg-loud)),
-                linear-gradient(white, white);
-    background:var(--bg-loud);
+    background: linear-gradient(-8deg, var(--purple-1) 31%, #DFA8FF 35%, var(--bg-loud) 70%);
+    /* background:
+        radial-gradient(
+            at 10% top,
+            #fafafa 21%, #DFA8FF57 60%, #7300FF 100%
+        ),
+        radial-gradient(
+            at 40% top,
+            #fafafa 21%, #DFA8FF57 60%, #7300FF 100%
+        ),
+        radial-gradient(
+            at 90% top,
+            #fafafa 21%, #DFA8FF57 60%, #7300FF 100%
+        ) */
 }
 .home-banner-container{
     /* background: white; */

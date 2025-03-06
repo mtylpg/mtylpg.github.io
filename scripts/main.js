@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   mm.add("(min-width: 800px)", () => {
     gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
     gsap.to('.animated--bg', {
-      transform: 'translateY(-50vh)', 
+      transform: 'translateY(-25vh)', 
       // rotation: -120,
       scrollTrigger: {
         trigger: 'h2',
