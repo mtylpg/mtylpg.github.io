@@ -504,11 +504,10 @@ a.cvlink>.material-symbols-outlined{
 }
 
 footer{
-    padding: 40px 0;
+    padding: 80px 0 24px 0;
     margin-top: 40px;
     background-image: url("/images/textures/singlewave.svg");
     background-size: contain;
-    
 }
 .footer-header{
     display: inline;
@@ -643,7 +642,7 @@ h4{
     
 }
 .portrait{
-    max-width: 124px;
+    max-width: 96px;
 }
 
 .work-item{
@@ -888,8 +887,7 @@ a:focus{
         display: block;
     }
     footer .flex{
-        display: flex;
-        align-items: flex-end;
+        padding-top: 40px;
     }
     .footer-header{
         /* display: none; */
