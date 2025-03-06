@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       scrollTrigger: {
         trigger: 'h2',
           start: 'top bottom',
-          end: 'top top',
+          end: 'bottom top',
           scrub: true
         }
     });
