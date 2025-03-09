@@ -122,6 +122,9 @@ hr{
 .flex-2{
     flex: 2;
 }
+.flex-3{
+    flex: 3;
+}
 .flex-5{
     flex: 5;
 }
@@ -575,23 +578,32 @@ span.pretext{
 }
 
 h2{
-    font:  600 2.25em var(--font-h2);
+    font:  600 1.75em var(--font-h2);
     text-align: center;
+    background-image: url(../images/textures/yellowstrip.png);
+    background-size: 26px;
+    width: fit-content;
+    background-position-y: 26px;
+    background-repeat: repeat-x;
+    margin: 24px 0;
 }
 
 h2.large{
-    font-family: var(--font-h2);
-    font-weight: 800;
-    font-size: 2.5em;
-    margin: 0;
+
 }
 
 h2.centered{
     text-align: center;
+    margin: 24px auto;
+    font:  600 2.25em var(--font-h2);
+    font-weight: 800;
+    font-size: 2.5em;
+    background: none;
 }
 
-h3{
+h3, h2.small{
     font-family: var(--font-h3);
+    font-size: 1.17em;
 }
 h4{
     font-weight: 600;
@@ -635,6 +647,18 @@ h4{
     border-right:24px solid;
     border-image:url(../images/textures/triangles.svg) repeat;
     border-image-slice: 12;
+}
+
+.box{
+    /* border: 1px solid red; */
+    gap: 0 40px;
+}
+.box-left{
+    text-align: left;
+    font-weight: bold;
+}
+.box ul{
+    padding: 0;
 }
 
 .tldr .container a, .footer a{
@@ -839,9 +863,8 @@ a:focus{
         margin-bottom: .25em;
     }
     .home-title h1{
-        font-size: 6em;
+        font-size: 4em;
         text-align: center;
-        padding-left: 14px;
     }
     h2.large{
         font-size: 2em;
