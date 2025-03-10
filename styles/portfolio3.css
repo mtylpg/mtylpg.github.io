@@ -405,7 +405,7 @@ ul.navlist a:focus{
     max-width: 1680px;
     width: 100%;
     margin:auto;
-
+    text-align: center;
 }
 
 .fullimage figure{
@@ -425,6 +425,7 @@ ul.navlist a:focus{
     margin:auto;
     font-size: .8em;
     font-style: italic;
+    text-align: left;
 }
 
 .portfolio-images{
