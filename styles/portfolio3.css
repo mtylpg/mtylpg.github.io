@@ -919,7 +919,8 @@ a:focus{
         padding-top: 40px;
     }
     .footer-header{
-        /* display: none; */
+        margin: auto;
+        background: none;
     }
     .portrait{
         max-width: 80px;
@@ -944,7 +945,9 @@ a:focus{
         display: block;
         text-align: center;
     }
-
+    .footer-fonts{
+        text-align: center;
+    }
     .blobs{
         width: 900px;
         height: 1200px;
