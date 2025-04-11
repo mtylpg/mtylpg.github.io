@@ -585,7 +585,7 @@ h2{
     background-image: url(../images/textures/yellowstrip.png);
     background-size: 26px;
     width: fit-content;
-    background-position-y: 26px;
+    background-position-y: .9em;
     background-repeat: repeat-x;
     margin: 24px 0;
 }
