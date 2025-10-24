@@ -46,6 +46,9 @@
     --font-h2: "Lineal", sans-serif;
     --font-h3: "Abordage", serif;
     --font-body: "Abordage", sans-serif;
+
+
+    --call-out-width: 780px;
 }
 .u--mobile-only{
     display: none !important;
@@ -322,7 +325,7 @@ ul.navlist a:focus{
     margin: auto;
     text-align: center;
     text-align: left;
-    max-width: 720px;
+    max-width: var(--call-out-width);
     padding-top: 160px;
 
 }
@@ -332,12 +335,12 @@ ul.navlist a:focus{
     line-height: 1.75em;
     /* margin:auto; */
     z-index: 5;
-    max-width: 720px;
+    max-width: var(--call-out-width);
     margin: 32px auto;
 }
 .intro-extension{
     text-align: left;
-    max-width: 720px;
+    max-width: var(--call-out-width);
     margin: 40px auto;
 }
 
@@ -748,7 +751,7 @@ a:focus{
         margin-top: 0;
         padding-top: 24px;
         display: block;
-        max-width:720px;
+        max-width:var(--call-out-width);
     }
     .home-title h1{
         font-size: 6em;
