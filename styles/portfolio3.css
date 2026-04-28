@@ -873,6 +873,10 @@ a:focus{
     .home-title h1{
         font-size: 4em;
         text-align: center;
+        margin-bottom: .0;
+    }
+    .intro-blurb{
+        text-align: center;
     }
     h2.large{
         font-size: 2em;
