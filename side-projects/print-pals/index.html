@@ -65,10 +65,6 @@
             windowWidth: element.scrollWidth,
             windowHeight: element.scrollHeight
         });
-        htmlToImage
-            .toPng(document.getElementById('sticker'))
-            .then((dataUrl) => download(dataUrl, 'sticker.png'));
-
     }
     function bind () {
         canvas.onmousedown = function(e) {
@@ -94,6 +90,9 @@
         };
         
         $save.onclick = function (e) {
+            htmlToImage
+                .toPng(document.getElementById('sticker'))
+                .then((dataUrl) => download(dataUrl, 'sticker.png'));
             var type = $sel.value,
                 w = $imgW.value,
                 h = $imgH.value;
