@@ -13,22 +13,31 @@
     }
     canvas {
         display: block;
-        border: 2px solid #888;
+        /* border: 2px solid #888; */
+    }
+    #sprite {
+        width: 96px;
+        height: 96px;
+        background-image: url("assets/v1.png");
+        background-position: 0;
     }
 </style>
 <body>
 <div class="doc">
-    <canvas width="600" height="400" id="cvs"></canvas>
+    <!-- <canvas width="600" height="400" id="cvs"></canvas> -->
     <div>
         <p>
-            <button id="save">save</button> or <button id="convert">convert to</button> as: 
+            <input type="text" name="key" id="key">
+            <button id="generate">generate</button>
+            <button id="save">save</button>
+             <!-- or <button id="convert">convert to</button> as: 
             <select id="sel">
                 <option value="png">png</option>
                 <option value="jpeg">jpeg</option>
                 <option value="bmp">bmp</option>
             </select><br/>
             width : <input type="number" value="300" id="imgW" /><br/>
-            height : <input type="number" value="200" id="imgH" />
+            height : <input type="number" value="200" id="imgH" /> -->
         </p>
 
     </div>
@@ -36,11 +45,16 @@
         
     </div>
 </div>
-<div id="sticker" style="width:400px; background:green; height:300px">
-    <h1>test</h1>
-    temp
-    <h1>test2</h1>
-    temp
+<div id="sticker" style="width:200px; height:150px; overflow: hidden;">
+
+    <div style=" background-image:url('../../images/textures/seawave.svg'); background-size:cover; background-color: bisque; height: 100%; display: flex;    flex-direction: column;
+    justify-content: space-between;">
+        <div id="sprite"></div>
+        <div> text</div>
+        <div> text</div>
+        <div> text</div>
+        <div> text</div>
+    </div>
 </div>
 <div id="sticker-preview"></div>
 <script>
@@ -49,68 +63,82 @@
         $convert, $imgW, $imgH,
         $sel;
     function init () {
-        canvas = document.getElementById('cvs');
-        ctx = canvas.getContext('2d');
+        // canvas = document.getElementById('cvs');
+        // ctx = canvas.getContext('2d');
+        $key = document.getElementById('key');
         $save = document.getElementById('save');
-        $convert = document.getElementById('convert');
-        $sel = document.getElementById('sel');
-        $imgs = document.getElementById('imgs');
-        $imgW = document.getElementById('imgW');
-        $imgH = document.getElementById('imgH');
+        $generate = document.getElementById('generate');
+        // $key = document.getElementById('key');
+        // $convert = document.getElementById('convert');
+        // $sel = document.getElementById('sel');
+        // $imgs = document.getElementById('imgs');
+        // $imgW = document.getElementById('imgW');
+        // $imgH = document.getElementById('imgH');
         bind();
         draw();
         
-        element = document.getElementById("sticker")
-        document.getElementById("sticker-preview").body = html2canvas(element, {
-            windowWidth: element.scrollWidth,
-            windowHeight: element.scrollHeight
-        });
+        $sticker = document.getElementById("sticker")
+        $sprite = document.getElementById("sprite")
+        // document.getElementById("sticker-preview").body = html2canvas(element, {
+        //     windowWidth: element.scrollWidth,
+        //     windowHeight: element.scrollHeight
+        // });
     }
     function bind () {
-        canvas.onmousedown = function(e) {
-            bMouseIsDown = true;
-            iLastX = e.clientX - canvas.offsetLeft + (window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft);
-            iLastY = e.clientY - canvas.offsetTop + (window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop);
+        // canvas.onmousedown = function(e) {
+        //     bMouseIsDown = true;
+        //     iLastX = e.clientX - canvas.offsetLeft + (window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft);
+        //     iLastY = e.clientY - canvas.offsetTop + (window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop);
+        // }
+        // canvas.onmouseup = function() {
+        //     bMouseIsDown = false;
+        //     iLastX = -1;
+        //     iLastY = -1;
+        // }
+        // canvas.onmousemove = function(e) {
+        //     if (bMouseIsDown) {
+        //         var iX = e.clientX - canvas.offsetLeft + (window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft);
+        //         var iY = e.clientY - canvas.offsetTop + (window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop);
+        //         ctx.moveTo(iLastX, iLastY);
+        //         ctx.lineTo(iX, iY);
+        //         ctx.stroke();
+        //         iLastX = iX;
+        //         iLastY = iY;
+        //     }
+        // };
+        $generate.onclick = function (e) {
+            console.log(cyrb128($key.value)[0])
+            randHash = cyrb128($key.value)[0]
+            console.log(randHash % 10)
+            console.log(Math.floor(randHash/10) % 10)
+            console.log(Math.floor(randHash/100) % 10)
+            console.log(Math.floor(randHash/1000) % 10)
+            $sprite.style.backgroundPosition=96*(cyrb128($key.value)[0] % 10)+"px"
+
         }
-        canvas.onmouseup = function() {
-            bMouseIsDown = false;
-            iLastX = -1;
-            iLastY = -1;
-        }
-        canvas.onmousemove = function(e) {
-            if (bMouseIsDown) {
-                var iX = e.clientX - canvas.offsetLeft + (window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft);
-                var iY = e.clientY - canvas.offsetTop + (window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop);
-                ctx.moveTo(iLastX, iLastY);
-                ctx.lineTo(iX, iY);
-                ctx.stroke();
-                iLastX = iX;
-                iLastY = iY;
-            }
-        };
-        
+
         $save.onclick = function (e) {
             htmlToImage
-                .toPng(document.getElementById('sticker'))
+                .toPng(document.getElementById('sticker'), {canvasWidth:200, canvasHeight:150})
                 .then((dataUrl) => download(dataUrl, 'sticker.png'));
-            var type = $sel.value,
-                w = $imgW.value,
-                h = $imgH.value;
-            Canvas2Image.saveAsImage(canvas, w, h, type);
+            // var type = $sel.value,
+            //     w = $imgW.value,
+            //     h = $imgH.value;
+            // Canvas2Image.saveAsImage(canvas, w, h, type);
         }
-        $convert.onclick = function (e) {
-            var type = $sel.value,
-                w = $imgW.value,
-                h = $imgH.value;
-            $imgs.appendChild(Canvas2Image.convertToImage(canvas, w, h, type))
-        }
+        // $convert.onclick = function (e) {
+        //     var type = $sel.value,
+        //         w = $imgW.value,
+        //         h = $imgH.value;
+        //     $imgs.appendChild(Canvas2Image.convertToImage(canvas, w, h, type))
+        // }
         
     }
     function draw () {
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, 600, 400);
-        ctx.fillStyle = 'red';
-        ctx.fillRect(100, 100, 50, 50);
+        // ctx.fillStyle = '#ffffff';
+        // ctx.fillRect(0, 0, 600, 400);
+        // ctx.fillStyle = 'red';
+        // ctx.fillRect(100, 100, 50, 50);
     }
     
     
