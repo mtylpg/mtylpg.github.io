@@ -6,68 +6,107 @@
 <script src="./canvas2image.js"></script>
 <script src="./download.min.js"></script>
 <script src="./critter-engine.js"></script>
+
+
 <style>
+    body{
+        font-family: Sniglet;
+
+    }
     .doc {
         width: 604px;
         margin: 0 auto;
     }
-    canvas {
-        display: block;
-        /* border: 2px solid #888; */
+    #sticker{
+        display: flex;
+        width:200px; height:150px; overflow: hidden;
+        border: 2px solid black;
+    }
+    #sticker-content{
+        /* background-image:url('../../images/textures/seawave.svg'); */
+        /* background-size:cover; */
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     #sprite {
+        background: white;
         width: 96px;
         height: 96px;
         background-image: url("assets/v1.png");
         background-position: 0;
+        border-radius: 24px;
+        flex: 1;
+        min-width: 96px;
+    }
+    #stats-container{
+        flex: 1;
+        min-width: 96px;
+    }
+    #quest-container{
+        flex: 2;
+        width: 100%;
+    }
+    .title{
+        font-weight: 500;
+        -webkit-text-stroke: 2px #333; 
+        kerning: 4px;
+        padding-top: 8px;
+        color: #333;
     }
 </style>
 <body>
 <div class="doc">
-    <!-- <canvas width="600" height="400" id="cvs"></canvas> -->
     <div>
-        <p>
-            <input type="text" name="key" id="key">
+            <input type="text" name="key" id="key" value="Rex Gouda">
             <button id="generate">generate</button>
+            <button id="randomize">randomize</button>
             <button id="save">save</button>
-             <!-- or <button id="convert">convert to</button> as: 
-            <select id="sel">
-                <option value="png">png</option>
-                <option value="jpeg">jpeg</option>
-                <option value="bmp">bmp</option>
-            </select><br/>
-            width : <input type="number" value="300" id="imgW" /><br/>
-            height : <input type="number" value="200" id="imgH" /> -->
-        </p>
 
-    </div>
-    <div id="imgs">
-        
     </div>
 </div>
-<div id="sticker" style="width:200px; height:150px; overflow: hidden;">
+<div id="sticker">
 
-    <div style=" background-image:url('../../images/textures/seawave.svg'); background-size:cover; background-color: bisque; height: 100%; display: flex;    flex-direction: column;
-    justify-content: space-between;">
+    <div id="sticker-content">
         <div id="sprite"></div>
-        <div> text</div>
-        <div> text</div>
-        <div> text</div>
-        <div> text</div>
+        <div id="stats-container">
+            <div id="name"></div>
+            <div id="nature-container"> <span class="title">NATURE: </span> <span id="nature"></span></div>
+
+            <div id="level"><span class="title">LVL:</span> <span id="lvl">1</span> </div>
+        </div>
+        <div id="quest-cointainer"><span class="title">QUEST:</span> <span id="quest"></span></div>
+
     </div>
 </div>
 <div id="sticker-preview"></div>
 <script>
+
+
+
+    var natures = ["Adamant","Bashful", "Bold", "Brave", "Calm", "Careful", "Docile", "Gentle", "Hardy", "Hasty", "Impish", "Jolly", "Lax", "Lonely", "Mild", "Modest", "Naive", "Naughty", "Quiet", "Quirky", "Rash", "Relaxed", "Sassy", "Serious", "Timid"]
+
+    var quests = ["Find somebody eating cheese. What is their favorite cheese?",
+        "Catch a magnet fish. What type of fish is it?",
+        "Get a trinket from a stranger. What did you get?",
+        "Craft something from the barn. Give your art a title.",
+        "Talk to a musician. Learn their names."
+    ]
+
+
     var canvas, ctx, bMouseIsDown = false, iLastX, iLastY,
         $save, $imgs,
         $convert, $imgW, $imgH,
-        $sel;
+        $sel,
+        $sticker, $sprite, $nature, $name, $quest;
     function init () {
         // canvas = document.getElementById('cvs');
         // ctx = canvas.getContext('2d');
         $key = document.getElementById('key');
         $save = document.getElementById('save');
         $generate = document.getElementById('generate');
+        $randomize = document.getElementById('randomize');
         // $key = document.getElementById('key');
         // $convert = document.getElementById('convert');
         // $sel = document.getElementById('sel');
@@ -79,6 +118,10 @@
         
         $sticker = document.getElementById("sticker")
         $sprite = document.getElementById("sprite")
+        $nature = document.getElementById("nature")
+        $name = document.getElementById("name")
+        $quest = document.getElementById("quest")
+        generateBuddy()
         // document.getElementById("sticker-preview").body = html2canvas(element, {
         //     windowWidth: element.scrollWidth,
         //     windowHeight: element.scrollHeight
@@ -107,14 +150,12 @@
         //     }
         // };
         $generate.onclick = function (e) {
-            console.log(cyrb128($key.value)[0])
-            randHash = cyrb128($key.value)[0]
-            console.log(randHash % 10)
-            console.log(Math.floor(randHash/10) % 10)
-            console.log(Math.floor(randHash/100) % 10)
-            console.log(Math.floor(randHash/1000) % 10)
-            $sprite.style.backgroundPosition=96*(cyrb128($key.value)[0] % 10)+"px"
+            generateBuddy()
+        }
 
+        $randomize.onclick = function (e) {
+            $key.value=Math.random()
+            generateBuddy()
         }
 
         $save.onclick = function (e) {
@@ -133,6 +174,17 @@
         //     $imgs.appendChild(Canvas2Image.convertToImage(canvas, w, h, type))
         // }
         
+    }
+    function generateBuddy () {
+        var spltkey = $key.value.split(" ")
+        console.log(spltkey)
+        console.log(cyrb128($key.value)[0])
+        randHash = cyrb128($key.value)[0]
+        // $sprite.style.backgroundPosition=96*(cyrb128($key.value)[0] % 10)+"px"
+
+        $nature.innerHTML = natures[Math.floor(randHash/10) % natures.length]
+        $quest.innerHTML = quests[Math.floor(randHash/1000) % quests.length]
+        $name.innerHTML = $key.value
     }
     function draw () {
         // ctx.fillStyle = '#ffffff';
