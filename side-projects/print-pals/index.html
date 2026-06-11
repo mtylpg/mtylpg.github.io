@@ -16,6 +16,7 @@
 
     body{
         font-family: Sniglet;
+        font-size: 14px;
         
     }
     .doc {
@@ -42,6 +43,7 @@
     }
     #sticker{
         display: flex;
+        position: relative;
         width:200px; height:150px; overflow: hidden;
         background-color: #fff;
         /* TODO Add the ally guide bg to this */
@@ -54,12 +56,14 @@
         /* background-size:cover; */
         height: 100%;
         display: flex;
+        align-content: center;
         flex-wrap: wrap;
         justify-content: space-between;
     }
     #sprite-container{
         flex: 1;
         position: relative;
+        min-width: 96px;
         height: 96px;
     }
     .sprite-bit{
@@ -95,19 +99,35 @@
         width: 100%;
     }
     .title{
+        font-size: 12px;
         font-weight: 500;
-        -webkit-text-stroke: 2px #333; 
+        -webkit-text-stroke: 1px #333; 
         kerning: 4px;
         padding-top: 8px;
         color: #333;
     }
     #name{
-        max-height: 2em;
+        -webkit-text-stroke: 1px #333; 
+        max-height: 3em;
+        line-height: 1em;
         overflow: hidden;
-        line-height: .8;
+        width: 96px;
+        margin-bottom: 4px;
     }
     #nature, #lvl{
         margin-left: 16px;
+        font-size: 12px;
+    }
+    #lvl{
+        margin-left: 4px;
+    }
+    #timestamp{
+        position: absolute;
+        bottom: 1px;
+        font-size: 6px;
+        /* margin-top: -3x; */
+        text-align: right;
+        width: 100%;
     }
 </style>
 <body>
@@ -125,6 +145,7 @@
 <div id="sticker">
 
     <div id="sticker-content">
+
         <div id="sprite-container">
             <div id="sprite-egg" class="sprite-bit"></div>
             <div id="sprite-blob" class="sprite-bit hidden"></div>
@@ -136,9 +157,10 @@
             <div id="name"></div>
             <div id="nature-container"> <span class="title">NATURE: </span> <div id="nature"></div></div>
 
-            <div id="level"><span class="title">LVL:</span> <div id="lvl">EGG</div> </div>
+            <div id="level"><span class="title">LVL:</span> <span id="lvl">EGG</span> </div>
         </div>
         <div id="quest-cointainer"><span class="title">QUEST:</span> <span id="quest"></span></div>
+        <div id="timestamp"></div>
 
     </div>
 </div>
@@ -149,11 +171,15 @@
 
     var natures = ["Adamant","Bashful", "Bold", "Brave", "Calm", "Careful", "Docile", "Gentle", "Hardy", "Hasty", "Impish", "Jolly", "Lax", "Lonely", "Mild", "Modest", "Naive", "Naughty", "Quiet", "Quirky", "Rash", "Relaxed", "Sassy", "Serious", "Timid"]
 
-    var quests = ["Find somebody eating cheese. What is their favorite cheese?",
-        "Catch a magnet fish. What type of fish is it?",
-        "Get a trinket from a stranger. What did you get?",
-        "Craft something from the barn. Give your art a title.",
-        "Talk to a musician. Learn their names."
+    var quests = ["Find somebody eating cheese. What's their favorite type of cheese?",
+        "Catch a magnet fish, what kind of fish is it?",
+        "Get a trinket from a stranger, what did you get?",
+        "Craft something at the craft barn. Name your art.",
+        "Talk to a musician. Learn their name.",
+        "Invent a secret handshake with as friend. What's the part?",
+        "Solve a puzzle. Any puzzle. What was the answer?",
+        "Meet a staffer, are they having a good day?",
+        "Find a pair cool sunglasses. Who owns em?"
     ]
 
 
@@ -161,7 +187,7 @@
         $save, $imgs,
         $convert, $imgW, $imgH,
         $sel,
-        $sticker, $sprite, $nature, $name, $quest, $bod, $face, $egg, $blob;
+        $sticker, $sprite, $nature, $name, $quest, $bod, $face, $egg, $blob, $timestamp;
     function init () {
         // canvas = document.getElementById('cvs');
         // ctx = canvas.getContext('2d');
@@ -190,6 +216,7 @@
         $name = document.getElementById("name")
         $lvl = document.getElementById("lvl")
         $quest = document.getElementById("quest")
+        $timestamp = document.getElementById("timestamp")
         generateBuddy()
         // document.getElementById("sticker-preview").body = html2canvas(element, {
         //     windowWidth: element.scrollWidth,
@@ -238,7 +265,7 @@
         $save.onclick = function (e) {
             htmlToImage
                 .toPng($sticker, {canvasWidth:200, canvasHeight:150})
-                .then((dataUrl) => download(dataUrl, 'sticker.png'));
+                .then((dataUrl) => download(dataUrl, getHumanFriendlyDateString()+'.png'));
             // var type = $sel.value,
             //     w = $imgW.value,
             //     h = $imgH.value;
@@ -259,7 +286,7 @@
         console.log(cyrb128(base_word)[0])
         randHash = cyrb128(base_word)[0]
         $nature.innerHTML = natures[Math.floor(randHash/10) % natures.length]
-        $quest.innerHTML = quests[Math.floor(randHash/1000) % quests.length]
+        quest1 = quests[Math.floor(randHash/1000) % quests.length]
         if(splitkey.length == 1){
             $egg.classList.remove("hidden")
             $bod.classList.add("hidden")
@@ -268,13 +295,18 @@
             console.log("egg time")
             $egg.style.backgroundPosition=96*(randHash % 10)+"px"
             $lvl.innerHTML = "egg"
+            $quest.innerHTML = quest1
         }
         else{
             face_words = splitkey[0]+splitkey[1]
             randHash = cyrb128(face_words)[0]
 
             console.log("blob")
-
+            quest2 = quests[Math.floor(randHash/1000) % quests.length]
+            if(quest1 == quest2){
+                console.log("collision")
+                quest2 = quests[(Math.floor(randHash/1000)+1) % quests.length]
+            }
             $egg.classList.add("hidden")
             $face.classList.remove("hidden")
             $bod.classList.add("hidden")
@@ -283,6 +315,7 @@
             if(splitkey.length == 2){
                 $blob.style.backgroundPosition=96*(Math.floor(randHash/10) % 10)+"px"
                 $lvl.innerHTML = "blob"
+                $quest.innerHTML = quest2
             }
             else{
                 randHash = cyrb128($key.value)[0]
@@ -291,16 +324,17 @@
                 $blob.classList.add("hidden")
                 $bod.style.backgroundPosition=96*(randHash % 10)+"px"
                 $lvl.innerHTML = "<3 buddy"
+                quest3 = quests[Math.floor(randHash/1000) % quests.length]
+                if(quest2 == quest3){
+                    console.log("collision")
+                    quest3 = quests[(Math.floor(randHash/1000)+1) % quests.length]
+                }
+                $quest.innerHTML = quest3
             }
         }
 
         $name.innerHTML = $key.value
-        if(splitkey.length == 1){
-        }
-        $bod.style.backgroundPosition=96*(cyrb128(base)[0] % 10)+"px"
-        $face.style.backgroundPosition=96*(cyrb128(base)[1] % 10)+"px"
-
-
+        $timestamp.innerHTML = getHumanFriendlyDateString()
     }
     function draw () {
         // ctx.fillStyle = '#ffffff';
@@ -309,6 +343,19 @@
         // ctx.fillRect(100, 100, 50, 50);
     }
     
+
+    // Quick date format script from Alex Chan https://alexwlchan.net/2020/human-friendly-dates-in-javascript/
+    const dateFormatter = new Intl.DateTimeFormat(
+        [], {"month": "long", "day": "numeric", "weekday": "short"}
+    )
+
+    const timeFormatter = new Intl.DateTimeFormat(
+        [], {"hour": "numeric", "minute": "numeric"}
+    )
+    function getHumanFriendlyDateString() {
+        const date = new Date();
+        return dateFormatter.format(date) + ", " + timeFormatter.format(date);
+    }
     
     onload = init;
 </script>
