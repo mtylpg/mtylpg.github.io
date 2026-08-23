@@ -21,7 +21,7 @@
             text-align: center;
             font-family: "Sniglet";
             color: #45283C;
-            font-size: 24px;
+            font-size: 32px;
             cursor:
                 url("cursor-neutral.png") 8 8,
                 auto;
@@ -32,6 +32,7 @@
             margin: auto;
             border: 4px solid;
             border-bottom: none;
+            font-size: 1.25em;
             border-radius: 16px 16px 0 0;
             padding: 0 48px;
         }
@@ -49,6 +50,10 @@
             font-size: .75em;
         }
 
+        #searchContainer{
+            display: flex;
+            justify-content: center;
+        }
         #search{
             position: relative;
             z-index: 5;
@@ -85,7 +90,7 @@
         
         .whitebg{
             background: white;
-            max-width: 240px;
+            max-width: 100%;
             border-radius: 8px;
             margin:8px;
             padding: 8px 16px;
@@ -105,24 +110,23 @@
 
         #badgeInput{
             font-family: "Sniglet";
-            font-size: 24px;
             border-radius: 16px 0 0 16px;
             padding: 16px;
         }
         
         #searchButton{
-            margin-left: -5px;
+            margin-left: -12px;
             border-radius: 0 16px 16px 0;
             padding: 16px;
         }
         #randomButton{
-            font-size: 16px;
+            font-size: .75em;
             border-radius: 16px ;
             margin-top:24px
         }
         button, input{
             background-color: #ffffff;
-            font-size: 24px;
+            font-size: 1em;
             font-family: "Sniglet";
             border: 4px solid #45283C;
             padding:8px 16px;
@@ -133,6 +137,7 @@
         }
         button:focus, input:focus, input:active{
             border: 8px solid #FEDC01;
+            margin-top:-4px;
             box-shadow: 0px 0 0 4px #45283C;
             outline: none;
         }
@@ -150,12 +155,13 @@
         #nofish>.whitebg{
             max-width: 560px;
             margin: auto;
-            border: 4px solid #45283C;
+            border: 8px solid #45283C;
+            border-radius: 40px;
         }
         #whoops{
             position: absolute;
             top: 0;
-            right: -213px;
+            right: -218px;
         }
 
     </style>
