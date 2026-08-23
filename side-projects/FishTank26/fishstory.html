@@ -12186,9 +12186,14 @@
                 <div>NATURE: <span id="nature"></span></div>
                 <div>TEAM: <span id="team"></span></div>
                 <!-- <div>BORN: <span id="birthday"></span></div> -->
-                <div>LVL: <span id="food"></span>
-                <span class="smol"> <span id="perfect"></span></span></div>
+                <div>LVL: <span id="food"></span> </div>
                 <div>SCANS: <span id="scans"></span></div>
+            </div>
+            <div class="whitebg">
+                <div class="smol"> Level Rank: <span id="lvlrank"></span></div>
+                <div class="smol"><span class="smol" id="lvltie"></span></div>
+                <div class="smol">Scan Rank: <span id="scanrank"></span></div>
+                <div class="smol"><span class="smol" id="scantie"></span></div>
             </div>
         </div>
     </div>
@@ -12196,11 +12201,13 @@
     <script>
         var intros = ["Presenting", "Say hello to", "Hey, it's", "Oh my it's", "There they are!", "Wow what a fish it's", "Good to see you", "Hey there", "🐟 look it's 🐠", "Welcome back!", "At it again, it's"]
         $.getJSON("fishstory.json", function(json) {
-            console.log(json);
             tankData = json["Data"];
             fishData = json["Fish"];
             nameTable = json["nameTable"]
+            scanScores = json["scanScores"]
+            lvlScores = json["lvlScores"]
             keys = Object.keys(fishData)
+
         });
 
         function searchBadge(){
@@ -12229,13 +12236,29 @@
             $("#team").text(data[6])
             // $("#birthday").text(data[7])
             $("#food").text(data[9]+data[11])
+            if(lvlScores[data[9]+data[11]][1]>1){
+                tieCount = lvlScores[data[9]+data[11]][1] - 1
+                $("#lvltie").show()
+                $("#lvltie").text("Tied with "+ tieCount +" other fish")
+            } else {
+                 $("#lvltie").hide()
+            }
+            $("#lvlrank").text(lvlScores[data[9]+data[11]][0])
             if(data[11]>0){
-                $("#perfect").text( "("+data[11]+" perfect feed!)")
-                if(data[11]>1){
-                    $("#perfect").text( "("+data[11]+" perfect feeds!)")
-                }
+                // $("#perfect").text( "("+data[11]+" perfect feed!)")
+                // if(data[11]>1){
+                //     $("#perfect").text( "("+data[11]+" perfect feeds!)")
+                // }
             }
             $("#scans").text(data[8])
+            $("#scanrank").text(scanScores[data[8]][0])
+            if(scanScores[data[8]][1]>1){
+                tieCount = scanScores[data[8]][1] - 1
+                $("#scantie").show()
+                $("#scantie").text("Tied with "+tieCount+" other fish")
+            } else {
+                $("#scantie").hide()
+            }
             $("svg").css("margin-top", -64*(data[3])+"px")
             $(".fbody").css("fill", "#"+data[2][0])
             $(".fborder").css("fill", "#"+data[2][1])
