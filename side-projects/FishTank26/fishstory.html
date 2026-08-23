@@ -1,10 +1,4 @@
 <head>
-<!-- 
-    TODO: Cursors -->
-
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         :root{
@@ -166,8 +160,6 @@
 
     </style>
 
-    <script>
-    </script>
 </head>
 <body>
     <div id="search">
@@ -12183,32 +12175,21 @@
     </div>
 
     <script>
-        var intros = ["Presenting", "Say hello to", "Hey, it's", "Oh my it's", "There they are!", "Wow what a fish it's", "Good to see you,"]
+        var intros = ["Presenting", "Say hello to", "Hey, it's", "Oh my it's", "There they are!", "Wow what a fish it's", "Good to see you", "Hey there", "🐟 look it's 🐠", "Welcome back!", "At it again, it's"]
         $.getJSON("fishstory.json", function(json) {
             console.log(json);
             tankData = json["Data"];
             fishData = json["Fish"];
-            nameTable = new Map()
+            nameTable = json["nameTable"]
             keys = Object.keys(fishData)
-            collisionCount = 0
-            for(key in keys){
-                if(nameTable.get(fishData[keys[key]][0])){
-                    collisionCount = collisionCount+1
-                    nameTable.set(fishData[keys[key]][0],keys[key])
-                    // nameTable.set(fishData[keys[key]][0],nameTable.get(fishData[keys[key]][0]+" ; "+keys[key]))
-                } else{
-                    nameTable.set(fishData[keys[key]][0],keys[key])
-                }
-            }
-            // randomFish()
         });
 
         function searchBadge(){
             fish_id = $("#badgeInput").val()
             tempID = fish_id[1]+fish_id[4]+fish_id[3]+fish_id.substr(5)
             if(!fishData[tempID]){
-                if(nameTable.get(fish_id)){
-                    tempID = nameTable.get(fish_id).split(" ; ")[0]
+                if(nameTable[fish_id]){
+                    tempID = nameTable[fish_id]
                 } else{
                     resetFish();
                     return
