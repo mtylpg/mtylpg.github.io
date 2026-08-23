@@ -12216,7 +12216,7 @@
             tempID = fish_id[1]+fish_id[4]+fish_id[3]+fish_id.substr(5)
             if(!fishData[tempID]){
                 // Fix caps as needed, then check name table
-                fish_id = fish_id.split(' ').map(word => word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()).join(' ');
+                fish_id = fish_id.split(' ').map(word => word.substring(0, 1).toUpperCase() + word.substring(1)).join(' ');
                 if(nameTable[fish_id]){
                     tempID = nameTable[fish_id]
                 } else{
