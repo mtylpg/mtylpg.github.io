@@ -62,7 +62,7 @@
         }
 
         #fishOuterFrame{
-            height: 280px;
+            height: 160px;
             max-width: 100%;
             /* transform: translateY(-44%); */
             position: relative;
@@ -12205,19 +12205,23 @@
 
         function searchBadge(){
             fish_id = $("#badgeInput").val()
+            // Obscure mag badge codes for a tiny bit of security
             tempID = fish_id[1]+fish_id[4]+fish_id[3]+fish_id.substr(5)
             if(!fishData[tempID]){
+                // Fix caps as needed, then check name table
+                fish_id = fish_id.split(' ').map(word => word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()).join(' ');
                 if(nameTable[fish_id]){
                     tempID = nameTable[fish_id]
                 } else{
-                    resetFish();
+                    noFish();
                     return
                 }
             }
-            $("#noFish").hide()
             loadFish(tempID)
         }
+
         function loadFish(fish_id){
+            $("#noFish").hide()
             $("#fishInfo").show()
             data = fishData[fish_id]
             $("#fname").text(data[0])
@@ -12260,7 +12264,7 @@
             
         }
 
-        function resetFish(){
+        function noFish(){
             $("#fishInfo").hide()
             $("#noFish").show()
             
