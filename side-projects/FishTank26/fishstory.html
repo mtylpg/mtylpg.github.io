@@ -12206,9 +12206,15 @@
                 <div>SCANS: <span id="scans"></span></div>
             </div>
             <div class="whitebg">
-                <div class="smol"> Level Rank: <span id="lvlrank"></span></div>
+                <div class=""> 
+                    Level Rank: <span id="lvlrank"></span> 
+                    <span class="smol"> / 2399</span>
+                </div>
                 <div class="smol"><span class="smol" id="lvltie"></span></div>
-                <div class="smol">Scan Rank: <span id="scanrank"></span></div>
+                <div class="">
+                    Scan Rank: <span id="scanrank"></span>
+                    <span class="smol"> / 2399</span>
+                </div>
                 <div class="smol"><span class="smol" id="scantie"></span></div>
             </div>
         </div>
@@ -12262,7 +12268,7 @@
             } else {
                  $("#lvltie").hide()
             }
-            $("#lvlrank").text(lvlScores[data[9]+data[11]][0])
+            $("#lvlrank").text(lvlScores[data[9]+data[11]][2])
             if(data[11]>0){
                 // $("#perfect").text( "("+data[11]+" perfect feed!)")
                 // if(data[11]>1){
@@ -12270,7 +12276,7 @@
                 // }
             }
             $("#scans").text(data[8])
-            $("#scanrank").text(scanScores[data[8]][0])
+            $("#scanrank").text(scanScores[data[8]][2])
             if(scanScores[data[8]][1]>1){
                 tieCount = scanScores[data[8]][1] - 1
                 $("#scantie").show()
