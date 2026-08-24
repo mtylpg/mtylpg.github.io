@@ -12225,6 +12225,7 @@
 
     <script>
         var intros = ["Presenting", "Say hello to", "Hey, it's", "Oh my it's", "There they are!", "Wow what a fish it's", "Good to see you", "Hey there", "🐟 look it's 🐠", "Welcome back!", "At it again, it's"]
+
         $.getJSON("fishstory.json", function(json) {
             tankData = json["Data"];
             fishData = json["Fish"];
@@ -12232,8 +12233,14 @@
             scanScores = json["scanScores"]
             lvlScores = json["lvlScores"]
             keys = Object.keys(fishData)
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.get('fish')){
+                $("#badgeInput").val(urlParams.get('fish'));
+                searchBadge();
+            }
 
         });
+
 
         function searchBadge(){
             fish_id = $("#badgeInput").val()
@@ -12299,7 +12306,11 @@
             }
             
             $("#presenting").text(intros[Math.floor(Math.random() * intros.length)])
-            
+
+            // URL update
+            const url = new URL(window.location.href);
+            url.searchParams.set('fish', data[0]);
+            window.history.pushState({}, '', url);
         }
 
         function randomFish(){
